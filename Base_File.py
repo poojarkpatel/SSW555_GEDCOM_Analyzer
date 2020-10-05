@@ -176,9 +176,8 @@ class Repository:
                 list_family_count: int = 0
                 for line in fp:
                     output_line_list: List = line.strip("\n").split(" ", 2)
-                    list_individual = [item for item in output_line_list if
-                                       item.startswith("@I") and item.endswith("@")]
-                    list_family = [item for item in output_line_list if item.startswith("@F") and item.endswith("@")]
+                    list_individual = [item for item in output_line_list]
+                    list_family = [item for item in output_line_list]
                     list_family_count += len(list_family)
                     list_individual_count += len(list_individual)
                     if list_individual_count < 5000 and list_family_count < 1000:
