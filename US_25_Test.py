@@ -11,19 +11,19 @@ class Test(unittest.TestCase):
         """ The function helps to test us_25 function"""
         indi_repo: Repository = Repository("/Users/poojapatel/Downloads/US_25.ged")
 
-        expected: List = ['There are multiple people born on 1980-09-13 date in family @F1@',
-                          'The family @F2@ has multiple individuals with same name Joey /Robinson/']
+        expected: List = ['The family @F2@ has multiple individuals with same name Joey /Robinson/',
+                          'There are multiple people born on 1980-09-13 date in family @F1@']
 
-        self.assertEqual(us_25(indi_repo._individual, indi_repo._family), expected)
-        self.assertNotEqual(us_25(indi_repo._individual, indi_repo._family),
+        self.assertEqual(sorted(us_25(indi_repo._individual, indi_repo._family)), expected)
+        self.assertNotEqual(sorted(us_25(indi_repo._individual, indi_repo._family)),
                             ['The family @F1@ has multiple individuals with same name Joey /Robinson/',
                              'There are multiple people born on 1822-01-01 date in family @F1@'])
         self.assertFalse(us_25(indi_repo._individual, indi_repo._family)
                          == ['The family @F1@ has multiple individuals with same name Joey /Robinson/',
                              'There are multiple people born on 1822-01-01 date in family @F1@'])
-        self.assertTrue(us_25(indi_repo._individual, indi_repo._family)
-                        == ['There are multiple people born on 1980-09-13 date in family @F1@',
-                            'The family @F2@ has multiple individuals with same name Joey /Robinson/'])
+        self.assertTrue(sorted(us_25(indi_repo._individual, indi_repo._family))
+                        == ['The family @F2@ has multiple individuals with same name Joey /Robinson/',
+                            'There are multiple people born on 1980-09-13 date in family @F1@'])
         self.assertTrue(us_25(indi_repo._individual, indi_repo._family)
                         != ['The family @F1@ has multiple individuals with same name Joey /Robinson/',
                             'There are multiple people born on 1822-01-02 date in family @F1@'])
