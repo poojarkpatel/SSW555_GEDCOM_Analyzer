@@ -6,6 +6,8 @@ from prettytable import PrettyTable
 import os
 from US_35 import recent_births
 from US_25 import us_25
+from US_28 import US_28
+from US_29 import US_29
 # from collections import defaultdict
 
 class Individual:
@@ -249,4 +251,12 @@ if __name__ == '__main__':
     indi_repo_us_25: Repository = Repository("US_25.ged")
     for item in us_25(indi_repo_us_25._individual, indi_repo_us_25._family):
         print(f"US_25: {item}")
+
+    indi_repo_us_28: Repository = Repository("US_28.ged")
+    for item in US_28(indi_repo_us_28):
+        print(f"US_28: Age {item}")
+
+    indi_repo_us_29: Repository = Repository("US_29.ged")
+    for item in US_29(indi_repo_us_29):
+        print(f"US_29: {item} is deceased individual")
 
