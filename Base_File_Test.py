@@ -8,6 +8,8 @@ from US_28 import US_28
 from US_29 import US_29
 from US_11 import US_11
 from US_33 import US_33
+from US_07 import US_07
+from US_06 import US_06
 
 class TestRepository(unittest.TestCase):
     """Helps to test all the functions"""
@@ -94,6 +96,23 @@ class TestRepository(unittest.TestCase):
         self.assertFalse(US_33(indi_repo) == ['@I1@ Yatinkumar /Shiyani/ 13 is orphan and age is less than 18'])
         self.assertTrue(US_33(indi_repo) != ['@I1@ priyanka /Shiyani/ 16 is orphan and age is less than 18'])
 
+    def test_US_06(self):
+        """ Contains test cases for US_06"""
+        indi_repo: Repository = Repository("US_06.ged")
+
+        expected = ["US_06: Katir /Bala/ Death 1822-01-03 occured prior to the divorce date 1852-07-14"]
+
+        self.assertEqual((US_06(indi_repo._individual, indi_repo._family)), expected)
+    
+    def test_US_07(self):
+        """ Contains test cases for US_07"""
+        indi_repo: Repository = Repository("US_07.ged")
+
+        expected = ["Tia /Ale/"]
+
+        self.assertEqual(US_07(indi_repo._individual), expected )
+
+    
 
 if __name__ == "__main__":
     unittest.main(exit=False, verbosity=2)
