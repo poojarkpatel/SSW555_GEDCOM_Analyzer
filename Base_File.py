@@ -12,6 +12,8 @@ from US_11 import US_11
 from US_33 import US_33
 from US_06 import US_06
 from US_07 import US_07
+from US01 import us01
+from US04 import us04
 
 # from collections import defaultdict
 
@@ -286,5 +288,9 @@ if __name__ == '__main__':
     for item in US_06(indi_repo._individual, indi_repo._family):
         print(f"{item}")
 
+    for item in us01(indi_repo._individual, indi_repo._family):
+        print(item)
 
+    for item in us04(indi_repo._family):
+        print(item)
 

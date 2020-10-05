@@ -1,3 +1,8 @@
+"""
+Test cases for user story us04
+Author: Varun Mullins
+"""
+
 import unittest
 from US04 import us04
 from Base_File import Repository
@@ -5,7 +10,7 @@ from Base_File import Repository
 
 class Test(unittest.TestCase):
     """For testing user story us04"""
-    def test_us01(self):
+    def test_us04(self):
         """ The function is to test us04 function"""
         indi_repo: Repository = Repository("US04.ged")
 

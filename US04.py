@@ -1,4 +1,7 @@
-"""File with the User Story US04"""
+"""
+File with the User Story US04
+Author: Varun Mullins
+"""
 
 
 def us04(family):
