@@ -9,7 +9,7 @@ class Test(unittest.TestCase):
         """ Contains test cases for US_06"""
         indi_repo: Repository = Repository("US_06.ged")
 
-        expected = ["US06: Katir /Bala/ Death 1822-01-03 occured prior to the divorce date 1852-07-14"]
+        expected = ["US_06: Katir /Bala/ Death 1822-01-03 occured prior to the divorce date 1852-07-14"]
 
         self.assertEqual((US_06(indi_repo._individual, indi_repo._family)), expected)
 
