@@ -258,19 +258,15 @@ if __name__ == '__main__':
     indi_repo.individual_pretty_table()
     indi_repo.family_pretty_table()
 
-    indi_repo_us_35: Repository = Repository("US_35.ged")
-    for item in recent_births(indi_repo_us_35._individual):
+    for item in recent_births(indi_repo._individual):
         print(f"US_35: {item}")
 
-    indi_repo_us_25: Repository = Repository("US_25.ged")
-    for item in us_25(indi_repo_us_25._individual, indi_repo_us_25._family):
+    for item in us_25(indi_repo._individual, indi_repo._family):
         print(f"US_25: {item}")
 
-    indi_repo_us_28: Repository = Repository("US_28.ged")
-    for item in US_28(indi_repo_us_28):
+    for item in US_28(indi_repo):
         print(f"US_28: Age {item}")
 
-    indi_repo_us_29: Repository = Repository("US_29.ged")
-    for item in US_29(indi_repo_us_29):
+    for item in US_29(indi_repo):
         print(f"US_29: {item} is deceased individual")
 
