@@ -3,12 +3,25 @@ from typing import Iterator, IO, List, Dict
 import datetime
 import math
 from prettytable import PrettyTable
-import os
+import sys
 from US_35 import recent_births
 from US_25 import us_25
 from US_28 import US_28
 from US_29 import US_29
 # from collections import defaultdict
+
+class Logger(object):
+    def __init__(self):
+        self.terminal = sys.stdout
+        self.log = open("output.txt", "w")
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)
+
+    def flush(self):
+        pass
+
 
 class Individual:
     """
@@ -240,6 +253,7 @@ class Repository:
 
 if __name__ == '__main__':
     """ main file """
+    sys.stdout = Logger()
     indi_repo: Repository = Repository("ssw555_input_file.ged")# change path where you gedcomfile is present
     indi_repo.individual_pretty_table()
     indi_repo.family_pretty_table()

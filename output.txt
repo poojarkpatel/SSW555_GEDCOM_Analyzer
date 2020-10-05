@@ -1,0 +1,44 @@
++-------+--------------------+--------+------------+-----+-------+------------+----------+------------------+
+|   Id  |        Name        | Gender |  Birthday  | Age | Alive | Deathdate  |  Child   |      Spouse      |
++-------+--------------------+--------+------------+-----+-------+------------+----------+------------------+
+|  @I1@ |  Joey /Robinson/   |   M    | 1822-01-01 |  68 | False | 1890-03-06 | {'@F1@'} |        NA        |
+|  @I2@ |  Ross /Robinson/   |   M    | 1790-11-26 |  59 | False | 1850-09-09 |    NA    |     {'@F1@'}     |
+|  @I3@ |  Monica /Geller/   |   F    | 1792-11-12 |  47 | False | 1840-04-02 |    NA    |     {'@F1@'}     |
+|  @I4@ |     Ben /Mann/     |   M    | 1823-02-01 |  48 | False | 1871-04-06 | {'@F1@'} |        NA        |
+|  @I5@ |  Mike /Robinson/   |   M    | 1824-02-01 |  55 | False | 1880-01-10 | {'@F1@'} | {'@F2@', '@F3@'} |
+|  @I6@ |   Rachel /Green/   |   F    | 1832-02-14 |  68 | False | 1900-06-24 |    NA    |     {'@F2@'}     |
+|  @I7@ |    Ema /Mosbi/     |   F    | 1828-04-14 |  41 | False | 1869-04-09 |    NA    |     {'@F3@'}     |
+|  @I8@ | William /Robinson/ |   M    | 1849-09-09 |  38 | False | 1888-08-02 | {'@F3@'} |        NA        |
+|  @I9@ |   Max /Robinson/   |   M    | 1866-10-08 |  83 | False | 1950-04-12 | {'@F2@'} |     {'@F4@'}     |
+| @I10@ |  Dora /Robinson/   |   F    | 1868-10-09 |  61 | False | 1930-01-12 |    NA    |     {'@F4@'}     |
+| @I11@ |  Emmy /Robinson/   |   F    | 1899-09-05 | 121 |  True |     NA     | {'@F4@'} |     {'@F5@'}     |
+| @I12@ |   Jimmy /Smith/    |   M    | 1898-12-19 |  71 | False | 1970-08-10 |    NA    |     {'@F5@'}     |
++-------+--------------------+--------+------------+-----+-------+------------+----------+------------------+
++------+------------+------------+------------+-----------------+---------+-----------------+--------------------------+
+|  Id  |  Married   |  Divorced  | Husband ID |   Husband Name  | Wife ID |    Wife Name    |         Children         |
++------+------------+------------+------------+-----------------+---------+-----------------+--------------------------+
+| @F1@ | 1820-04-12 |     NA     |    @I2@    | Ross /Robinson/ |   @I3@  | Monica /Geller/ | {'@I5@', '@I4@', '@I1@'} |
+| @F2@ | 1862-07-10 |     NA     |    @I5@    | Mike /Robinson/ |   @I6@  |  Rachel /Green/ |         {'@I9@'}         |
+| @F3@ | 1848-01-12 | 1852-07-14 |    @I5@    | Mike /Robinson/ |   @I7@  |   Ema /Mosbi/   |         {'@I8@'}         |
+| @F4@ | 1893-08-04 |     NA     |    @I9@    |  Max /Robinson/ |  @I10@  | Dora /Robinson/ |        {'@I11@'}         |
+| @F5@ | 1925-06-05 | 1930-11-15 |   @I12@    |  Jimmy /Smith/  |  @I11@  | Emmy /Robinson/ |            NA            |
++------+------------+------------+------------+-----------------+---------+-----------------+--------------------------+
+US_35: Emmy /Robinson/ has recent birthday
+US_35: Jil /Robinson/ has recent birthday
+US_35: Sam /Robinson/ has recent birthday
+US_25: There are multiple people born on 1980-09-13 date in family @F1@
+US_25: The family @F2@ has multiple individuals with same name Joey /Robinson/
+US_28: Age 68 :- Joey /Robinson/ from FamID @F1@
+US_28: Age 55 :- Mike /Robinson/ from FamID @F1@
+US_28: Age 48 :- Ben /Mann/ from FamID @F1@
+US_29: Joey /Robinson/ is deceased individual
+US_29: Ross /Robinson/ is deceased individual
+US_29: Monica /Geller/ is deceased individual
+US_29: Ben /Mann/ is deceased individual
+US_29: Mike /Robinson/ is deceased individual
+US_29: Rachel /Green/ is deceased individual
+US_29: Ema /Mosbi/ is deceased individual
+US_29: William /Robinson/ is deceased individual
+US_29: Max /Robinson/ is deceased individual
+US_29: Dora /Robinson/ is deceased individual
+US_29: Jimmy /Smith/ is deceased individual
