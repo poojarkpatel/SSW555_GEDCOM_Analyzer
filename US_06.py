@@ -9,9 +9,9 @@ def US_06(individual,family):
             wife_death = individual[v._wife_id]._death
 
             if husband_death != 'NA' and husband_death < v._divorced:
-                lst.append(f"US06: {v._husband_name} Death {husband_death} occured prior to the divorce date {v._divorced}")
+                lst.append(f"US_06: {v._husband_name} Death {husband_death} occured prior to the divorce date {v._divorced}")
             
             elif wife_death != 'NA' and wife_death < v._divorced:
-                lst.append(f"US06: {v._wife_name} Death {wife_death} occured prior to the divorce date {v._divorced}")
+                lst.append(f"US_06: {v._wife_name} Death {wife_death} occured prior to the divorce date {v._divorced}")
 
     return lst
