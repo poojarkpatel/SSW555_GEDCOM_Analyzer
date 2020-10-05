@@ -8,6 +8,8 @@ from US_35 import recent_births
 from US_25 import us_25
 from US_28 import US_28
 from US_29 import US_29
+from US_17 import US_17
+from US_23 import US_23
 # from collections import defaultdict
 
 class Logger(object):
@@ -268,4 +270,10 @@ if __name__ == '__main__':
 
     for item in US_29(indi_repo):
         print(f"US_29: {item} is deceased individual")
+
+    for item in US_17(indi_repo._family.values()):
+        print(item)
+
+    for item in US_23(indi_repo._individual.values()):
+        pass
 
