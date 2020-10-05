@@ -9,7 +9,7 @@ class Test(unittest.TestCase):
 
     def test_recent_births(self):
         """ The function helps to test recent_births function"""
-        indi_repo: Repository = Repository("/Users/poojapatel/Downloads/US_35.ged")
+        indi_repo: Repository = Repository("US_35.ged")
 
         expected: List = ['Emmy /Robinson/ has recent birthday', 'Jil /Robinson/ has recent birthday',
                           'Sam /Robinson/ has recent birthday']

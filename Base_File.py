@@ -8,8 +8,8 @@ from US_35 import recent_births
 from US_25 import us_25
 from US_28 import US_28
 from US_29 import US_29
-from US_17 import US_17
-from US_23 import US_23
+from US_11 import US_11
+from US_33 import US_33
 # from collections import defaultdict
 
 class Logger(object):
@@ -182,21 +182,21 @@ class Repository:
                     list_family = [item for item in output_line_list]
                     list_family_count += len(list_family)
                     list_individual_count += len(list_individual)
-                    if list_individual_count < 5000 and list_family_count < 1000:
-                        if any(item in output_line_list for item in list(tag_dict.keys())):
-                            item = [item for item in output_line_list if item in list(tag_dict.keys())]
-                            if output_line_list[1] not in tag_dict.keys():
-                                index = output_line_list.index(item[0])
-                                output_line_list[index], output_line_list[1] = output_line_list[1], output_line_list[index]
+                    # if list_individual_count < 5000 and list_family_count < 1000:
+                    if any(item in output_line_list for item in list(tag_dict.keys())):
+                        item = [item for item in output_line_list if item in list(tag_dict.keys())]
+                        if output_line_list[1] not in tag_dict.keys():
+                            index = output_line_list.index(item[0])
+                            output_line_list[index], output_line_list[1] = output_line_list[1], output_line_list[index]
 
-                                if len(output_line_list) > 2 and str(output_line_list[0]) == str(tag_dict[output_line_list[1]]):
-                                    yield output_line_list[1], output_line_list[2]
+                            if len(output_line_list) > 2 and str(output_line_list[0]) == str(tag_dict[output_line_list[1]]):
+                                yield output_line_list[1], output_line_list[2]
 
-                            else:
-                                if len(output_line_list) > 2 and str(output_line_list[0]) == str(tag_dict[output_line_list[1]]):
-                                    yield output_line_list[1], output_line_list[2]
-                    else:
-                        raise ValueError("Total 5000 individuals and 1000 families are allowed")
+                        else:
+                            if len(output_line_list) > 2 and str(output_line_list[0]) == str(tag_dict[output_line_list[1]]):
+                                yield output_line_list[1], output_line_list[2]
+                    # else:
+                    #     raise ValueError("Total 5000 individuals and 1000 families are allowed")
 
     def _read_ged(self) -> None:
         """
@@ -271,9 +271,12 @@ if __name__ == '__main__':
     for item in US_29(indi_repo):
         print(f"US_29: {item} is deceased individual")
 
-    for item in US_17(indi_repo._family.values()):
-        print(item)
+    for item in US_11(indi_repo):
+        print(f"US_11: {item}")
 
-    for item in US_23(indi_repo._individual.values()):
-        pass
+    for item in US_33(indi_repo):
+        print(f"US_33: {item}")
+
+
+
 

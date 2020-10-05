@@ -9,7 +9,7 @@ class Test(unittest.TestCase):
 
     def test_us_25(self):
         """ The function helps to test us_25 function"""
-        indi_repo: Repository = Repository("/Users/poojapatel/Downloads/US_25.ged")
+        indi_repo: Repository = Repository("US_25.ged")
 
         expected: List = ['The family @F2@ has multiple individuals with same name Joey /Robinson/',
                           'There are multiple people born on 1980-09-13 date in family @F1@']

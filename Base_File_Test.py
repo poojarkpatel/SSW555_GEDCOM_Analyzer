@@ -6,7 +6,8 @@ from US_35 import recent_births
 from US_25 import us_25
 from US_28 import US_28
 from US_29 import US_29
-
+from US_11 import US_11
+from US_33 import US_33
 
 class TestRepository(unittest.TestCase):
     """Helps to test all the functions"""
@@ -71,6 +72,27 @@ class TestRepository(unittest.TestCase):
                           '48 :- Ben /Mann/ from FamID @F1@']
         calculated: List = US_28(indi_repo)
         self.assertEqual(calculated, expected)
+
+
+    def test_US_11(self):
+        """ Tests that husbands and wifes are not married twice at the same time and prints out the cases if so"""
+        indi_repo = Repository('US_11.ged')
+        output = ['Joey /BIng/married twice at the same time', 'Rachel /Green/married twice at the same time']
+        self.assertEqual(US_11(indi_repo), output)
+        self.assertNotEqual(US_11(indi_repo), ['Ross /Galler married twice on the same time'])
+        self.assertTrue(US_11(indi_repo) == ['Joey /BIng/married twice at the same time', 'Rachel /Green/married twice at the same time'])
+        self.assertFalse(US_11(indi_repo) == ['Emma /Galler married twice on the same time'])
+        self.assertTrue(US_11(indi_repo) != ['Ross /Galler married twice on the same time'])
+
+    def test_US_33(self):
+        """ Tests US33. checks that list all orphans. """
+
+        indi_repo = Repository('US_33.ged')
+        output = ['@I1@ Mia /Shiyani/ 17 is orphan and age is less than 18']
+        self.assertEqual(US_33(indi_repo), output)
+        self.assertTrue(US_33(indi_repo) == ['@I1@ Mia /Shiyani/ 17 is orphan and age is less than 18'])
+        self.assertFalse(US_33(indi_repo) == ['@I1@ Yatinkumar /Shiyani/ 13 is orphan and age is less than 18'])
+        self.assertTrue(US_33(indi_repo) != ['@I1@ priyanka /Shiyani/ 16 is orphan and age is less than 18'])
 
 
 if __name__ == "__main__":
