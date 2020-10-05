@@ -10,6 +10,9 @@ from US_28 import US_28
 from US_29 import US_29
 from US_11 import US_11
 from US_33 import US_33
+from US_06 import US_06
+from US_07 import US_07
+
 # from collections import defaultdict
 
 class Logger(object):
@@ -277,6 +280,11 @@ if __name__ == '__main__':
     for item in US_33(indi_repo):
         print(f"US_33: {item}")
 
+    for item in US_07(indi_repo._individual):
+        print(f"US_07: {item} death date is greater than 150 years")
+
+    for item in us_25(indi_repo._individual, indi_repo._family):
+        print(f"US_25: {item}")
 
 
 
