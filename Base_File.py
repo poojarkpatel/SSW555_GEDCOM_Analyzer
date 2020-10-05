@@ -283,8 +283,8 @@ if __name__ == '__main__':
     for item in US_07(indi_repo._individual):
         print(f"US_07: {item} death date is greater than 150 years")
 
-    for item in us_25(indi_repo._individual, indi_repo._family):
-        print(f"US_25: {item}")
+    for item in US_06(indi_repo._individual, indi_repo._family):
+        print(f"US_06: {item}")
 
 
 
