@@ -72,6 +72,8 @@ class Individual:
             today = datetime.date.today()  # today's date
             self._age = today - self._birth  # current age
             self._age = math.floor(self._age.days / 365)
+            if self._age < 0:
+                self._age = 0
             self._alive = True
         else:
             self._death = datetime.datetime.strptime(date, '%d %b %Y').date()
