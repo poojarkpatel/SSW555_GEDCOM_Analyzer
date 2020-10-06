@@ -2,7 +2,7 @@
 |   Id  |         Name         | Gender |  Birthday  | Age | Alive | Deathdate  |   Child   |          Spouse          |
 +-------+----------------------+--------+------------+-----+-------+------------+-----------+--------------------------+
 |  @I1@ |   Joey /Robinson/    |   M    | 1822-01-01 |  68 | False | 1890-03-06 |  {'@F2@'} |         {'@F1@'}         |
-|  @I2@ | Priyanka /Robinson/  |   F    | 1830-01-12 | 100 | False | 1930-06-12 |  {'@F2@'} | {'@F3@', '@F1@', '@F4@'} |
+|  @I2@ | Priyanka /Robinson/  |   F    | 1830-01-12 | 100 | False | 1930-06-12 |  {'@F2@'} | {'@F1@', '@F3@', '@F4@'} |
 |  @I3@ |   Ross /Robinson/    |   M    | 1790-11-26 |  59 | False | 1850-09-09 |     NA    |         {'@F2@'}         |
 |  @I4@ |   Monica /Geller/    |   F    | 1792-11-12 |  47 | False | 1840-04-02 |     NA    |         {'@F2@'}         |
 |  @I5@ |      Ben /Mann/      |   M    | 1823-02-01 |  48 | False | 1871-04-06 |  {'@F2@'} |            NA            |
@@ -31,18 +31,18 @@
 | @I28@ |    Mia /Shiyani/     |   F    | 2004-06-12 |  16 |  True |     NA     |  {'@F3@'} |            NA            |
 | @I29@ |     Ginger /Ale/     |   M    | 1800-02-15 | 180 | False | 1980-07-10 |  {'@F2@'} |        {'@F12@'}         |
 | @I30@ |      Tia /Ale/       |   F    | 1820-11-13 | 200 |  True |     NA     |     NA    |        {'@F12@'}         |
-| @I31@ |   Mike /Robinson/    |   M    | 2021-07-02 |  -1 |  True |     NA     |  {'@F2@'} |        {'@F13@'}         |
-| @I32@ |    Micheal /Mia/     |   F    | 2025-09-04 |  -5 |  True |     NA     |     NA    |        {'@F13@'}         |
+| @I31@ |   Mike /Robinson/    |   M    | 2021-07-02 |  0  |  True |     NA     |  {'@F2@'} |        {'@F13@'}         |
+| @I32@ |    Micheal /Mia/     |   F    | 2025-09-04 |  0  |  True |     NA     |     NA    |        {'@F13@'}         |
 | @I33@ |   Ryan /Robinson/    |   M    | 1990-02-05 |  30 |  True |     NA     | {'@F13@'} |        {'@F14@'}         |
 | @I34@ |   Rosa /Hernadez/    |   F    | 1990-06-02 |  30 |  True |     NA     |     NA    |        {'@F14@'}         |
-| @I35@ |   Mike /Robinson/    |   M    | 2021-07-02 |  -1 |  True |     NA     |  {'@F2@'} |            NA            |
+| @I35@ |   Mike /Robinson/    |   M    | 2021-07-02 |  0  |  True |     NA     |  {'@F2@'} |            NA            |
 +-------+----------------------+--------+------------+-----+-------+------------+-----------+--------------------------+
 +-------+------------+------------+------------+----------------------+---------+---------------------+-------------------------------------------------------------+
 |   Id  |  Married   |  Divorced  | Husband ID |     Husband Name     | Wife ID |      Wife Name      |                           Children                          |
 +-------+------------+------------+------------+----------------------+---------+---------------------+-------------------------------------------------------------+
 |  @F1@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |   @I2@  | Priyanka /Robinson/ |                              NA                             |
 |  @F3@ | 1850-09-11 |     NA     |   @I27@    | Yatinkumar /Shiyani/ |   @I2@  | Priyanka /Robinson/ |                          {'@I28@'}                          |
-|  @F2@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I6@', '@I1@', '@I5@', '@I2@', '@I29@', '@I31@', '@I35@'} |
+|  @F2@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I31@', '@I5@', '@I29@', '@I2@', '@I1@', '@I35@', '@I6@'} |
 |  @F4@ | 1850-12-14 |     NA     |   @I26@    |    Joss /Parker/     |   @I2@  | Priyanka /Robinson/ |                              NA                             |
 |  @F5@ | 1862-07-10 |     NA     |    @I6@    |   Mike /Robinson/    |   @I7@  |    Rachel /Green/   |                          {'@I10@'}                          |
 |  @F6@ | 1848-01-12 | 1852-07-14 |    @I6@    |   Mike /Robinson/    |   @I8@  |     Ema /Mosbi/     |                           {'@I9@'}                          |
@@ -50,17 +50,18 @@
 |  @F8@ | 1925-06-05 | 1930-11-15 |   @I13@    |    Jimmy /Smith/     |  @I12@  |   Emmy /Robinson/   |                              NA                             |
 |  @F9@ |     NA     |     NA     |   @I14@    |  Miller /Robinson/   |  @I15@  |   Ellie /Robinson/  |                          {'@I17@'}                          |
 | @F10@ |     NA     |     NA     |   @I17@    |  Miller /Robinson/   |  @I18@  |   Erica /Robinson/  |                      {'@I19@', '@I20@'}                     |
-| @F11@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |                 {'@I25@', '@I23@', '@I24@'}                 |
+| @F11@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |                 {'@I24@', '@I25@', '@I23@'}                 |
 | @F12@ | 1850-05-05 | 2000-06-12 |   @I29@    |     Ginger /Ale/     |  @I30@  |      Tia /Ale/      |                              NA                             |
 | @F13@ | 2019-03-04 | 2018-07-03 |   @I31@    |   Mike /Robinson/    |  @I32@  |    Micheal /Mia/    |                          {'@I33@'}                          |
 | @F14@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |   @I4@  |   Monica /Geller/   |                              NA                             |
+| @F20@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |  @I25@  |    Sam /Robinson/   |                              NA                             |
 +-------+------------+------------+------------+----------------------+---------+---------------------+-------------------------------------------------------------+
 US_35: Emmy /Robinson/ has recent birthday
 US_35: Jil /Robinson/ has recent birthday
 US_35: Sam /Robinson/ has recent birthday
 US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
-US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
 US_25: There are multiple people born on 2021-07-02 date in family @F2@
+US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
 US_25: The family @F10@ has multiple individuals with same name Joey /Robinson/
 US_28: Age 68 :- Joey /Robinson/ from FamID @F2@
 US_28: Age 55 :- Mike /Robinson/ from FamID @F2@
@@ -70,6 +71,7 @@ US_28: Age 22 :- Joey /Robinson/ from FamID @F10@
 US_28: Age 180 :- Ginger /Ale/ from FamID @F2@
 US_28: Age 100 :- Priyanka /Robinson/ from FamID @F2@
 US_28: Age 0 :- Sam /Robinson/ from FamID @F11@
+US_28: Age 0 :- Mike /Robinson/ from FamID @F2@
 US_28: Age 0 :- Jil /Robinson/ from FamID @F11@
 US_28: Age 0 :- Emmy /Robinson/ from FamID @F11@
 US_29: Joey /Robinson/ is deceased individual
@@ -90,11 +92,13 @@ US_29: Ginger /Ale/ is deceased individual
 US_11: Priyanka /Robinson/married twice at the same time
 US_11: Priyanka /Robinson/married twice at the same time
 US_11: Joey /Robinson/married twice at the same time
+US_11: Joey /Robinson/married twice at the same time
 US_11: Priyanka /Robinson/married twice at the same time
 US_11: Monica /Geller/married twice at the same time
-US_33: @I28@ Mia /Shiyani/ 16 is orphan and age is less than 18
-US_33: @I31@ Mike /Robinson/ -1 is orphan and age is less than 18
-US_33: @I35@ Mike /Robinson/ -1 is orphan and age is less than 18
+US_11: Joey /Robinson/married twice at the same time
+US_33: @I28@ Mia /Shiyani/ has age 16 and is orphan
+US_33: @I31@ Mike /Robinson/ has age 0 and is orphan
+US_33: @I35@ Mike /Robinson/ has age 0 and is orphan
 US_07: Ginger /Ale/ age is greater than 150 years
 US_07: Tia /Ale/ age is greater than 150 years
 US_06: Ginger /Ale/ Death 1980-07-10 occured prior to the divorce date 2000-06-12
@@ -104,3 +108,7 @@ US01: Birthdate "2021-07-02" for individual id @I35@ is illeagal
 US04: This family id @F13@ has an illegal dates for marriage and divorce
 US_17: Parents married to their children: Joey /Robinson/ and Monica /Geller/.
 US_23: Multiple individuals with name Mike /Robinson/ born on 2021-07-02 exists.
+US13: The family id @F8@ has twins Emmy /Robinson/ and Jil /Robinson/
+US13: The family id @F8@ has twins Jil /Robinson/ and Sam /Robinson/
+US13: The family id @F8@ has twins Emmy /Robinson/ and Sam /Robinson/
+US18: @I1@ and @I25@ are Siblings and a couple
