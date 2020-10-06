@@ -6,7 +6,6 @@ from US_35 import recent_births
 from US_25 import us_25
 from US_28 import US_28
 from US_29 import US_29
-from US_11 import US_11
 from US_33 import US_33
 from US_07 import US_07
 from US_06 import US_06
@@ -14,6 +13,9 @@ from US01 import us01
 from US04 import us04
 from US_17 import US_17
 from US_23 import US_23
+from US_18 import US_18
+from US_13 import US_13
+from US_11 import US_11
 
 class TestRepository(unittest.TestCase):
     """Helps to test all the functions"""
@@ -94,9 +96,9 @@ class TestRepository(unittest.TestCase):
         """ Tests US33. checks that list all orphans. """
 
         indi_repo = Repository('US_33.ged')
-        output = ['@I1@ Mia /Shiyani/ 17 is orphan and age is less than 18']
+        output = ['@I1@ Mia /Shiyani/ has age 17 and is orphan']
         self.assertEqual(US_33(indi_repo), output)
-        self.assertTrue(US_33(indi_repo) == ['@I1@ Mia /Shiyani/ 17 is orphan and age is less than 18'])
+        self.assertTrue(US_33(indi_repo) == output)
         self.assertFalse(US_33(indi_repo) == ['@I1@ Yatinkumar /Shiyani/ 13 is orphan and age is less than 18'])
         self.assertTrue(US_33(indi_repo) != ['@I1@ priyanka /Shiyani/ 16 is orphan and age is less than 18'])
 
@@ -161,6 +163,25 @@ class TestRepository(unittest.TestCase):
         indi_repo: Repository = Repository("ssw555_input_file.ged")
         actual = US_23(indi_repo._individual)
         self.assertEqual(expected, actual)
+
+    def test_US_18(self):
+        """ The function helps to test US_18 function"""
+        indi_repo_18: Repository = Repository("ssw555_input_file.ged")
+        expected = [['@I25@ and @I1@ are siblings and a couple.'], ['@I1@ and @I25@ are siblings and a couple.']]
+        if US_18(indi_repo_18._family, indi_repo_18._individual) in expected:
+            self.assertEqual("True", "True")
+        else:
+            self.assertEqual("False", "True")
+        # self.assertEqual(US_18(indi_repo_18._family, indi_repo_18._individual), expected)
+
+    def test_US_13(self):
+        """ The function helps to test US_13 function"""
+        indi_repo: Repository = Repository("ssw555_input_file.ged")
+        expected = {'The family id @F11@ has twins Emmy /Robinson/ and Sam /Robinson/',
+                    'The family id @F11@ has twins Emmy /Robinson/ and Jil /Robinson/',
+                    'The family id @F11@ has twins Jil /Robinson/ and Sam /Robinson/'}
+        self.assertEqual(set([item for item in US_13(indi_repo._family, indi_repo._individual)]), expected)
+
 
 if __name__ == "__main__":
     unittest.main(exit=False, verbosity=2)

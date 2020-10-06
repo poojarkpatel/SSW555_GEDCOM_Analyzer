@@ -16,6 +16,8 @@ from US01 import us01
 from US04 import us04
 from US_17 import US_17
 from US_23 import US_23
+from US_13 import US_13
+from US_18 import US_18
 
 # from collections import defaultdict
 
@@ -46,7 +48,7 @@ class Individual:
         self._individual = individual
         self._name = ""
         self._gender = ""
-        self._birth = ""
+        self._birth = "NA"
         self._age = 0
         self._alive = False
         self._death = "NA"
@@ -78,6 +80,7 @@ class Individual:
         else:
             self._death = datetime.datetime.strptime(date, '%d %b %Y').date()
             self._age = self._death - self._birth  # obtaining birthday for a deceased individual
+
             self._age = math.floor(self._age.days / 365)  # age at which individual died
             self._alive = False
 
@@ -183,29 +186,19 @@ class Repository:
                                   "MARR": 1,
                                   "HUSB": 1, "WIFE": 1, "CHIL": 1,
                                   "DIV": 1, "DATE": 2, "HEAD": 0, "TRLR": 0, "NOTE": 0}
-                list_individual_count: int = 0
-                list_family_count: int = 0
                 for line in fp:
                     output_line_list: List = line.strip("\n").split(" ", 2)
-                    list_individual = [item for item in output_line_list]
-                    list_family = [item for item in output_line_list]
-                    list_family_count += len(list_family)
-                    list_individual_count += len(list_individual)
-                    # if list_individual_count < 5000 and list_family_count < 1000:
                     if any(item in output_line_list for item in list(tag_dict.keys())):
                         item = [item for item in output_line_list if item in list(tag_dict.keys())]
                         if output_line_list[1] not in tag_dict.keys():
                             index = output_line_list.index(item[0])
                             output_line_list[index], output_line_list[1] = output_line_list[1], output_line_list[index]
-
                             if len(output_line_list) > 2 and str(output_line_list[0]) == str(tag_dict[output_line_list[1]]):
                                 yield output_line_list[1], output_line_list[2]
-
                         else:
                             if len(output_line_list) > 2 and str(output_line_list[0]) == str(tag_dict[output_line_list[1]]):
                                 yield output_line_list[1], output_line_list[2]
-                    # else:
-                    #     raise ValueError("Total 5000 individuals and 1000 families are allowed")
+
 
     def _read_ged(self) -> None:
         """
@@ -304,3 +297,7 @@ if __name__ == '__main__':
     for key, value in US_23(indi_repo._individual).items():
         print(f"US_23: Multiple individuals with name {key} born on {value} exists.")
 
+    for item in US_13(indi_repo._family, indi_repo._individual):
+        print(f"US13: {item}")
+    for item in US_18(indi_repo._family, indi_repo._individual):
+        print(f"US18: {item}")

@@ -14,9 +14,9 @@ class Test_US_33(unittest.TestCase):
         """ Tests US33. checks that list all orphans. """
 
         indi_repo = Repository('US_33.ged')
-        output = ['@I1@ Mia /Shiyani/ 17 is orphan and age is less than 18']
+        output = ['@I1@ Mia /Shiyani/ has age 17 and is orphan']
         self.assertEqual(US_33(indi_repo), output)
-        self.assertTrue(US_33(indi_repo) == ['@I1@ Mia /Shiyani/ 17 is orphan and age is less than 18'])
+        self.assertTrue(US_33(indi_repo) == ['@I1@ Mia /Shiyani/ has age 17 and is orphan'])
         self.assertFalse(US_33(indi_repo) == ['@I1@ Yatinkumar /Shiyani/ 13 is orphan and age is less than 18'])
         self.assertTrue(US_33(indi_repo) != ['@I1@ priyanka /Shiyani/ 16 is orphan and age is less than 18'])
 

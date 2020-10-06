@@ -11,8 +11,9 @@ def recent_births(individual):
     for value in individual.values():
         birth_date = value._birth
         # today_temp = datetime.timedelta(days=30)
-        today = datetime.datetime.today().date()
-        if abs((today - birth_date).days) <= 30:
-            list_most_recent_birth.append(f"{value.get_name()} has recent birthday")
+        if birth_date != "NA":
+            today = datetime.datetime.today().date()
+            if abs((today - birth_date).days) <= 30:
+                list_most_recent_birth.append(f"{value.get_name()} has recent birthday")
     return list_most_recent_birth
 

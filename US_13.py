@@ -5,7 +5,7 @@ def US_13(family_object, individual_object):
     warnings = set()
     for attribute in family_object.values():    
         child = list(attribute._children)
-        if child != ['N','A']:    
+        if child != ['N','A']:
             for i in range(0, len(child)):          
                 for j in range(i + 1, len(child)):
                     person_one_id = child[i] 
@@ -13,8 +13,10 @@ def US_13(family_object, individual_object):
 
                     date_one = individual_object[person_one_id]._birth
                     date_two = individual_object[person_two_id]._birth
-
-                    difference = date_one - date_two
+                    try:
+                        difference = date_one - date_two
+                    except:
+                        continue
                     if date_one < date_two:
                         difference = date_two - date_one
 
