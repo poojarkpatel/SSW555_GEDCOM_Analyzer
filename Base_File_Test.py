@@ -12,6 +12,8 @@ from US_07 import US_07
 from US_06 import US_06
 from US01 import us01
 from US04 import us04
+from US_17 import US_17
+from US_23 import US_23
 
 class TestRepository(unittest.TestCase):
     """Helps to test all the functions"""
@@ -147,6 +149,18 @@ class TestRepository(unittest.TestCase):
 
         self.assertEqual(result, expected)  # positive test result
         self.assertFalse(result == ['This family id @F3@ has an illegal dates for marriage and divorce']) # Negative # test case
+
+    def test_US_17(self):
+        expected = {'Joey /Robinson/': 'Monica /Geller/'}
+        indi_repo: Repository = Repository("ssw555_input_file.ged")
+        actual = US_17(indi_repo._family.values())
+        self.assertEqual(expected, actual)
+
+    def test_US_23(self):
+        expected = {'Mike /Robinson/': datetime.date(2021, 7, 2)}
+        indi_repo: Repository = Repository("ssw555_input_file.ged")
+        actual = US_23(indi_repo._individual)
+        self.assertEqual(expected, actual)
 
 if __name__ == "__main__":
     unittest.main(exit=False, verbosity=2)

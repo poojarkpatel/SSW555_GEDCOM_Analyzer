@@ -14,6 +14,8 @@ from US_06 import US_06
 from US_07 import US_07
 from US01 import us01
 from US04 import us04
+from US_17 import US_17
+from US_23 import US_23
 
 # from collections import defaultdict
 
@@ -293,4 +295,10 @@ if __name__ == '__main__':
 
     for item in us04(indi_repo._family):
         print(item)
+
+    for key, value in US_17(indi_repo._family.values()).items():
+        print(f"US_17: Parents married to their children: {key} and {value}.")
+
+    for key, value in US_23(indi_repo._individual).items():
+        print(f"US_23: Multiple individuals with name {key} born on {value} exists.")
 
