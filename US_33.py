@@ -13,7 +13,7 @@ def US_33(self):
                         if self._individual[fam._husband_id]._death != 'NA' and self._individual[fam._wife_id]._death != 'NA' and \
                                 self._individual[child]._age != 'NA' and self._individual[child]._age < 18:
                             orphans.append(f"{self._individual[child]._individual} {self._individual[child]._name} "
-                                           f"{self._individual[child]._age} is orphan and age is less than 18")
+                                           f"has age {self._individual[child]._age} and is orphan")
 
         return orphans
 
