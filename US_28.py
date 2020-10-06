@@ -12,7 +12,8 @@ def US_28(self):
                 if len(result1)>1:
                     result.append("List of siblings"  +family._family+  "after sorting is")
                     for child in result1:
-                        temp.append(str(len(str(child._age)))+" "+str(child._age)+" :- "+child._name +" from FamID "+family._family)
+                        if child._age >= 0:
+                            temp.append(str(len(str(child._age)))+" "+str(child._age)+" :- "+child._name +" from FamID "+family._family)
             temp=list(set(temp))
     for _ in sorted(temp,reverse=True):
         x=_.split(" ")

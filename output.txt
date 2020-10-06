@@ -25,7 +25,7 @@
 | @I22@ |   Emmy /Robinson/    |   F    | 2020-09-22 |  0  |  True |     NA     |  {'@F8@'} |         NA        |
 | @I23@ |    Jil /Robinson/    |   F    | 2020-10-01 |  0  |  True |     NA     |  {'@F8@'} |         NA        |
 | @I24@ |    Sam /Robinson/    |   M    | 2020-09-10 |  0  |  True |     NA     |  {'@F8@'} |         NA        |
-| @I25@ | Priyanka /Robinson/  |   F    | 1830-01-12 | 100 | False | 1930-06-12 |  {'@F1@'} | {'@F9@', '@F10@'} |
+| @I25@ | Priyanka /Robinson/  |   F    | 1830-01-12 | 100 | False | 1930-06-12 |  {'@F1@'} | {'@F10@', '@F9@'} |
 | @I26@ |    Joss /Parker/     |   M    | 1834-05-06 |  97 | False | 1932-03-08 |     NA    |      {'@F9@'}     |
 | @I27@ | Yatinkumar /Shiyani/ |   M    | 1832-11-16 | 100 | False | 1932-11-16 |     NA    |     {'@F10@'}     |
 | @I28@ |    Mia /Shiyani/     |   F    | 2004-06-12 |  16 |  True |     NA     | {'@F10@'} |         NA        |
@@ -39,14 +39,14 @@
 +-------+------------+------------+------------+----------------------+---------+---------------------+-----------------------------------------------------+
 |   Id  |  Married   |  Divorced  | Husband ID |     Husband Name     | Wife ID |      Wife Name      |                       Children                      |
 +-------+------------+------------+------------+----------------------+---------+---------------------+-----------------------------------------------------+
-|  @F1@ | 1820-04-12 |     NA     |    @I2@    |   Ross /Robinson/    |   @I3@  |   Monica /Geller/   | {'@I4@', '@I5@', '@I1@', '@I29@', '@I25@', '@I31@'} |
+|  @F1@ | 1820-04-12 |     NA     |    @I2@    |   Ross /Robinson/    |   @I3@  |   Monica /Geller/   | {'@I29@', '@I31@', '@I1@', '@I25@', '@I4@', '@I5@'} |
 |  @F2@ | 1862-07-10 |     NA     |    @I5@    |   Mike /Robinson/    |   @I6@  |    Rachel /Green/   |                       {'@I9@'}                      |
 |  @F3@ | 1848-01-12 | 1852-07-14 |    @I5@    |   Mike /Robinson/    |   @I7@  |     Ema /Mosbi/     |                       {'@I8@'}                      |
 |  @F4@ | 1893-08-04 |     NA     |    @I9@    |    Max /Robinson/    |  @I10@  |   Dora /Robinson/   |                      {'@I11@'}                      |
 |  @F5@ | 1925-06-05 | 1930-11-15 |   @I12@    |    Jimmy /Smith/     |  @I11@  |   Emmy /Robinson/   |                          NA                         |
 |  @F6@ |     NA     |     NA     |   @I13@    |  Miller /Robinson/   |  @I14@  |   Ellie /Robinson/  |                      {'@I16@'}                      |
 |  @F7@ |     NA     |     NA     |   @I16@    |  Miller /Robinson/   |  @I17@  |   Erica /Robinson/  |                  {'@I19@', '@I18@'}                 |
-|  @F8@ |     NA     |     NA     |   @I20@    |   Ross /Robinson/    |  @I21@  |   Joey /Robinson/   |             {'@I22@', '@I24@', '@I23@'}             |
+|  @F8@ |     NA     |     NA     |   @I20@    |   Ross /Robinson/    |  @I21@  |   Joey /Robinson/   |             {'@I24@', '@I22@', '@I23@'}             |
 |  @F9@ | 1850-12-14 |     NA     |   @I26@    |    Joss /Parker/     |  @I25@  | Priyanka /Robinson/ |                          NA                         |
 | @F10@ | 1850-09-11 |     NA     |   @I27@    | Yatinkumar /Shiyani/ |  @I25@  | Priyanka /Robinson/ |                      {'@I28@'}                      |
 | @F11@ | 1850-05-05 | 2000-06-12 |   @I29@    |     Ginger /Ale/     |  @I30@  |      Tia /Ale/      |                          NA                         |
@@ -68,7 +68,6 @@ US_28: Age 100 :- Priyanka /Robinson/ from FamID @F1@
 US_28: Age 0 :- Sam /Robinson/ from FamID @F8@
 US_28: Age 0 :- Jil /Robinson/ from FamID @F8@
 US_28: Age 0 :- Emmy /Robinson/ from FamID @F8@
-US_28: Age -1 :- Mike /Robinson/ from FamID @F1@
 US_29: Joey /Robinson/ is deceased individual
 US_29: Ross /Robinson/ is deceased individual
 US_29: Monica /Geller/ is deceased individual
