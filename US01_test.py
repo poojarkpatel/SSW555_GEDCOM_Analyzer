@@ -24,7 +24,7 @@ class Test(unittest.TestCase):
                     'US01: Marriage date "2090-04-05" for family id @F7@ is illeagal']
 
         # generating a list of the output from the function
-        result = [value for value in us01(indi_repo._individual, indi_repo._family)]
+        result = [value for value in us01(indi_repo.individual, indi_repo.family)]
 
         self.assertEqual(result, expected)  # positive test result
         self.assertFalse(result == ['Birthdate "2022-01-01" for individual id @I1@ is illeagal',

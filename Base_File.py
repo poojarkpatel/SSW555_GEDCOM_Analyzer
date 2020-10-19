@@ -18,8 +18,10 @@ from US_17 import US_17
 from US_23 import US_23
 from US_13 import US_13
 from US_18 import US_18
+from us_32_36 import us_36, us_32
+# from us_42 import validate_date
 
-# from collections import defaultdict
+
 
 class Logger(object):
     def __init__(self):
@@ -45,61 +47,64 @@ class Individual:
         """
         init method of class individual
         """
-        self._individual = individual
-        self._name = ""
-        self._gender = ""
-        self._birth = "NA"
-        self._age = 0
-        self._alive = False
-        self._death = "NA"
-        self._famC = set()
-        self._famS = set()
+        self.individual = individual
+        self.name = ""
+        self.gender = ""
+        self.birth = "NA"
+        self.age = 0
+        self.alive = False
+        self.death = "NA"
+        self.famC = set()
+        self.famS = set()
+        self.line_num = 1
 
-    def set_name(self, name):
+    def set_name(self, name, line_num):
         """ sets the name of individual"""
-        self._name = name
+        self.name = name
+        self.line_num = line_num
 
     def get_name(self) -> str:
         """ returns the name of individual"""
-        return self._name
+        return self.name
 
     def set_gender(self, gender):
         """ sets the gender of individual"""
-        self._gender = gender
+        self.gender = gender
 
     def set_birth_death_date(self, date):
         """ sets the birth-date and death-date of individual """
-        if not self._alive:
-            self._birth = datetime.datetime.strptime(date, '%d %b %Y').date()
+        # date = validate_date(date)
+        if not self.alive:
+            self.birth = datetime.datetime.strptime(date, '%d %b %Y').date()
             today = datetime.date.today()  # today's date
-            self._age = today - self._birth  # current age
-            self._age = math.floor(self._age.days / 365)
-            if self._age < 0:
-                self._age = 0
-            self._alive = True
+            self.age = today - self.birth  # current age
+            self.age = math.floor(self.age.days / 365)
+            if self.age < 0:
+                self.age = 0
+            self.alive = True
         else:
-            self._death = datetime.datetime.strptime(date, '%d %b %Y').date()
-            self._age = self._death - self._birth  # obtaining birthday for a deceased individual
+            self.death = datetime.datetime.strptime(date, '%d %b %Y').date()
+            self.age = self.death - self.birth  # obtaining birthday for a deceased individual
 
-            self._age = math.floor(self._age.days / 365)  # age at which individual died
-            self._alive = False
+            self.age = math.floor(self.age.days / 365)  # age at which individual died
+            self.alive = False
 
     def set_child(self, child):
         """ sets the id of family in which the individual is child"""
-        self._famC.add(child)
+        self.famC.add(child)
 
     def set_spouse(self, spouse):
         """ sets the id of family in which the individual is spouse"""
-        self._famS.add(spouse)
+        self.famS.add(spouse)
 
     def info_individual(self):
         """ returns the information of individual in form of list"""
-        if self._famC == set():
-            self._famC = "NA"
-        if self._famS == set():
-            self._famS = "NA"
-        return list((self._individual, self._name, self._gender, self._birth, self._age, self._alive, self._death,
-                     self._famC, self._famS))
+        if self.famC == set():
+            self.famC = "NA"
+        if self.famS == set():
+            self.famS = "NA"
+        return list((self.individual, self.name, self.gender, self.birth, self.age, self.alive, self.death,
+                     self.famC, self.famS))
 
 
 class Family:
@@ -108,62 +113,62 @@ class Family:
 
     def __init__(self, family) -> None:
         """init function of family"""
-        self._family = family
-        self._married = "NA"
-        self._divorced = "NA"
-        self._husband_id = ""
-        self._husband_name = ""
-        self._wife_name = ""
-        self._wife_id = ""
-        self._is_divorced = False
-        self._children = set()
+        self.family = family
+        self.married = "NA"
+        self.divorced = "NA"
+        self.husband_id = ""
+        self.husband_name = ""
+        self.wife_name = ""
+        self.wife_id = ""
+        self.is_divorced = False
+        self.children = set()
 
     def set_husband_name(self, name):
         """sets the name of husband in family"""
-        self._husband_name = name
+        self.husband_name = name
 
     def set_wife_name(self, name):
         """sets the name of wife in family"""
-        self._wife_name = name
+        self.wife_name = name
 
     def set_husband_id(self, husband_id):
         """sets husband ID"""
-        self._husband_id = husband_id
+        self.husband_id = husband_id
 
     def set_wife_id(self, wife_id):
         """sets wife ID"""
-        self._wife_id = wife_id
+        self.wife_id = wife_id
 
     def set_marriage_divorce_date(self, date):
         """
         sets marriage and divorce date (if any)
         """
-        if not self._is_divorced:
-            self._married = datetime.datetime.strptime(date, '%d %b %Y').date()
-            self._is_divorced = True
+        if not self.is_divorced:
+            self.married = datetime.datetime.strptime(date, '%d %b %Y').date()
+            self.is_divorced = True
         else:
-            self._divorced = datetime.datetime.strptime(date, '%d %b %Y').date()
-            self._is_divorced = False
+            self.divorced = datetime.datetime.strptime(date, '%d %b %Y').date()
+            self.is_divorced = False
 
     def set_child(self, child):
         """sets child"""
-        self._children.add(child)
+        self.children.add(child)
 
     def info_family(self):
         """ returns family info in the form of list"""
-        if self._children == set():
-            self._children = "NA"
-        return list((self._family, self._married, self._divorced, self._husband_id, self._husband_name, self._wife_id,
-                     self._wife_name, self._children,))
+        if self.children == set():
+            self.children = "NA"
+        return list((self.family, self.married, self.divorced, self.husband_id, self.husband_name, self.wife_id,
+                     self.wife_name, self.children,))
 
 
 class Repository:
     def __init__(self, path: str) -> None:
         # self._path: str = path
         self._path: str = path
-        self._individual: Dict[str, Individual] = dict()
-        self._family: Dict[str, Family] = dict()
-        # self._family = defaultdict(str)
+        self.individual: Dict[str, Individual] = dict()
+        self.family: Dict[str, Family] = dict()
+        # self.family = defaultdict(str)
         self._read_ged()
         # self.individual_pretty_table()
         # self.family_pretty_table()
@@ -186,7 +191,7 @@ class Repository:
                                   "MARR": 1,
                                   "HUSB": 1, "WIFE": 1, "CHIL": 1,
                                   "DIV": 1, "DATE": 2, "HEAD": 0, "TRLR": 0, "NOTE": 0}
-                for line in fp:
+                for num, line in enumerate(fp, 1):
                     output_line_list: List = line.strip("\n").split(" ", 2)
                     if any(item in output_line_list for item in list(tag_dict.keys())):
                         item = [item for item in output_line_list if item in list(tag_dict.keys())]
@@ -194,11 +199,10 @@ class Repository:
                             index = output_line_list.index(item[0])
                             output_line_list[index], output_line_list[1] = output_line_list[1], output_line_list[index]
                             if len(output_line_list) > 2 and str(output_line_list[0]) == str(tag_dict[output_line_list[1]]):
-                                yield output_line_list[1], output_line_list[2]
+                                yield output_line_list[1], output_line_list[2], num
                         else:
                             if len(output_line_list) > 2 and str(output_line_list[0]) == str(tag_dict[output_line_list[1]]):
-                                yield output_line_list[1], output_line_list[2]
-
+                                yield output_line_list[1], output_line_list[2], num
 
     def _read_ged(self) -> None:
         """
@@ -208,48 +212,48 @@ class Repository:
         fam_id = ""
         indi_flag = False
 
-        for tag, arg in self._validate_gedcom():
+        for tag, arg, line_num in self._validate_gedcom():
             if tag == "INDI" and not indi_flag:
                 id = arg
-                if arg not in self._individual.keys():
-                    self._individual[arg] = Individual(arg)
+                if arg not in self.individual.keys():
+                    self.individual[arg] = Individual(arg)
             elif tag == "NAME" and not indi_flag:
-                self._individual[id].set_name(arg)
+                self.individual[id].set_name(arg, line_num)
             elif tag == "SEX" and not indi_flag:
-                self._individual[id].set_gender(arg)
+                self.individual[id].set_gender(arg)
             elif tag == "DATE" and not indi_flag:
-                self._individual[id].set_birth_death_date(arg)
+                self.individual[id].set_birth_death_date(arg)
             elif tag == "FAMC" and not indi_flag:
-                self._individual[id].set_child(arg)
+                self.individual[id].set_child(arg)
             elif tag == "FAMS" and not indi_flag:
-                self._individual[id].set_spouse(arg)
+                self.individual[id].set_spouse(arg)
             elif tag == "FAM":
                 indi_flag = True
                 fam_id = arg
-                if arg not in self._family.keys():
-                    self._family[fam_id] = Family(fam_id)
+                if arg not in self.family.keys():
+                    self.family[fam_id] = Family(fam_id)
             elif tag == "HUSB":
-                self._family[fam_id].set_husband_id(arg)
-                self._family[fam_id].set_husband_name(self._individual[arg].get_name())
+                self.family[fam_id].set_husband_id(arg)
+                self.family[fam_id].set_husband_name(self.individual[arg].get_name())
             elif tag == "WIFE":
-                self._family[fam_id].set_wife_id(arg)
-                self._family[fam_id].set_wife_name(self._individual[arg].get_name())
+                self.family[fam_id].set_wife_id(arg)
+                self.family[fam_id].set_wife_name(self.individual[arg].get_name())
             elif tag == "CHIL":
-                self._family[fam_id].set_child(arg)
+                self.family[fam_id].set_child(arg)
             elif tag == "DATE":
-                self._family[fam_id].set_marriage_divorce_date(arg)
+                self.family[fam_id].set_marriage_divorce_date(arg)
 
     def individual_pretty_table(self):
         """ individual pretty table"""
         pt = PrettyTable(field_names=Individual.PT_FIELD_NAMES)
-        for value in self._individual.values():
+        for value in self.individual.values():
             pt.add_row(value.info_individual())
         print(pt)
 
     def family_pretty_table(self):
         """Family pretty table"""
         pt = PrettyTable(field_names=Family.PT_FIELD_NAMES)
-        for value in self._family.values():
+        for value in self.family.values():
             pt.add_row(value.info_family())
         print(pt)
 
@@ -261,10 +265,10 @@ if __name__ == '__main__':
     indi_repo.individual_pretty_table()
     indi_repo.family_pretty_table()
 
-    for item in recent_births(indi_repo._individual):
+    for item in recent_births(indi_repo.individual):
         print(f"US_35: {item}")
 
-    for item in us_25(indi_repo._individual, indi_repo._family):
+    for item in us_25(indi_repo.individual, indi_repo.family):
         print(f"US_25: {item}")
 
     for item in US_28(indi_repo):
@@ -279,25 +283,31 @@ if __name__ == '__main__':
     for item in US_33(indi_repo):
         print(f"US_33: {item}")
 
-    for item in US_07(indi_repo._individual):
+    for item in US_07(indi_repo.individual):
         print(f"US_07: {item} age is greater than 150 years")
 
-    for item in US_06(indi_repo._individual, indi_repo._family):
+    for item in US_06(indi_repo.individual, indi_repo.family):
         print(f"{item}")
 
-    for item in us01(indi_repo._individual, indi_repo._family):
+    for item in us01(indi_repo.individual, indi_repo.family):
         print(item)
 
-    for item in us04(indi_repo._family):
+    for item in us04(indi_repo.family):
         print(item)
 
-    for key, value in US_17(indi_repo._family.values()).items():
+    for key, value in US_17(indi_repo.family.values()).items():
         print(f"US_17: Parents married to their children: {key} and {value}.")
 
-    for key, value in US_23(indi_repo._individual).items():
+    for key, value in US_23(indi_repo.individual).items():
         print(f"US_23: Multiple individuals with name {key} born on {value} exists.")
 
-    for item in US_13(indi_repo._family, indi_repo._individual):
+    for item in US_13(indi_repo.family, indi_repo.individual):
         print(f"US13: {item}")
-    for item in US_18(indi_repo._family, indi_repo._individual):
+
+    for item in US_18(indi_repo.family, indi_repo.individual):
         print(f"US18: {item}")
+
+    for item in us_36(indi_repo.individual):
+        print(f"US36: {item}")
+
+    print(f"US32: {us_32(indi_repo.individual)}")

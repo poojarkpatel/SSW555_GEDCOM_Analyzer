@@ -5,7 +5,7 @@ def US_23(individual_object):
 
     for individual in individual_object.values():
         individual_name = individual.get_name()
-        individual_birth_date = individual._birth
+        individual_birth_date = individual.birth
 
         if individual_name in individuals:
             if individuals[individual_name] == individual_birth_date:

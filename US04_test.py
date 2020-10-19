@@ -19,7 +19,7 @@ class Test(unittest.TestCase):
                     'US04: This family id @F7@ has an illegal dates for marriage and divorce']
 
         # generating a list of the output from the function
-        result = [value for value in us04(indi_repo._family)]
+        result = [value for value in us04(indi_repo.family)]
 
         self.assertEqual(result, expected)  # positive test result
         self.assertFalse(result == ['This family id @F3@ has an illegal dates for marriage and divorce']) # Negative # test case

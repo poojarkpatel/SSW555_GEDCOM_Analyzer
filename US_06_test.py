@@ -11,7 +11,7 @@ class Test(unittest.TestCase):
 
         expected = ["US_06: Katir /Bala/ Death 1822-01-03 occured prior to the divorce date 1852-07-14"]
 
-        self.assertEqual((US_06(indi_repo._individual, indi_repo._family)), expected)
+        self.assertEqual((US_06(indi_repo.individual, indi_repo.family)), expected)
 
 
 if __name__ == "__main__":

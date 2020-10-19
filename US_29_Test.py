@@ -15,7 +15,7 @@ class TestRepository(unittest.TestCase):
             'Ben /Mann/', 'Mike /Robinson/', 'Rachel /Green/', 'Ema /Mosbi/', 'William /Robinson/', 'Max /Robinson/', 'Dora /Robinson/', 'Jimmy /Smith/']
             ,['Htp /Manan/']]
         
-            #calculated = [individual.info_individual() for individual in indi_repo._individual.values()]
+            #calculated = [individual.info_individual() for individual in indi_repo.individual.values()]
             calculated=[[i for i in US_29(indi_repo)]]
             self.assertEqual(sorted(calculated),sorted(excepted))
             self.assertNotEqual(calculated,expected1)

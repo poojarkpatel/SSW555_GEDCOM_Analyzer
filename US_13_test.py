@@ -13,7 +13,7 @@ class Test(unittest.TestCase):
         expected = {'The family id @F11@ has twins Emmy /Robinson/ and Sam /Robinson/',
                     'The family id @F11@ has twins Emmy /Robinson/ and Jil /Robinson/',
                     'The family id @F11@ has twins Jil /Robinson/ and Sam /Robinson/'}
-        self.assertEqual(set([item for item in US_13(indi_repo._family, indi_repo._individual)]), expected)
+        self.assertEqual(set([item for item in US_13(indi_repo.family, indi_repo.individual)]), expected)
     
         
 

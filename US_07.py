@@ -3,6 +3,6 @@ def US_07(individual):
     lst = []
 
     for v in individual.values():
-        if v._age >= 150:
-            lst.append(v._name)
+        if v.age >= 150:
+            lst.append(v.name)
     return(lst)

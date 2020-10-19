@@ -1,28 +1,23 @@
-import datetime
+"""
+This file
+"""
+from typing import List
 
-def us_25(individual,family):
-    warnings = []
-    for family in family.values():
-        names = []
-        birth_dates = []
-        if family._children != "NA":
-            for child in family._children:
-                if individual[child]._name in names:
-                    warnings.append(f"The family {family._family} has multiple individuals with same name {individual[child]._name}")
-                names.append(individual[child]._name)
-                if individual[child]._birth in birth_dates:
-                    warnings.append(f"There are multiple people born on {individual[child]._birth} date in family {family._family}")
-                birth_dates.append(individual[child]._birth)
 
+def us_25(individual, family_id):
+    """ this function returns name, birthdate, family id of multiple people born on same day and
+    multiple people with same name
+    """
+    warnings: List = []
+    for family in family_id.values():
+        birth_dates_names = []
+        if family.children != "NA":
+            for child in family.children:
+                if individual[child].name in birth_dates_names:
+                    warnings.append(f"The family {family.family} has multiple individuals "
+                                    f"with same name {individual[child].name}")
+                if individual[child].birth in birth_dates_names:
+                    warnings.append(f"There are multiple people born on {individual[child].birth} "
+                                    f"date in family {family.family}")
+                birth_dates_names.extend([individual[child].birth, individual[child].name])
     return warnings
-
-
-
-
-
-
-
-
-
-
-

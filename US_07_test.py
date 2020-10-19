@@ -11,7 +11,7 @@ class Test(unittest.TestCase):
 
         expected = ["Tia /Ale/"]
 
-        self.assertEqual(US_07(indi_repo._individual), expected )
+        self.assertEqual(US_07(indi_repo.individual), expected)
 
 
 if __name__ == "__main__":

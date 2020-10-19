@@ -6,14 +6,12 @@ recent births.
 
 import datetime
 
-def recent_births(individual):
-    list_most_recent_birth = list()
-    for value in individual.values():
-        birth_date = value._birth
-        # today_temp = datetime.timedelta(days=30)
-        if birth_date != "NA":
-            today = datetime.datetime.today().date()
-            if abs((today - birth_date).days) <= 30:
-                list_most_recent_birth.append(f"{value.get_name()} has recent birthday")
-    return list_most_recent_birth
 
+def recent_births(individual):
+
+    """This function returns the name of people
+    who were born recently """
+
+    return [f"{value.get_name()} has recent birthday" for value in individual.values()
+            if value.birth != "NA"
+            if abs((datetime.datetime.today().date() - value.birth).days) <= 30]
