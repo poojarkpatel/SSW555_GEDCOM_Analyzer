@@ -27,7 +27,6 @@ def US_17(family_object):
         wife_id = family_info[5]
         wife_name = family_info[6]
 
-
         if (husband_id in parents_to_children and wife_id in parents_to_children[husband_id]) or (wife_id in parents_to_children and husband_id in parents_to_children[wife_id]):
             result[husband_name] = wife_name
 
