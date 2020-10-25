@@ -10,19 +10,24 @@ from Base_File import Repository
 
 class Test(unittest.TestCase):
     """For testing user story us04"""
+
     def test_us04(self):
         """ The function is to test us04 function"""
         indi_repo: Repository = Repository("US_04.ged")
 
         # The expected output
-        expected = ['US_04: This family id @F3@ has an illegal dates for marriage and divorce',
-                    'US_04: This family id @F7@ has an illegal dates for marriage and divorce']
+        expected = ['Marriage date Line: 209\nDivorce date Line: 211\nUS_04: This family id @F3@ has an illegal dates '
+                    'for marriage and divorce',
+                    'Marriage date Line: 240\nDivorce date Line: 242\nUS_04: This family id @F7@ has an illegal dates '
+                    'for marriage and divorce']
 
         # generating a list of the output from the function
         result = [value for value in us04(indi_repo._family)]
 
         self.assertEqual(result, expected)  # positive test result
-        self.assertFalse(result == ['This family id @F3@ has an illegal dates for marriage and divorce']) # Negative # test case
+        self.assertFalse(
+            result == ['This family id @F3@ has an illegal dates for marriage and divorce'])  # Negative # test case
+
 
 if __name__ == "__main__":
     unittest.main(exit=False)
