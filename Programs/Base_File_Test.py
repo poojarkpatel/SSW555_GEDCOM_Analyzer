@@ -22,6 +22,7 @@ from UserStories.US_33 import US_33
 from UserStories.US_35 import US_35
 from UserStories.us_32_36 import us_32, us_36
 
+
 class TestRepository(unittest.TestCase):
     """ Class that contains all the test cases. """
     def __init__(self, *args, **kwargs):
