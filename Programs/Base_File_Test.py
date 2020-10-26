@@ -3,15 +3,13 @@ import unittest
 from typing import List
 import datetime
 
-from Programs.Base_File import Repository
+from Base_File import Repository
 
 # Importing all the user stories.
 from UserStories.US_01 import US_01
 from UserStories.US_04 import US_04
-from UserStories.US_05 import US_05
 from UserStories.US_06 import US_06
 from UserStories.US_07 import US_07
-from UserStories.US_08 import US_08
 from UserStories.US_11 import US_11
 from UserStories.US_13 import US_13
 from UserStories.US_17 import US_17
@@ -24,11 +22,11 @@ from UserStories.US_28 import US_28
 from UserStories.US_29 import US_29
 from UserStories.US_33 import US_33
 from UserStories.US_35 import US_35
-
+from UserStories.US_15 import US_15
+from UserStories.US_16 import US_16
 
 class TestRepository(unittest.TestCase):
     """ Class that contains all the test cases. """
-
     def __init__(self, *args, **kwargs):
         """ Function that initializes class variable repository. """
         super(TestRepository, self).__init__(*args, **kwargs)
@@ -68,23 +66,7 @@ class TestRepository(unittest.TestCase):
         result = [value for value in US_04(repository._family)]
 
         self.assertEqual(result, expected)  # positive test result
-        self.assertFalse(
-            result == ['This family id @F3@ has an illegal dates for marriage and divorce'])  # Negative # test case
-
-    def test_US_05(self):
-        """ The function is to test US_05 function"""
-        indi_repo: Repository = Repository('../GedcomFiles/ssw555_input_file.ged')
-
-        # The expected output
-        expected = ["Marriage date Line: 501\nDeath of wife date Line: 60\n"
-                    "The family @F14@ has a death of wife @I4@ before the marriage date."]
-
-        # generating a list of the output from the function
-        result = [value for value in US_05(indi_repo._individual, indi_repo._family)]
-
-        self.assertEqual(result, expected)  # positive test result
-        self.assertFalse(
-            result == ['The family @F11@ has a death of wife @I7@ before the marriage date.'])  # Negative # test case
+        self.assertFalse(result == ['This family id @F3@ has an illegal dates for marriage and divorce']) # Negative # test case
 
     def test_US_06(self):
         """ Contains test cases for US_06"""
@@ -100,33 +82,13 @@ class TestRepository(unittest.TestCase):
 
         self.assertEqual(US_07(repository._individual), expected)
 
-    def test_US_08(self):
-        """ The function is to test US_08 function"""
-        indi_repo: Repository = Repository('../GedcomFiles/ssw555_input_file.ged')
-
-        # The expected output
-        expected = ["Family id Line number: 391\nThe Father @I1@ is younger than his child @I4@ which is "
-                    "illeagal.",
-                    "Family id Line number: 484\nThe Father @I31@ is younger than his child @I33@ which is "
-                    "illeagal.",
-                    "Family id Line number: 503\nThe Father @I36@ is younger than his child @I1@ which is "
-                    "illeagal."]
-
-        # generating a list of the output from the function
-        result = [value for value in US_08(indi_repo._individual, indi_repo._family)]
-
-        self.assertEqual(result, expected)  # positive test result
-        self.assertFalse(
-            result == ['The family @F11@ has a death of wife @I7@ before the marriage date.'])  # Negative # test case
-
     def test_US_11(self):
         """ Tests that husbands and wifes are not married twice at the same time and prints out the cases if so"""
         repository = Repository('../GedcomFiles/US_11.ged')
         output = ['Joey /BIng/married twice at the same time', 'Rachel /Green/married twice at the same time']
         self.assertEqual(US_11(repository), output)
         self.assertNotEqual(US_11(repository), ['Ross /Galler married twice on the same time'])
-        self.assertTrue(US_11(repository) == ['Joey /BIng/married twice at the same time',
-                                              'Rachel /Green/married twice at the same time'])
+        self.assertTrue(US_11(repository) == ['Joey /BIng/married twice at the same time', 'Rachel /Green/married twice at the same time'])
         self.assertFalse(US_11(repository) == ['Emma /Galler married twice on the same time'])
         self.assertTrue(US_11(repository) != ['Ross /Galler married twice on the same time'])
 
@@ -151,23 +113,10 @@ class TestRepository(unittest.TestCase):
             self.assertEqual("False", "True")
         # self.assertEqual(US_18(self.repository_18._family, self.repository_18._individual), expected)
 
-    def test_US_20(self):
-        """ The function helps to test US_20 function"""
-        repository = Repository("../GedcomFiles/US_20.ged")
-        expected = ["Individuals @I1@ and @I9@ are uncle/aunt and niece/nephew married on line number 324"]
-        self.assertEqual(US_20(repository._family, repository._individual), expected)
-
     def test_US_23(self):
         expected = {'Mike /Robinson/': datetime.date(2021, 7, 2)}
         actual = US_23(self.repository._individual)
         self.assertEqual(expected, actual)
-
-    def test_US_24(self):
-        """ The function helps to test US_13 function"""
-        repository = Repository("../GedcomFiles/ssw555_input_file.ged")
-        expected = ['Family contains same husband, wife and marriage date as another family, Line number: 501', 'Family contains same husband, wife and marriage date as another family, Line number: 514']
-        self.assertEqual(US_24(repository._family), expected)
-
 
     def test_US_25(self):
         """ The function helps to test US_25 function"""
@@ -178,16 +127,16 @@ class TestRepository(unittest.TestCase):
         self.assertEqual(sorted(US_25(repository._individual, repository._family)), expected)
         self.assertNotEqual(sorted(US_25(repository._individual, repository._family)),
                             ['The family @F1@ has multiple individuals with same name Joey /Robinson/',
-                             'There are multiple people born on 1822-01-01 date in family @F1@'])
+                            'There are multiple people born on 1822-01-01 date in family @F1@'])
         self.assertFalse(US_25(repository._individual, repository._family)
                          == ['The family @F1@ has multiple individuals with same name Joey /Robinson/',
-                             'There are multiple people born on 1822-01-01 date in family @F1@'])
+                         'There are multiple people born on 1822-01-01 date in family @F1@'])
         self.assertTrue(US_25(repository._individual, repository._family)
                         == ['There are multiple people born on 1980-09-13 date in family @F1@',
-                            'The family @F2@ has multiple individuals with same name Joey /Robinson/'])
+                        'The family @F2@ has multiple individuals with same name Joey /Robinson/'])
         self.assertTrue(sorted(US_25(repository._individual, repository._family))
                         != ['The family @F1@ has multiple individuals with same name Joey /Robinson/',
-                            'There are multiple people born on 1822-01-02 date in family @F1@'])
+                        'There are multiple people born on 1822-01-02 date in family @F1@'])
 
     def test_US_28(self):
         repository = Repository('../GedcomFiles/US_28.ged')
@@ -208,14 +157,11 @@ class TestRepository(unittest.TestCase):
     def test_US_35(self):
         """ The function helps to test US_35 function """
         repository = Repository('../GedcomFiles/US_35.ged')
-        expected: List = ['Emmy /Robinson/ has recent birthday', 'Jil /Robinson/ has recent birthday',
-                          'Sam /Robinson/ has recent birthday']
+        expected: List = ['Emmy /Robinson/ has recent birthday', 'Jil /Robinson/ has recent birthday', 'Sam /Robinson/ has recent birthday']
         self.assertEqual(US_35(repository._individual), expected)
         self.assertNotEqual(US_35(repository._individual), ['William /Robinson/ has recent birthday'])
         self.assertFalse(US_35(repository._individual) == ['Jim /Robinson/ has recent birthday'])
-        self.assertTrue(US_35(repository._individual) == ['Emmy /Robinson/ has recent birthday',
-                                                          'Jil /Robinson/ has recent birthday',
-                                                          'Sam /Robinson/ has recent birthday'])
+        self.assertTrue(US_35(repository._individual) == ['Emmy /Robinson/ has recent birthday', 'Jil /Robinson/ has recent birthday', 'Sam /Robinson/ has recent birthday'])
         self.assertTrue(US_35(repository._individual) != ['Smith /Robinson/ has recent birthday'])
 
     def test_deceased(self):
@@ -238,6 +184,24 @@ class TestRepository(unittest.TestCase):
         self.assertLess(len(calculated), len(excepted2))
         self.assertNotEqual(calculated, excepted2)
 
+    def test_US_16(self):
+        """ Contains test cases for US_16"""
+        indi_repo: Repository = Repository("../GedcomFiles/US_16.ged")
+
+        expected = ['US_16: Family id @F15@ with father Ribu /Watson/ and son Joey /Robinson/ have different last names on line number 503',
+                    'US_16: Family id @F15@ with father Ribu /Watson/ and son Sam /Robinson/ have different last names on line number 503',
+                    'US_16: Family id @F2@ with father Ross /Robinson/ and son Ben /Mann/ have different last names on line number 407',
+                    'US_16: Family id @F2@ with father Ross /Robinson/ and son Ginger /Ale/ have different last names on line number 407' ]
+
+        self.assertEqual(US_16(indi_repo._individual ,indi_repo._family), expected)
+
+    def test_US_15(self):
+        """ Contains test cases for US_15"""
+        indi_repo: Repository = Repository("../GedcomFiles/US_15.ged")
+
+        expected = ["US:15 Family id:@F1@ has 15 or more children on line number 180"]
+
+        self.assertEqual(US_15(indi_repo._family), expected)
 
 if __name__ == "__main__":
     """ Runs all the tests created above. """
