@@ -20,7 +20,7 @@ def US_20(family, individual):
                             for niece_id in nieces:
                                 for k, v in family.items():
                                     if (v._husband_id == individual_id and v._wife_id == niece_id) or (v._wife_id == individual_id and v._husband_id == niece_id):
-                                        warnings.append(f'US_20: Individuals {individual_id} and {niece_id} are uncle/aunt and niece/nephew married on line number {family[k].get_line_numbers()["wife_id"]}')
+                                        warnings.append(f'Individuals {individual_id} and {niece_id} are uncle/aunt and niece/nephew married on line number {family[k].get_line_numbers()["wife_id"]}')
 
     return warnings
 
