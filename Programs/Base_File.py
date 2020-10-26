@@ -15,7 +15,9 @@ from UserStories.US_11 import US_11
 from UserStories.US_13 import US_13
 from UserStories.US_17 import US_17
 from UserStories.US_18 import US_18
+from UserStories.US_20 import US_20
 from UserStories.US_23 import US_23
+from UserStories.US_24 import US_24
 from UserStories.US_25 import US_25
 from UserStories.US_28 import US_28
 from UserStories.US_29 import US_29
@@ -72,8 +74,14 @@ def main():
     for item in US_18(family, individual):
         print(f"US18: {item}")
 
+    for item in US_20(family, individual):
+        print(f"US_20: {item}")
+
     for key, value in US_23(individual).items():
         print(f"US_23: Multiple individuals with name {key} born on {value} exists.")
+
+    for item in US_24(family):
+        print(f"US_24: {item}")
 
     for item in US_25(individual, family):
         print(f"US_25: {item}")
