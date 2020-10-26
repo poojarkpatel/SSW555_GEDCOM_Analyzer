@@ -7,8 +7,8 @@ from Programs.Base_File import Repository
 
 # Importing all the user stories.
 from UserStories.US_01 import US_01
-from UserStories.US_05 import US_05
 from UserStories.US_04 import US_04
+from UserStories.US_05 import US_05
 from UserStories.US_06 import US_06
 from UserStories.US_07 import US_07
 from UserStories.US_08 import US_08
