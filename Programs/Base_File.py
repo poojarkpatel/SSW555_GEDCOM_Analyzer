@@ -7,8 +7,10 @@ from Programs.Repository import Repository
 # Importing all the user stories.
 from UserStories.US_01 import US_01
 from UserStories.US_04 import US_04
+from UserStories.US_05 import US_05
 from UserStories.US_06 import US_06
 from UserStories.US_07 import US_07
+from UserStories.US_08 import US_08
 from UserStories.US_11 import US_11
 from UserStories.US_13 import US_13
 from UserStories.US_17 import US_17
@@ -75,6 +77,14 @@ def main():
 
     for item in US_35(individual):
         print(f"US_35: {item}")
+
+    for item in US_05(individual, family):
+        print(f"US_05: {item}")
+
+    for item in US_08(individual, family):
+        print(f"US_08: {item}")
+
+
 
     """
     for individual_id, individual_information in individual.items():
