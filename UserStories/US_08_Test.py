@@ -29,3 +29,7 @@ class Test(unittest.TestCase):
         self.assertEqual(result, expected)  # positive test result
         self.assertFalse(
             result == ['The family @F11@ has a death of wife @I7@ before the marriage date.'])  # Negative # test case
+
+
+if __name__ == "__main__":
+    unittest.main(exit=False)
