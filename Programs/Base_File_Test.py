@@ -6,7 +6,7 @@ import datetime
 from Programs.Base_File import Repository
 
 # Importing all the user stories.
-from UserStories.US_01 import US_01
+from UserStories.US_01 import us01
 from UserStories.US_04 import US_04
 from UserStories.US_06 import US_06
 from UserStories.US_07 import US_07
@@ -20,6 +20,7 @@ from UserStories.US_28 import US_28
 from UserStories.US_29 import US_29
 from UserStories.US_33 import US_33
 from UserStories.US_35 import US_35
+from UserStories.us_32_36 import us_32, us_36
 
 class TestRepository(unittest.TestCase):
     """ Class that contains all the test cases. """
@@ -113,24 +114,27 @@ class TestRepository(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_US_25(self):
-        """ The function helps to test US_25 function"""
-        repository = Repository('../GedcomFiles/US_25.ged')
-        expected: List = ['The family @F2@ has multiple individuals with same name Joey /Robinson/',
-                          'There are multiple people born on 1980-09-13 date in family @F1@']
 
-        self.assertEqual(sorted(US_25(repository._individual, repository._family)), expected)
-        self.assertNotEqual(sorted(US_25(repository._individual, repository._family)),
+        """ The function helps to test us_25 function"""
+
+        """ The function helps to test us_25 function"""
+        indi_repo: Repository = Repository("../GedcomFiles/US_25.ged")
+
+        expected: List = ['Line number 61,70 There are multiple individual born with same name: Joey '
+                          '/Robinson/ ',
+                          'Line number 67,76 There are multiple individual born on same date: '
+                          '1997-11-08']
+
+        self.assertEqual(US_25(indi_repo._individual, indi_repo._family), expected)
+        self.assertNotEqual(sorted(US_25(indi_repo._individual, indi_repo._family)),
                             ['The family @F1@ has multiple individuals with same name Joey /Robinson/',
-                            'There are multiple people born on 1822-01-01 date in family @F1@'])
-        self.assertFalse(US_25(repository._individual, repository._family)
+                             'There are multiple people born on 1822-01-01 date in family @F1@'])
+        self.assertFalse(US_25(indi_repo._individual, indi_repo._family)
                          == ['The family @F1@ has multiple individuals with same name Joey /Robinson/',
-                         'There are multiple people born on 1822-01-01 date in family @F1@'])
-        self.assertTrue(US_25(repository._individual, repository._family)
-                        == ['There are multiple people born on 1980-09-13 date in family @F1@',
-                        'The family @F2@ has multiple individuals with same name Joey /Robinson/'])
-        self.assertTrue(sorted(US_25(repository._individual, repository._family))
+                             'There are multiple people born on 1822-01-01 date in family @F1@'])
+        self.assertTrue(US_25(indi_repo._individual, indi_repo._family)
                         != ['The family @F1@ has multiple individuals with same name Joey /Robinson/',
-                        'There are multiple people born on 1822-01-02 date in family @F1@'])
+                            'There are multiple people born on 1822-01-02 date in family @F1@'])
 
     def test_US_28(self):
         repository = Repository('../GedcomFiles/US_28.ged')
@@ -149,14 +153,22 @@ class TestRepository(unittest.TestCase):
         self.assertTrue(US_33(repository) != ['@I1@ priyanka /Shiyani/ 16 is orphan and age is less than 18'])
 
     def test_US_35(self):
-        """ The function helps to test US_35 function """
-        repository = Repository('../GedcomFiles/US_35.ged')
-        expected: List = ['Emmy /Robinson/ has recent birthday', 'Jil /Robinson/ has recent birthday', 'Sam /Robinson/ has recent birthday']
-        self.assertEqual(US_35(repository._individual), expected)
-        self.assertNotEqual(US_35(repository._individual), ['William /Robinson/ has recent birthday'])
-        self.assertFalse(US_35(repository._individual) == ['Jim /Robinson/ has recent birthday'])
-        self.assertTrue(US_35(repository._individual) == ['Emmy /Robinson/ has recent birthday', 'Jil /Robinson/ has recent birthday', 'Sam /Robinson/ has recent birthday'])
-        self.assertTrue(US_35(repository._individual) != ['Smith /Robinson/ has recent birthday'])
+
+        """ The function helps to test recent_births function"""
+
+        indi_repo: Repository = Repository("../GedcomFiles/US_35.ged")
+
+        expected: List = ['Line number:39  Emmy /Robinson/ has recent birthday',
+                          'Line number:48  Jil /Robinson/ has recent birthday',
+                          'Line number:57  Sam /Robinson/ has recent birthday']
+
+        self.assertEqual(US_35(indi_repo._individual), expected)
+        self.assertNotEqual(US_35(indi_repo._individual), ['William /Robinson/ has recent birthday'])
+        self.assertFalse(US_35(indi_repo._individual) == ['Jim /Robinson/ has recent birthday'])
+        self.assertTrue(US_35(indi_repo._individual) == ['Line number:39  Emmy /Robinson/ has recent birthday',
+                                                         'Line number:48  Jil /Robinson/ has recent birthday',
+                                                         'Line number:57  Sam /Robinson/ has recent birthday'])
+        self.assertTrue(US_35(indi_repo._individual) != ['Smith /Robinson/ has recent birthday'])
 
     def test_deceased(self):
         repository = Repository('../GedcomFiles/US_29.ged')
@@ -178,6 +190,25 @@ class TestRepository(unittest.TestCase):
         self.assertLess(len(calculated), len(excepted2))
         self.assertNotEqual(calculated, excepted2)
 
+    def test_us_36(self):
+        """ The function helps to test us_32 function"""
+        indi_repo: Repository = Repository("../GedcomFiles/US_32_36.ged")
+        expected: List = ['Line number:41 Julie /Cohen/ died recently']
+        self.assertEqual(us_36(indi_repo._individual), expected)
+        self.assertNotEqual(us_36(indi_repo._individual), ['John /Cohen/ died recently'])
+
+    def test_us_32(self):
+        """ this helps to test us_36 function"""
+        indi_repo: Repository = Repository("../GedcomFiles/US_32_36.ged")
+        expected: List = ['Line number:21 The two or more individuals were born at the same time '
+                          '@I1@:David /Cohen/',
+                          'Line number:50 The two or more individuals were born at the same time '
+                          '@I4@:John /Cohen/',
+                          'Line number:59 The two or more individuals were born at the same time '
+                          '@I5@:David /Cohen/']
+        self.assertEqual(us_32(indi_repo._individual), expected)
+        self.assertNotEqual(us_32(indi_repo._individual), ['@I2@:David /Cohen/ @I5@:David /Cohen/ The two or more '
+                                                           'individuals were born at the same time'])
 if __name__ == "__main__":
     """ Runs all the tests created above. """
     unittest.main(exit=False, verbosity=2)

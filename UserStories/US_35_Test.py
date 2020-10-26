@@ -1,28 +1,27 @@
 import unittest
-from US_35 import recent_births
-from Base_File import Repository
+from UserStories.US_35 import US_35
+from Programs.Base_File import Repository
 from typing import List
-
 
 
 class Test(unittest.TestCase):
     """Helps to test all the functions"""
 
-    def test_recent_births(self):
-
+    def test_US_35(self):
         """ The function helps to test recent_births function"""
+        indi_repo: Repository = Repository("../GedcomFiles/US_35.ged")
 
-        indi_repo: Repository = Repository("US_35.ged")
+        expected: List = ['Line number:39  Emmy /Robinson/ has recent birthday',
+                          'Line number:48  Jil /Robinson/ has recent birthday',
+                          'Line number:57  Sam /Robinson/ has recent birthday']
 
-        expected: List = ['Emmy /Robinson/ has recent birthday', 'Jil /Robinson/ has recent birthday',
-                          'Sam /Robinson/ has recent birthday']
-        self.assertEqual(recent_births(indi_repo.individual), expected)
-        self.assertNotEqual(recent_births(indi_repo.individual), ['William /Robinson/ has recent birthday'])
-        self.assertFalse(recent_births(indi_repo.individual) == ['Jim /Robinson/ has recent birthday'])
-        self.assertTrue(recent_births(indi_repo.individual) == ['Emmy /Robinson/ has recent birthday',
-                                                                 'Jil /Robinson/ has recent birthday',
-                                                                 'Sam /Robinson/ has recent birthday'])
-        self.assertTrue(recent_births(indi_repo.individual) != ['Smith /Robinson/ has recent birthday'])
+        self.assertEqual(US_35(indi_repo._individual), expected)
+        self.assertNotEqual(US_35(indi_repo._individual), ['William /Robinson/ has recent birthday'])
+        self.assertFalse(US_35(indi_repo._individual) == ['Jim /Robinson/ has recent birthday'])
+        self.assertTrue(US_35(indi_repo._individual) == ['Line number:39  Emmy /Robinson/ has recent birthday',
+                                                         'Line number:48  Jil /Robinson/ has recent birthday',
+                                                         'Line number:57  Sam /Robinson/ has recent birthday'])
+        self.assertTrue(US_35(indi_repo._individual) != ['Smith /Robinson/ has recent birthday'])
 
 
 if __name__ == "__main__":

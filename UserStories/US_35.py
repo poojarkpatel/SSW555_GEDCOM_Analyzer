@@ -7,11 +7,11 @@ recent births.
 import datetime
 
 
-def recent_births(individual):
-
+def US_35(individual):
     """This function returns the name of people
-    who were born recently """
+       who were born recently """
 
-    return [f"{value.get_name()} has recent birthday" for value in individual.values()
-            if value.birth != "NA"
-            if abs((datetime.datetime.today().date() - value.birth).days) <= 30]
+    return [f"Line number:{value._line_numbers['date']['birth']} " \
+            f" {value.get_name()} has recent birthday" for value in individual.values()
+            if value._birth_date != "NA"
+            if abs((datetime.datetime.today().date() - value._birth_date).days) <= 30]

@@ -1,6 +1,6 @@
 import unittest
-from US_25 import us_25
-from Base_File import Repository
+from UserStories.US_25 import US_25
+from Programs.Base_File import Repository
 from typing import List
 
 
@@ -9,22 +9,21 @@ class Test(unittest.TestCase):
 
     def test_us_25(self):
         """ The function helps to test us_25 function"""
-        indi_repo: Repository = Repository("US_25.ged")
+        indi_repo: Repository = Repository("../GedcomFiles/US_25.ged")
 
-        expected: List = ['The family @F2@ has multiple individuals with same name Joey /Robinson/',
-                          'There are multiple people born on 1980-09-13 date in family @F1@']
+        expected: List = ['Line number 61,70 There are multiple individual born with same name: Joey '
+                          '/Robinson/ ',
+                          'Line number 67,76 There are multiple individual born on same date: '
+                          '1997-11-08']
 
-        self.assertEqual(sorted(us_25(indi_repo.individual, indi_repo.family)), expected)
-        self.assertNotEqual(sorted(us_25(indi_repo.individual, indi_repo.family)),
+        self.assertEqual(US_25(indi_repo._individual, indi_repo._family), expected)
+        self.assertNotEqual(sorted(US_25(indi_repo._individual, indi_repo._family)),
                             ['The family @F1@ has multiple individuals with same name Joey /Robinson/',
                              'There are multiple people born on 1822-01-01 date in family @F1@'])
-        self.assertFalse(us_25(indi_repo.individual, indi_repo.family)
+        self.assertFalse(US_25(indi_repo._individual, indi_repo._family)
                          == ['The family @F1@ has multiple individuals with same name Joey /Robinson/',
                              'There are multiple people born on 1822-01-01 date in family @F1@'])
-        self.assertTrue(sorted(us_25(indi_repo.individual, indi_repo.family))
-                        == ['The family @F2@ has multiple individuals with same name Joey /Robinson/',
-                            'There are multiple people born on 1980-09-13 date in family @F1@'])
-        self.assertTrue(us_25(indi_repo.individual, indi_repo.family)
+        self.assertTrue(US_25(indi_repo._individual, indi_repo._family)
                         != ['The family @F1@ has multiple individuals with same name Joey /Robinson/',
                             'There are multiple people born on 1822-01-02 date in family @F1@'])
 
