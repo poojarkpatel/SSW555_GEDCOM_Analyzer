@@ -27,7 +27,6 @@ from UserStories.US_35 import US_35
 from UserStories.US_15 import US_15
 from UserStories.US_16 import US_16
 
-
 def main():
     """ Function that runs all the user stories and prints their results. """
     sys.stdout = Logger()
@@ -57,20 +56,26 @@ def main():
     for item in US_05(individual, family):
         print(f"US_05: {item}")
 
-    for item in US_08(individual, family):
-        print(f"US_08: {item}")
-
     for item in US_06(individual, family):
         print(f"{item}")
 
     for item in US_07(individual):
         print(f"US_07: {item} age is greater than 150 years")
 
+    for item in US_08(individual, family):
+        print(f"US_08: {item}")
+
     for item in US_11(repository):
         print(f"US_11: {item}")
 
     for item in US_13(family, individual):
         print(f"US13: {item}")
+
+    for item in US_15(family):
+        print(f"{item} ")
+
+    for item in US_16(individual, family):
+        print(f"{item}")
 
     for key, value in US_17(family.values()).items():
         print(f"US_17: Parents married to their children: {key} and {value}.")
@@ -101,12 +106,6 @@ def main():
 
     for item in US_35(individual):
         print(f"US_35: {item}")
-
-    for item in US_15(family):
-        print(f"{item} ")
-
-    for item in US_16(individual, family):
-        print(f"{item}")
 
 if __name__ == '__main__':
     """ Calls main method. """

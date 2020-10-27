@@ -153,6 +153,25 @@ class TestRepository(unittest.TestCase):
                     'The family id @F11@ has twins Jil /Robinson/ and Sam /Robinson/'}
         self.assertEqual(set([item for item in US_13(self.repository._family, self.repository._individual)]), expected)
 
+    def test_US_15(self):
+        """ Contains test cases for US_15"""
+        indi_repo: Repository = Repository("../GedcomFiles/US_15.ged")
+
+        expected = ["US:15 Family id:@F1@ has 15 or more children on line number 180"]
+
+        self.assertEqual(US_15(indi_repo._family), expected)
+
+    def test_US_16(self):
+        """ Contains test cases for US_16"""
+        indi_repo: Repository = Repository("../GedcomFiles/US_16.ged")
+
+        expected = ['US_16: Family id @F15@ with father Ribu /Watson/ and son Joey /Robinson/ have different last names on line number 503',
+                    'US_16: Family id @F15@ with father Ribu /Watson/ and son Sam /Robinson/ have different last names on line number 503',
+                    'US_16: Family id @F2@ with father Ross /Robinson/ and son Ben /Mann/ have different last names on line number 407',
+                    'US_16: Family id @F2@ with father Ross /Robinson/ and son Ginger /Ale/ have different last names on line number 407' ]
+
+        self.assertEqual(US_16(indi_repo._individual ,indi_repo._family), expected)
+
     def test_US_17(self):
         expected = {'Joey /Robinson/': 'Monica /Geller/'}
         actual = US_17(self.repository._family.values())
@@ -236,25 +255,6 @@ class TestRepository(unittest.TestCase):
         self.assertGreaterEqual(len(calculated), len(expected1))
         self.assertLess(len(calculated), len(excepted2))
         self.assertNotEqual(calculated, excepted2)
-
-    def test_US_16(self):
-        """ Contains test cases for US_16"""
-        indi_repo: Repository = Repository("../GedcomFiles/US_16.ged")
-
-        expected = ['US_16: Family id @F15@ with father Ribu /Watson/ and son Joey /Robinson/ have different last names on line number 503',
-                    'US_16: Family id @F15@ with father Ribu /Watson/ and son Sam /Robinson/ have different last names on line number 503',
-                    'US_16: Family id @F2@ with father Ross /Robinson/ and son Ben /Mann/ have different last names on line number 407',
-                    'US_16: Family id @F2@ with father Ross /Robinson/ and son Ginger /Ale/ have different last names on line number 407' ]
-
-        self.assertEqual(US_16(indi_repo._individual ,indi_repo._family), expected)
-
-    def test_US_15(self):
-        """ Contains test cases for US_15"""
-        indi_repo: Repository = Repository("../GedcomFiles/US_15.ged")
-
-        expected = ["US:15 Family id:@F1@ has 15 or more children on line number 180"]
-
-        self.assertEqual(US_15(indi_repo._family), expected)
 
 if __name__ == "__main__":
     """ Runs all the tests created above. """
