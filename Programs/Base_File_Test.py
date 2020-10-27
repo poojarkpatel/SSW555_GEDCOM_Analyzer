@@ -179,7 +179,7 @@ class TestRepository(unittest.TestCase):
 
     def test_US_18(self):
         """ The function helps to test US_18 function"""
-        expected = ['@I25@ and @I1@ are siblings and a couple. Line number: 512']
+        expected = ['@I1@ and @I25@ are siblings and a couple. Line number: 512']
         result = [value for value in US_18(self.repository._family, self.repository._individual)]
         self.assertEqual(expected, result)
 
