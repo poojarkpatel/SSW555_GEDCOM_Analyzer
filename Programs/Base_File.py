@@ -54,6 +54,12 @@ def main():
     for item in US_04(family):
         print(item)
 
+    for item in US_05(individual, family):
+        print(f"US_05: {item}")
+
+    for item in US_08(individual, family):
+        print(f"US_08: {item}")
+
     for item in US_06(individual, family):
         print(f"{item}")
 
@@ -101,14 +107,6 @@ def main():
 
     for item in US_16(individual, family):
         print(f"{item}")
-    """
-    for individual_id, individual_information in individual.items():
-        print(individual_id, individual_information.get_line_numbers())
-
-    for family_id, family_information in family.items():
-        print(family_id, family_information.get_line_numbers())
-    """
-
 
 if __name__ == '__main__':
     """ Calls main method. """

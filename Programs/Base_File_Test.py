@@ -9,8 +9,10 @@ from Programs.Repository import Repository
 from UserStories.US_01 import US_01
 from UserStories.US_2_3 import US_2, US_3
 from UserStories.US_04 import US_04
+from UserStories.US_05 import US_05
 from UserStories.US_06 import US_06
 from UserStories.US_07 import US_07
+from UserStories.US_08 import US_08
 from UserStories.US_11 import US_11
 from UserStories.US_13 import US_13
 from UserStories.US_17 import US_17
@@ -86,6 +88,21 @@ class TestRepository(unittest.TestCase):
         self.assertEqual(result, expected)  # positive test result
         self.assertFalse(result == ['This family id @F3@ has an illegal dates for marriage and divorce']) # Negative # test case
 
+    def test_US_05(self):
+        """ The function is to test US_05 function"""
+        indi_repo: Repository = Repository('../GedcomFiles/ssw555_input_file.ged')
+
+        # The expected output
+        expected = ["Marriage date Line: 501\nDeath of wife date Line: 60\n"
+                    "The family @F14@ has a death of wife @I4@ before the marriage date."]
+
+        # generating a list of the output from the function
+        result = [value for value in US_05(indi_repo._individual, indi_repo._family)]
+
+        self.assertEqual(result, expected)  # positive test result
+        self.assertFalse(
+            result == ['The family @F11@ has a death of wife @I7@ before the marriage date.'])  # Negative # test case
+
     def test_US_06(self):
         """ Contains test cases for US_06"""
         repository = Repository('../GedcomFiles/US_06.ged')
@@ -99,6 +116,25 @@ class TestRepository(unittest.TestCase):
         expected = ["Tia /Ale/"]
 
         self.assertEqual(US_07(repository._individual), expected)
+
+    def test_US_08(self):
+        """ The function is to test US_08 function"""
+        indi_repo: Repository = Repository('../GedcomFiles/ssw555_input_file.ged')
+
+        # The expected output
+        expected = ["Family id Line number: 391\nThe Father @I1@ is younger than his child @I4@ which is "
+                    "illeagal.",
+                    "Family id Line number: 484\nThe Father @I31@ is younger than his child @I33@ which is "
+                    "illeagal.",
+                    "Family id Line number: 503\nThe Father @I36@ is younger than his child @I1@ which is "
+                    "illeagal."]
+
+        # generating a list of the output from the function
+        result = [value for value in US_08(indi_repo._individual, indi_repo._family)]
+
+        self.assertEqual(result, expected)  # positive test result
+        self.assertFalse(
+            result == ['The family @F11@ has a death of wife @I7@ before the marriage date.'])  # Negative # test case
 
     def test_US_11(self):
         """ Tests that husbands and wifes are not married twice at the same time and prints out the cases if so"""
