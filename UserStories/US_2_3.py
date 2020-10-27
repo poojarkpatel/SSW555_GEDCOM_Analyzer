@@ -1,3 +1,8 @@
+"""
+Author: Priyankaben Shyiani
+SSW 555 Agile Methods for Software Development 
+Purpose: user story 2 and user story 3
+"""
 def US_2(individual, family):
         """checks if a person's birthday occurs before their marriage"""
         warnings = list()
