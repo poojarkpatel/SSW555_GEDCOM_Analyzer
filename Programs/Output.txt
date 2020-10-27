@@ -1,7 +1,7 @@
 +-------+----------------------+--------+------------+-----+-------+------------+-----------+--------------------------+
 |   Id  |         Name         | Gender |  Birthday  | Age | Alive | Deathdate  |   Child   |          Spouse          |
 +-------+----------------------+--------+------------+-----+-------+------------+-----------+--------------------------+
-|  @I1@ |   Joey /Robinson/    |   M    | 1822-01-01 |  68 | False | 1890-03-06 |     NA    |    {'@F20@', '@F1@'}     |
+|  @I1@ |   Joey /Robinson/    |   M    | 1822-01-01 |  68 | False | 1890-03-06 |     NA    |    {'@F1@', '@F20@'}     |
 |  @I2@ | Priyanka /Robinson/  |   F    | 1830-01-12 | 100 | False | 1930-06-12 |  {'@F2@'} | {'@F4@', '@F3@', '@F1@'} |
 |  @I3@ |   Ross /Robinson/    |   M    | 1790-11-26 |  59 | False | 1850-09-09 |     NA    |         {'@F2@'}         |
 |  @I4@ |   Monica /Geller/    |   F    | 1792-11-12 |  47 | False | 1840-04-02 |     NA    |         {'@F2@'}         |
@@ -44,19 +44,19 @@
 +-------+------------+------------+------------+----------------------+---------+---------------------+-----------------------------------------------------+
 |  @F1@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |   @I2@  | Priyanka /Robinson/ |                       {'@I4@'}                      |
 |  @F3@ | 1850-09-11 |     NA     |   @I27@    | Yatinkumar /Shiyani/ |   @I2@  | Priyanka /Robinson/ |                      {'@I28@'}                      |
-|  @F2@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I5@', '@I35@', '@I2@', '@I31@', '@I29@', '@I6@'} |
+|  @F2@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I5@', '@I6@', '@I31@', '@I35@', '@I2@', '@I29@'} |
 |  @F4@ | 1850-12-14 |     NA     |   @I26@    |    Joss /Parker/     |   @I2@  | Priyanka /Robinson/ |                          NA                         |
 |  @F5@ | 1862-07-10 |     NA     |    @I6@    |   Mike /Robinson/    |   @I7@  |    Rachel /Green/   |                      {'@I10@'}                      |
 |  @F6@ | 1848-01-12 | 1852-07-14 |    @I6@    |   Mike /Robinson/    |   @I8@  |     Ema /Mosbi/     |                       {'@I9@'}                      |
 |  @F7@ | 1893-08-04 |     NA     |   @I10@    |    Max /Robinson/    |  @I11@  |   Dora /Robinson/   |                      {'@I12@'}                      |
 |  @F8@ | 1925-06-05 | 1930-11-15 |   @I13@    |    Jimmy /Smith/     |  @I12@  |   Emmy /Robinson/   |                          NA                         |
 |  @F9@ |     NA     |     NA     |   @I14@    |  Miller /Robinson/   |  @I15@  |   Ellie /Robinson/  |                      {'@I17@'}                      |
-| @F10@ |     NA     |     NA     |   @I17@    |  Miller /Robinson/   |  @I18@  |   Erica /Robinson/  |                  {'@I19@', '@I20@'}                 |
-| @F11@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |             {'@I24@', '@I25@', '@I23@'}             |
+| @F10@ |     NA     |     NA     |   @I17@    |  Miller /Robinson/   |  @I18@  |   Erica /Robinson/  |                  {'@I20@', '@I19@'}                 |
+| @F11@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |             {'@I25@', '@I24@', '@I23@'}             |
 | @F12@ | 1850-05-05 | 2000-06-12 |   @I29@    |     Ginger /Ale/     |  @I30@  |      Tia /Ale/      |                          NA                         |
 | @F13@ | 2019-03-04 | 2018-07-03 |   @I31@    |   Mike /Robinson/    |  @I32@  |    Micheal /Mia/    |                      {'@I33@'}                      |
 | @F14@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |   @I4@  |   Monica /Geller/   |                          NA                         |
-| @F15@ |     NA     |     NA     |   @I36@    |    Ribu /Watson/     |  @I37@  |     Mikie /Roni/    |                  {'@I1@', '@I25@'}                  |
+| @F15@ |     NA     |     NA     |   @I36@    |    Ribu /Watson/     |  @I37@  |     Mikie /Roni/    |                  {'@I25@', '@I1@'}                  |
 | @F20@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |  @I25@  |    Sam /Robinson/   |                          NA                         |
 +-------+------------+------------+------------+----------------------+---------+---------------------+-----------------------------------------------------+
 Birthdate on Line: 331
@@ -78,17 +78,17 @@ US_11: Joey /Robinson/married twice at the same time
 US_11: Priyanka /Robinson/married twice at the same time
 US_11: Monica /Geller/married twice at the same time
 US_11: Joey /Robinson/married twice at the same time
-US13: The family id @F11@ has twins Jil /Robinson/ and Sam /Robinson/
-US13: The family id @F11@ has twins Emmy /Robinson/ and Jil /Robinson/
-US13: The family id @F11@ has twins Emmy /Robinson/ and Sam /Robinson/
+US13: The family id @F11@ has twins Emmy /Robinson/ and Sam /Robinson/, Line number: 469
+US13: The family id @F11@ has twins Jil /Robinson/ and Sam /Robinson/, Line number: 469
+US13: The family id @F11@ has twins Emmy /Robinson/ and Jil /Robinson/, Line number: 469
 US_17: Parents married to their children: Joey /Robinson/ and Monica /Geller/.
-US18: @I1@ and @I25@ are siblings and a couple.
+US18: @I25@ and @I1@ are siblings and a couple. Line number: 512
 US_23: Multiple individuals with name Mike /Robinson/ born on 2021-07-02 exists.
 US_24: Family contains same husband, wife and marriage date as another family, Line number: 501
 US_24: Family contains same husband, wife and marriage date as another family, Line number: 514
 US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
-US_25: There are multiple people born on 2021-07-02 date in family @F2@
 US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
+US_25: There are multiple people born on 2021-07-02 date in family @F2@
 US_25: The family @F10@ has multiple individuals with same name Joey /Robinson/
 US_28: Age 68 :- Joey /Robinson/ from FamID @F15@
 US_28: Age 55 :- Mike /Robinson/ from FamID @F2@
@@ -118,7 +118,7 @@ US_29: Joss /Parker/ is deceased individual
 US_29: Yatinkumar /Shiyani/ is deceased individual
 US_29: Ginger /Ale/ is deceased individual
 US_33: @I28@ Mia /Shiyani/ has age 16 and is orphan
-US_33: @I35@ Mike /Robinson/ has age 0 and is orphan
 US_33: @I31@ Mike /Robinson/ has age 0 and is orphan
+US_33: @I35@ Mike /Robinson/ has age 0 and is orphan
 US_35: Jil /Robinson/ has recent birthday
 US_35: Sam /Robinson/ has recent birthday
