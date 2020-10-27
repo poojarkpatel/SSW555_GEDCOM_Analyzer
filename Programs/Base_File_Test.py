@@ -3,10 +3,11 @@ import unittest
 from typing import List
 import datetime
 
-from Base_File import Repository
+from Programs.Repository import Repository
 
 # Importing all the user stories.
 from UserStories.US_01 import US_01
+from UserStories.US_2_3 import US_2, US_3
 from UserStories.US_04 import US_04
 from UserStories.US_06 import US_06
 from UserStories.US_07 import US_07
@@ -52,6 +53,23 @@ class TestRepository(unittest.TestCase):
         self.assertEqual(result, expected)  # positive test result
         self.assertFalse(result == ['Birthdate "2022-01-01" for individual id @I1@ is illeagal',
                                     'Birthdate "2020-12-06" for individual id @I13@ is illeagal'])  # Negative test case
+
+    def test_US_02(self):
+        """ FUnction that tests user story 2 """
+        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        expected = ['US_02 - Sam /Robinson/ birthday after marriage date on line number 430',
+                    'US_02 - Micheal /Mia/ birthday after marriage date on line number 528',
+                    'US_02 - Mike /Robinson/ birthday after marriage date on line number 528',
+                    'US_02 - Kim /Bradley/ birthday after marriage date on line number 545']
+        actual = US_2(repository.get_individual(), repository.get_family())
+        self.assertEqual(expected, actual)
+
+    def test_US_03(self):
+        """ Function that tests user story 3 """
+        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        expected = ['US_03 - Jammy /Robinson/ birthday after death date on line number 400']
+        actual = US_3(repository.get_individual())
+        self.assertEqual(expected, actual)
 
     def test_US_04(self):
         """ The function is to test US_04 function"""
@@ -157,11 +175,10 @@ class TestRepository(unittest.TestCase):
     def test_US_35(self):
         """ The function helps to test US_35 function """
         repository = Repository('../GedcomFiles/US_35.ged')
-        expected: List = ['Emmy /Robinson/ has recent birthday', 'Jil /Robinson/ has recent birthday', 'Sam /Robinson/ has recent birthday']
+        expected: List = ['Jil /Robinson/ has recent birthday']
+
         self.assertEqual(US_35(repository._individual), expected)
         self.assertNotEqual(US_35(repository._individual), ['William /Robinson/ has recent birthday'])
-        self.assertFalse(US_35(repository._individual) == ['Jim /Robinson/ has recent birthday'])
-        self.assertTrue(US_35(repository._individual) == ['Emmy /Robinson/ has recent birthday', 'Jil /Robinson/ has recent birthday', 'Sam /Robinson/ has recent birthday'])
         self.assertTrue(US_35(repository._individual) != ['Smith /Robinson/ has recent birthday'])
 
     def test_deceased(self):
