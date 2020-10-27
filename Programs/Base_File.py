@@ -6,6 +6,7 @@ from Programs.Repository import Repository
 
 # Importing all the user stories.
 from UserStories.US_01 import US_01
+from UserStories.US_2_3 import US_2, US_3
 from UserStories.US_04 import US_04
 from UserStories.US_05 import US_05
 from UserStories.US_06 import US_06
@@ -32,7 +33,7 @@ def main():
     sys.stdout = Logger()
     # Creating an object of class Repository that will contains both individual and family dictionaries.
     # Pass the path of your GEDCOM file as a parameter below.
-    repository = Repository("../GedcomFiles/US_16.ged")
+    repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
     individual = repository.get_individual()
     family = repository.get_family()
 
@@ -42,6 +43,12 @@ def main():
     repository.family_pretty_table()
 
     for item in US_01(individual, family):
+        print(item)
+
+    for item in US_2(individual, family):
+        print(item)
+
+    for item in US_3(individual):
         print(item)
 
     for item in US_04(family):
