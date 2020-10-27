@@ -148,9 +148,9 @@ class TestRepository(unittest.TestCase):
 
     def test_US_13(self):
         """ The function helps to test US_13 function"""
-        expected = {'The family id @F11@ has twins Emmy /Robinson/ and Sam /Robinson/',
-                    'The family id @F11@ has twins Emmy /Robinson/ and Jil /Robinson/',
-                    'The family id @F11@ has twins Jil /Robinson/ and Sam /Robinson/'}
+        expected = {'The family id @F11@ has twins Emmy /Robinson/ and Sam /Robinson/, Line number: 469',
+                    'The family id @F11@ has twins Emmy /Robinson/ and Jil /Robinson/, Line number: 469',
+                    'The family id @F11@ has twins Jil /Robinson/ and Sam /Robinson/, Line number: 469'}
         self.assertEqual(set([item for item in US_13(self.repository._family, self.repository._individual)]), expected)
 
     def test_US_15(self):
@@ -179,18 +179,27 @@ class TestRepository(unittest.TestCase):
 
     def test_US_18(self):
         """ The function helps to test US_18 function"""
-        expected = [['@I25@ and @I1@ are siblings and a couple.'], ['@I1@ and @I25@ are siblings and a couple.']]
-        if US_18(self.repository._family, self.repository._individual) in expected:
-            self.assertEqual("True", "True")
-        else:
-            self.assertEqual("False", "True")
-        # self.assertEqual(US_18(self.repository_18._family, self.repository_18._individual), expected)
+        expected = ['@I1@ and @I25@ are siblings and a couple. Line number: 512']
+        result = [value for value in US_18(self.repository._family, self.repository._individual)]
+        self.assertEqual(expected, result)
 
+    def test_US_20(self):
+        """ The function helps to test US_20 function"""
+        repository = Repository("../GedcomFiles/US_20.ged")
+        expected = ["Individuals @I1@ and @I9@ are uncle/aunt and niece/nephew married on line number 324"]
+        self.assertEqual(US_20(repository._family, repository._individual), expected)
+        
     def test_US_23(self):
         expected = {'Mike /Robinson/': datetime.date(2021, 7, 2)}
         actual = US_23(self.repository._individual)
         self.assertEqual(expected, actual)
 
+    def test_US_24(self):
+        """ The function helps to test US_13 function"""
+        repository = Repository("../GedcomFiles/ssw555_input_file.ged")
+        expected = ['Family contains same husband, wife and marriage date as another family, Line number: 501', 'Family contains same husband, wife and marriage date as another family, Line number: 514']
+        self.assertEqual(US_24(repository._family), expected)
+             
     def test_US_25(self):
         """ The function helps to test US_25 function"""
         repository = Repository('../GedcomFiles/US_25.ged')
