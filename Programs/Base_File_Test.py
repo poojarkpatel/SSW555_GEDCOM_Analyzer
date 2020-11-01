@@ -20,6 +20,8 @@ from UserStories.US_28 import US_28
 from UserStories.US_29 import US_29
 from UserStories.US_33 import US_33
 from UserStories.US_35 import US_35
+from UserStories.US_30 import us_30
+from UserStories.US_26 import us_26
 
 class TestRepository(unittest.TestCase):
     """ Class that contains all the test cases. """
@@ -132,12 +134,13 @@ class TestRepository(unittest.TestCase):
                         != ['The family @F1@ has multiple individuals with same name Joey /Robinson/',
                         'There are multiple people born on 1822-01-02 date in family @F1@'])
 
-    def test_US_28(self):
-        repository = Repository('../GedcomFiles/US_28.ged')
-        expected: List = ['68 :- Joey /Robinson/ from FamID @F1@', '55 :- Mike /Robinson/ from FamID @F1@',
-                          '48 :- Ben /Mann/ from FamID @F1@']
-        calculated: List = US_28(repository)
-        self.assertEqual(calculated, expected)
+    def test_US28(self):
+        indi_repo: Repository = Repository("../GedcomFiles/US_28.ged")
+        expected:List = ['68 :- Joey /Robinson/ from FamID @F1@ with individual id @I1@ is on line number 14',
+        '55 :- Mike /Robinson/ from FamID @F1@ with individual id @I5@ is on line number 58',
+        '48 :- Ben /Mann/ from FamID @F1@ with individual id @I4@ is on line number 47']
+        calculated:List = US_28(indi_repo, indi_repo._individual)
+        self.assertEqual(calculated,expected)
 
     def test_US_33(self):
         """ Tests US33. checks that list all orphans. """
@@ -159,25 +162,29 @@ class TestRepository(unittest.TestCase):
         self.assertTrue(US_35(repository._individual) != ['Smith /Robinson/ has recent birthday'])
 
     def test_deceased(self):
-        repository = Repository('../GedcomFiles/US_29.ged')
-        excepted: List = [['Joey /Robinson/', 'Ross /Robinson/', 'Monica /Geller/',
-                           'Ben /Mann/', 'Mike /Robinson/', 'Rachel /Green/', 'Ema /Mosbi/', 'William /Robinson/',
-                           'Max /Robinson/', 'Dora /Robinson/', 'Jimmy /Smith/']]
-        expected1: List = [['Joey /Robinson/', 'Ross /Robinson/',
-                            'Ben /Mann/', 'Mike /Robinson/', 'Rachel /Green/', 'Ema /Mosbi/', 'William /Robinson/',
-                            'Max /Robinson/', 'Dora /Robinson/', 'Jimmy /Smith/']]
-        excepted2: List = [['Joey /Robinson/', 'Ross /Robinson/', 'Monica /Geller/',
-                            'Ben /Mann/', 'Mike /Robinson/', 'Rachel /Green/', 'Ema /Mosbi/', 'William /Robinson/',
-                            'Max /Robinson/', 'Dora /Robinson/', 'Jimmy /Smith/'], ['Htp /Manan/']]
+            indi_repo: Repository = Repository("../GedcomFiles/US_29.ged")
+            excepted: List=[['Joey /Robinson/ on line number 21', 'Ross /Robinson/ on line number 32',
+                             'Monica /Geller/ on line number 43','Ben /Mann/ on line number 54', 'Mike /Robinson/ on line number 65', 'Rachel /Green/ on line number 78', 'Ema /Mosbi/ on line number 89',
+                             'William /Robinson/ on line number 100', 'Max /Robinson/ on line number 111', 'Dora /Robinson/ on line number 123', 'Jimmy /Smith/ on line number 144']]
+            #calculated = [individual.info_individual() for individual in indi_repo._individual.values()]
+            calculated=[[i for i in US_29(indi_repo)]]
+            self.assertEqual(sorted(calculated),sorted(excepted))
 
-        # calculated = [individual.info_individual() for individual in self.repository._individual.values()]
-        calculated = [[i for i in US_29(repository)]]
-        self.assertEqual(sorted(calculated), sorted(excepted))
-        self.assertNotEqual(calculated, expected1)
-        self.assertGreaterEqual(len(calculated), len(expected1))
-        self.assertLess(len(calculated), len(excepted2))
-        self.assertNotEqual(calculated, excepted2)
+    def test_us_26(self):
+        indi_repo: Repository = Repository("../GedcomFiles/US_26.ged")
+        excepted: List = ['Individual in family:@F1@ is on line number 148', 'Individual in family:@F1@ is on line number 148', 'Individual in family:@F1@ is on line number 148',
+                          'Individual in family:@F3@ is on line number 164','Individual in family:@F2@ is on line number 157','Individual in family:@F4@ is on line number 173']
+        calculated: List = us_26(indi_repo._individual,indi_repo._family)
+        self.assertEqual(calculated, excepted)
 
+    def test_us_30(self):
+        indi_repo: Repository = Repository("../GedcomFiles/US_30.ged")
+        excepted: List = [' Seema /Sharma/ is married and alive on line number 32',
+                          ' Poonam /Sharma/ is married and alive on line number 41',
+                          ' Snehal /Sharma/ is married and alive on line number 51',
+                          ' Renu /Sharma/ is married and alive on line number 72']
+        calculated: List = us_30(indi_repo._individual)
+        self.assertEqual(calculated, excepted)
 if __name__ == "__main__":
     """ Runs all the tests created above. """
     unittest.main(exit=False, verbosity=2)
