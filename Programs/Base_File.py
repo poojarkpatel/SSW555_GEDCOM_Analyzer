@@ -101,6 +101,9 @@ def main():
 
     for item in US_16(individual, family):
         print(f"{item}")
+
+    "implement the user story 22"
+
     """
     for individual_id, individual_information in individual.items():
         print(individual_id, individual_information.get_line_numbers())
