@@ -1,18 +1,18 @@
 """
-Test cases for user story US_05
+Test cases for user story US_10
 Author: Varun Mullins
 """
 
 import unittest
-from UserStories.US_10 import US_14
+from UserStories.US_10 import US_10
 from Programs.Base_File import Repository
 
 
 class Test(unittest.TestCase):
-    """For testing user story US_14"""
+    """For testing user story US_10"""
 
     def test_us14(self):
-        """ The function is to test US_14 function"""
+        """ The function is to test US_10 function"""
         indi_repo: Repository = Repository('../GedcomFiles/ssw555_input_file.ged')
 
         # The expected output
@@ -24,7 +24,7 @@ class Test(unittest.TestCase):
                     "The wife @I25@ was younger than 14 at the time of marriage for @F20@"]
 
         # generating a list of the output from the function
-        result = [value for value in US_14(indi_repo._individual, indi_repo._family)]
+        result = [value for value in US_10(indi_repo._individual, indi_repo._family)]
 
         self.assertEqual(result, expected)  # positive test result
         self.assertFalse(
