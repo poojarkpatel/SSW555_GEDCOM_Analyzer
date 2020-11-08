@@ -11,7 +11,7 @@ from Programs.Base_File import Repository
 class Test(unittest.TestCase):
     """For testing user story US_10"""
 
-    def test_us14(self):
+    def test_us10(self):
         """ The function is to test US_10 function"""
         indi_repo: Repository = Repository('../GedcomFiles/ssw555_input_file.ged')
 
