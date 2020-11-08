@@ -13,8 +13,10 @@ from UserStories.US_05 import US_05
 from UserStories.US_06 import US_06
 from UserStories.US_07 import US_07
 from UserStories.US_08 import US_08
+from UserStories.US_09 import US_09
 from UserStories.US_11 import US_11
 from UserStories.US_13 import US_13
+from UserStories.US_14 import US_14
 from UserStories.US_17 import US_17
 from UserStories.US_18 import US_18
 from UserStories.US_20 import US_20
@@ -58,17 +60,16 @@ class TestRepository(unittest.TestCase):
 
     def test_US_02(self):
         """ FUnction that tests user story 2 """
-        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        repository = Repository("../GedcomFiles/ssw555_input_file.ged")
         expected = ['US_02 - Sam /Robinson/ birthday after marriage date on line number 430',
                     'US_02 - Micheal /Mia/ birthday after marriage date on line number 528',
-                    'US_02 - Mike /Robinson/ birthday after marriage date on line number 528',
-                    'US_02 - Kim /Bradley/ birthday after marriage date on line number 545']
+                    'US_02 - Mike /Robinson/ birthday after marriage date on line number 528']
         actual = US_2(repository.get_individual(), repository.get_family())
         self.assertEqual(expected, actual)
 
     def test_US_03(self):
         """ Function that tests user story 3 """
-        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        repository = Repository("../GedcomFiles/ssw555_input_file.ged")
         expected = ['US_03 - Jammy /Robinson/ birthday after death date on line number 400']
         actual = US_3(repository.get_individual())
         self.assertEqual(expected, actual)
@@ -136,6 +137,31 @@ class TestRepository(unittest.TestCase):
         self.assertFalse(
             result == ['The family @F11@ has a death of wife @I7@ before the marriage date.'])  # Negative # test case
 
+    def test_us09(self):
+        """ The function is to test US_09 function"""
+        indi_repo: Repository = Repository('../GedcomFiles/ssw555_input_file.ged')
+
+        # The expected output
+        expected = ["Family id Line number: 398\n"
+                    "Birth of child @I28@ is before the death of the father @I27@",
+                    "Family id Line number: 398\n"
+                    "Birth of child @I28@ is before the death of the mother @I2@",
+                    "Family id Line number: 407\n"
+                    "Birth of child @I35@ is before the death of the father @I3@",
+                    "Family id Line number: 407\n"
+                    "Birth of child @I35@ is before the death of the mother @I4@",
+                    "Family id Line number: 407\n"
+                    "Birth of child @I31@ is before the death of the father @I3@",
+                    "Family id Line number: 407\n"
+                    "Birth of child @I31@ is before the death of the mother @I4@"]
+
+        # generating a list of the output from the function
+        result = [value for value in US_09(indi_repo._individual, indi_repo._family)]
+
+        self.assertEqual(result, expected)  # positive test result
+        self.assertFalse(
+            result == ['The family @F11@ has a death of wife @I7@ before the marriage date.'])  # Negative # test case
+
     def test_US_11(self):
         """ Tests that husbands and wifes are not married twice at the same time and prints out the cases if so"""
         repository = Repository('../GedcomFiles/US_11.ged')
@@ -152,6 +178,25 @@ class TestRepository(unittest.TestCase):
                     'The family id @F11@ has twins Emmy /Robinson/ and Jil /Robinson/',
                     'The family id @F11@ has twins Jil /Robinson/ and Sam /Robinson/'}
         self.assertEqual(set([item for item in US_13(self.repository._family, self.repository._individual)]), expected)
+
+    def test_us14(self):
+        """ The function is to test US_14 function"""
+        indi_repo: Repository = Repository('../GedcomFiles/ssw555_input_file.ged')
+
+        # The expected output
+        expected = ["Family id Line number: 484\n"
+                    "The husband @I31@ was younger than 14 at the time of marriage for @F13@",
+                    "Family id Line number: 484\n"
+                    "The wife @I32@ was younger than 14 at the time of marriage for @F13@",
+                    "Family id Line number: 510\n"
+                    "The wife @I25@ was younger than 14 at the time of marriage for @F20@"]
+
+        # generating a list of the output from the function
+        result = [value for value in US_14(indi_repo._individual, indi_repo._family)]
+
+        self.assertEqual(result, expected)  # positive test result
+        self.assertFalse(
+            result == ['The family @F11@ has a death of wife @I7@ before the marriage date.'])  # Negative # test case
 
     def test_US_17(self):
         expected = {'Joey /Robinson/': 'Monica /Geller/'}
