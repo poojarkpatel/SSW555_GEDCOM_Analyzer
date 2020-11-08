@@ -24,6 +24,7 @@ class Individual:
         self._name = name
         self._line_numbers['individual_name'] = line_number
 
+
     def get_name(self) -> str:
         """ Function that returns the name of individual. """
         return self._name

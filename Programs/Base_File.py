@@ -20,7 +20,8 @@ from UserStories.US_29 import US_29
 from UserStories.US_33 import US_33
 from UserStories.US_35 import US_35
 from UserStories.us_32_36 import us_32, us_36
-
+from UserStories.US_38 import US_38
+from UserStories.US_31 import US_31
 
 def main():
     """ Function that runs all the user stories and prints their results. """
@@ -83,6 +84,12 @@ def main():
 
     for item in us_32(individual):
         print(f"US32: {item}")
+
+    # for item in US_38(individual):
+    #     print(f"US_38: {item}")
+
+    for item in US_31(individual):
+        print(f"US_31: {item}")
 
 if __name__ == '__main__':
     """ Calls main method. """

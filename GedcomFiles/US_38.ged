@@ -1,0 +1,66 @@
+0 HEAD
+1 SOUR Family Echo
+2 WWW http://www.familyecho.com/
+1 FILE Family 3
+1 DATE 4 OCT 2020
+1 DEST ANSTFILE
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 SUBM @I1@
+2 NAME Heli
+1 SUBN
+1 CHAR UTF-8
+0 @I1@ INDI
+1 NAME Ross /Robinson/
+2 GIVN Ross
+2 SURN Robinson
+2 _MARNM Robinson
+1 SEX M
+1 BIRT
+2 DATE 4 JAN 1970
+1 FAMS @F1@
+0 @I2@ INDI
+1 NAME Joey /Robinson/
+2 GIVN Joey
+2 SURN Robinson
+2 _MARNM Robinson
+1 SEX F
+1 BIRT
+2 DATE 10 AUG 1971
+1 FAMS @F1@
+0 @I3@ INDI
+1 NAME Emmy /Robinson/
+2 GIVN Emmy
+2 SURN Robinson
+2 _MARNM Robinson
+1 SEX F
+1 BIRT
+2 DATE 6 DEC 1997
+1 FAMC @F1@
+0 @I4@ INDI
+1 NAME Jil /Robinson/
+2 GIVN Jil
+2 SURN Robinson
+2 _MARNM Robinson
+1 SEX F
+1 BIRT
+2 DATE 5 DEC 1997
+1 FAMC @F1@
+0 @I5@ INDI
+1 NAME Sam /Robinson/
+2 GIVN Sam
+2 SURN Robinson
+2 _MARNM Robinson
+1 SEX M
+1 BIRT
+2 DATE 2 DEC 1997
+1 FAMC @F1@
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 CHIL @I3@
+1 CHIL @I4@
+1 CHIL @I5@
+1 _CURRENT Y
+0 TRLR

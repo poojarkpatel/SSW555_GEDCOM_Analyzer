@@ -21,7 +21,8 @@ from UserStories.US_29 import US_29
 from UserStories.US_33 import US_33
 from UserStories.US_35 import US_35
 from UserStories.us_32_36 import us_32, us_36
-
+from UserStories.US_38 import US_38
+from UserStories.US_31 import US_31
 
 class TestRepository(unittest.TestCase):
     """ Class that contains all the test cases. """
@@ -210,6 +211,39 @@ class TestRepository(unittest.TestCase):
         self.assertEqual(us_32(indi_repo._individual), expected)
         self.assertNotEqual(us_32(indi_repo._individual), ['@I2@:David /Cohen/ @I5@:David /Cohen/ The two or more '
                                                            'individuals were born at the same time'])
+
+    def test_US_38(self):
+
+        """ The function helps to test upcoming birthdates"""
+
+        indi_repo: Repository = Repository("../GedcomFiles/US_38.ged")
+
+        expected: List = ['Line number:21  Ross /Robinson/ has recent birthday',
+                          'Line number:30  Joey /Robinson/ has recent birthday',
+                          'Line number:48  Jil /Robinson/ has recent birthday']
+
+        self.assertEqual(US_38(indi_repo._individual), expected)
+        self.assertNotEqual(US_38(indi_repo._individual), ['William /Robinson/ has recent birthday'])
+        self.assertFalse(US_38(indi_repo._individual) == ['Jim /Robinson/ has recent birthday'])
+        self.assertTrue(US_38(indi_repo._individual) == ['Line number:21  Ross /Robinson/ has recent birthday',
+                                                         'Line number:30  Joey /Robinson/ has recent birthday',
+                                                         'Line number:48  Jil /Robinson/ has recent birthday'])
+        self.assertTrue(US_38(indi_repo._individual) != ['Smith /Robinson/ has recent birthday'])
+
+    def test_US_31(self):
+        """ The function helps to test US_31"""
+        indi_repo: Repository = Repository("../GedcomFiles/US_31.ged")
+
+        expected: List = ['Line number: 33 Charles /Windsor/is over 30 and still not married']
+
+        self.assertEqual(US_31(indi_repo._individual), expected)
+        self.assertNotEqual(US_31(indi_repo._individual), ['William /Robinson/ has recent birthday'])
+        self.assertFalse(US_31(indi_repo._individual) == ['Jim /Robinson/ has recent birthday'])
+        self.assertTrue(US_31(indi_repo._individual) == ['Line number: 33 Charles /Windsor/is over 30 and still '
+                                                         'not married'])
+        self.assertTrue(US_31(indi_repo._individual) != ['Smith /Robinson/ has recent birthday'])
+
+
 if __name__ == "__main__":
     """ Runs all the tests created above. """
     unittest.main(exit=False, verbosity=2)
