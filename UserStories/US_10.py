@@ -3,7 +3,7 @@
 import math
 
 
-def US_14(individual, family):
+def US_10(individual, family):
     for fam in family.values():
         marriage_date = fam._marriage_date
         if marriage_date != 'NA':
