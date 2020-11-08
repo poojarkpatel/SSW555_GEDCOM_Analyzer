@@ -213,22 +213,22 @@ class TestRepository(unittest.TestCase):
                                                            'individuals were born at the same time'])
 
     def test_US_38(self):
-
         """ The function helps to test upcoming birthdates"""
 
         indi_repo: Repository = Repository("../GedcomFiles/US_38.ged")
 
-        expected: List = ['Line number:21  Ross /Robinson/ has recent birthday',
-                          'Line number:30  Joey /Robinson/ has recent birthday',
-                          'Line number:48  Jil /Robinson/ has recent birthday']
+        expected: List = ['Line number 39, Emmy /Robinson/ has upcoming birthday',
+                          'Line number 48, Jil /Robinson/ has upcoming birthday',
+                          'Line number 57, Sam /Robinson/ has upcoming birthday']
 
         self.assertEqual(US_38(indi_repo._individual), expected)
-        self.assertNotEqual(US_38(indi_repo._individual), ['William /Robinson/ has recent birthday'])
+        self.assertNotEqual(US_38(indi_repo._individual), ['William /Robinson/ has upcoming birthday'])
         self.assertFalse(US_38(indi_repo._individual) == ['Jim /Robinson/ has recent birthday'])
-        self.assertTrue(US_38(indi_repo._individual) == ['Line number:21  Ross /Robinson/ has recent birthday',
-                                                         'Line number:30  Joey /Robinson/ has recent birthday',
-                                                         'Line number:48  Jil /Robinson/ has recent birthday'])
-        self.assertTrue(US_38(indi_repo._individual) != ['Smith /Robinson/ has recent birthday'])
+        self.assertTrue(US_38(indi_repo._individual) == ['Line number 39, Emmy /Robinson/ has upcoming birthday',
+                                                         'Line number 48, Jil /Robinson/ has upcoming birthday',
+                                                         'Line number 57, Sam /Robinson/ has upcoming birthday'])
+        self.assertTrue(US_38(indi_repo._individual) != ['Smith /Robinson/ has upcoming birthday'])
+
 
     def test_US_31(self):
         """ The function helps to test US_31"""

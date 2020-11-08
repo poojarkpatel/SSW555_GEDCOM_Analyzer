@@ -85,8 +85,8 @@ def main():
     for item in us_32(individual):
         print(f"US32: {item}")
 
-    # for item in US_38(individual):
-    #     print(f"US_38: {item}")
+    for item in US_38(individual):
+        print(f"US_38: {item}")
 
     for item in US_31(individual):
         print(f"US_31: {item}")

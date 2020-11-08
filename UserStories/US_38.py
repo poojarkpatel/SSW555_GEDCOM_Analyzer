@@ -16,13 +16,16 @@ def US_38(individual):
     #         if value._birth_date != "NA"
     #         if abs(datetime.datetime.today().date() - value._birth_date).days() >= 30
     #         ]
+    warnings = []
     for value in individual.values():
+        birth_date = value._birth_date
         if value._birth_date != "NA":
-            today = datetime.datetime.today().date()
-            today_fmt = today.strftime("%m %d")
-            birth_date = value._birth_date
-            birth_date_fmt = birth_date.strftime("%m %d")
-            if birth_date_fmt >= today_fmt:
-                print(birth_date_fmt)
+            if birth_date.strftime("%Y") <= datetime.datetime.today().strftime("%Y"):
+                delta: datetime = datetime.datetime.today() + timedelta(days=30)
+                if delta.strftime("%m %d") >= birth_date.strftime("%m %d") \
+                        >= datetime.datetime.today().strftime("%m %d"):
+                    warnings.append(
+                     f'Line number {value._line_numbers["date"]["birth"]}, '
+                     f'{value._name} has upcoming birthday')
 
-
+    return warnings

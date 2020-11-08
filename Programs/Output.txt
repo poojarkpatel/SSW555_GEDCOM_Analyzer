@@ -1,10 +1,10 @@
 +-------+----------------------+--------+------------+-----+-------+------------+-----------+--------------------------+
 |   Id  |         Name         | Gender |  Birthday  | Age | Alive | Deathdate  |   Child   |          Spouse          |
 +-------+----------------------+--------+------------+-----+-------+------------+-----------+--------------------------+
-|  @I1@ |   Joey /Robinson/    |   M    | 1822-01-01 |  68 | False | 1890-03-06 |     NA    | {'@F1@', '@F2@', '@F3@'} |
-|  @I2@ | Priyanka /Robinson/  |   F    | 1830-01-12 | 100 | False | 1930-06-12 |  {'@F6@'} | {'@F1@', '@F4@', '@F5@'} |
+|  @I1@ |   Joey /Robinson/    |   M    | 1822-01-01 |  68 | False | 1890-03-06 |     NA    | {'@F2@', '@F3@', '@F1@'} |
+|  @I2@ | Priyanka /Robinson/  |   F    | 1830-01-12 | 100 | False | 1930-06-12 |  {'@F6@'} | {'@F5@', '@F4@', '@F1@'} |
 |  @I3@ |   Ross /Robinson/    |   M    | 1790-11-26 |  59 | False | 1850-09-09 |     NA    |         {'@F6@'}         |
-|  @I4@ |   Monica /Geller/    |   F    | 1792-11-12 |  47 | False | 1840-04-02 |     NA    |     {'@F6@', '@F2@'}     |
+|  @I4@ |   Monica /Geller/    |   F    | 1792-11-12 |  47 | False | 1840-04-02 |     NA    |     {'@F2@', '@F6@'}     |
 |  @I5@ |      Ben /Mann/      |   M    | 1823-02-01 |  48 | False | 1871-04-06 |  {'@F6@'} |            NA            |
 |  @I6@ |   Mike /Robinson/    |   M    | 1824-02-01 |  55 | False | 1880-01-10 |  {'@F6@'} |     {'@F7@', '@F8@'}     |
 |  @I7@ |    Rachel /Green/    |   F    | 1832-02-14 |  68 | False | 1900-06-24 |     NA    |         {'@F7@'}         |
@@ -52,14 +52,14 @@
 |  @F2@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |   @I4@  |   Monica /Geller/   |                              NA                              |
 |  @F3@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |  @I25@  |    Sam /Robinson/   |                              NA                              |
 |  @F5@ | 1850-09-11 |     NA     |   @I27@    | Yatinkumar /Shiyani/ |   @I2@  | Priyanka /Robinson/ |                          {'@I28@'}                           |
-|  @F6@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I31@', '@I29@', '@I6@', '@I5@', '@I2@', '@I35@', '@I38@'} |
+|  @F6@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I31@', '@I2@', '@I5@', '@I6@', '@I29@', '@I35@', '@I38@'} |
 |  @F7@ | 1862-07-10 |     NA     |    @I6@    |   Mike /Robinson/    |   @I7@  |    Rachel /Green/   |                          {'@I10@'}                           |
 |  @F8@ | 1848-01-12 | 1852-07-14 |    @I6@    |   Mike /Robinson/    |   @I8@  |     Ema /Mosbi/     |                           {'@I9@'}                           |
 |  @F9@ | 1893-08-04 |     NA     |   @I10@    |    Max /Robinson/    |  @I11@  |   Dora /Robinson/   |                          {'@I12@'}                           |
 | @F10@ | 1925-06-05 | 1930-11-15 |   @I13@    |    Jimmy /Smith/     |  @I12@  |   Emmy /Robinson/   |                              NA                              |
 | @F11@ |     NA     |     NA     |   @I14@    |  Miller /Robinson/   |  @I15@  |   Ellie /Robinson/  |                          {'@I17@'}                           |
 | @F12@ |     NA     |     NA     |   @I17@    |  Miller /Robinson/   |  @I18@  |   Erica /Robinson/  |                      {'@I19@', '@I20@'}                      |
-| @F13@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |                 {'@I24@', '@I25@', '@I23@'}                  |
+| @F13@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |                 {'@I23@', '@I24@', '@I25@'}                  |
 | @F14@ | 1850-05-05 | 2000-06-12 |   @I29@    |     Ginger /Ale/     |  @I30@  |      Tia /Ale/      |                              NA                              |
 | @F15@ | 2019-03-04 | 2018-07-03 |   @I31@    |   Mike /Robinson/    |  @I32@  |    Micheal /Mia/    |                          {'@I33@'}                           |
 | @F16@ |     NA     |     NA     |   @I33@    |   Ryan /Robinson/    |  @I34@  |   Rosa /Hernadez/   |                              NA                              |
