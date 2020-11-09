@@ -207,3 +207,4 @@ class TestRepository(unittest.TestCase):
 if __name__ == "__main__":
     """ Runs all the tests created above. """
     unittest.main(exit=False, verbosity=2)
+    

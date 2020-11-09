@@ -89,11 +89,7 @@ def main():
     for item in US_39(family):
         print(f"US_39: {item}")
 
-"""
-
-    for item in US_41(self):
-        print(f"US_41: {item}")
-
+    """
     for individual_id, individual_information in individual.items():
         print(individual_id, individual_information.get_line_numbers())
 
