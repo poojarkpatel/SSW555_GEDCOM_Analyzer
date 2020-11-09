@@ -13,24 +13,23 @@ from UserStories.US_11 import US_11
 from UserStories.US_13 import US_13
 from UserStories.US_17 import US_17
 from UserStories.US_18 import US_18
-from UserStories.US_19 import US_19
+from UserStories.US_20 import US_20
 from UserStories.US_23 import US_23
+from UserStories.US_24 import US_24
 from UserStories.US_25 import US_25
 from UserStories.US_28 import US_28
 from UserStories.US_29 import US_29
 from UserStories.US_33 import US_33
 from UserStories.US_35 import US_35
-from UserStories.US_30 import us_30
-from UserStories.US_26 import us_26
-from UserStories.US_34 import us_34
-from UserStories.US_37 import us_37
+from UserStories.US_39 import US_39
+#from UserStories.US_41 import US_41
 
 def main():
     """ Function that runs all the user stories and prints their results. """
     sys.stdout = Logger()
     # Creating an object of class Repository that will contains both individual and family dictionaries.
     # Pass the path of your GEDCOM file as a parameter below.
-    repository = Repository("../GedcomFiles/ssw555_input_file.ged")
+    repository = Repository("../GedcomFiles/US_39.ged")
     individual = repository.get_individual()
     family = repository.get_family()
 
@@ -62,14 +61,23 @@ def main():
 
     for item in US_18(family, individual):
         print(f"US18: {item}")
+        
+    for item in US_19(individual, family):
+        print(item)
+
+    for item in US_20(family, individual):
+        print(f"US_20: {item}")
 
     for key, value in US_23(individual).items():
         print(f"US_23: Multiple individuals with name {key} born on {value} exists.")
 
+    for item in US_24(family):
+        print(f"US_24: {item}")
+
     for item in US_25(individual, family):
         print(f"US_25: {item}")
 
-    for item in US_28(repository,individual):
+    for item in US_28(repository):
         print(f"US_28: Age {item}")
 
     for item in US_29(repository):
@@ -80,19 +88,9 @@ def main():
 
     for item in US_35(individual):
         print(f"US_35: {item}")
-    for item in us_30(individual):
-        print("US_30:", item)
-    for item in us_26(individual, family):
-        print(f"US_26: {item}")
 
-    for item in us_34(individual,family):
-        print(f"US_34: {item}")
-
-    for item in us_37(individual,family):
-        print(f"US_37: {item}")
-
-    for item in US_19(individual, family):
-        print(item)
+    for item in US_39(family):
+        print(f"US_39: {item}")
 
     """
     for individual_id, individual_information in individual.items():
