@@ -22,6 +22,9 @@ from UserStories.US_29 import US_29
 from UserStories.US_33 import US_33
 from UserStories.US_35 import US_35
 from UserStories.US_39 import US_39
+from UserStories.US_12 import US_12
+from UserStories.US_14 import US_14
+
 #from UserStories.US_41 import US_41
 
 def main():
@@ -62,8 +65,8 @@ def main():
     for item in US_18(family, individual):
         print(f"US18: {item}")
         
-    for item in US_19(individual, family):
-        print(item)
+    #for item in US_19(individual, family):
+        #print(item)
 
     for item in US_20(family, individual):
         print(f"US_20: {item}")
@@ -77,8 +80,8 @@ def main():
     for item in US_25(individual, family):
         print(f"US_25: {item}")
 
-    for item in US_28(repository):
-        print(f"US_28: Age {item}")
+    #for item in US_28(repository):
+    #    print(f"US_28: Age {item}")
 
     for item in US_29(repository):
         print(f"US_29: {item} is deceased individual")
@@ -91,6 +94,12 @@ def main():
 
     for item in US_39(family):
         print(f"US_39: {item}")
+
+    for item in US_12(individual, family):
+        print(item)
+
+    for item in US_14(individual, family):
+        print(item)
 
     """
     for individual_id, individual_information in individual.items():
