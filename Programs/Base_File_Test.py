@@ -104,7 +104,7 @@ class TestRepository(unittest.TestCase):
 
     def test_US_18(self):
         """ The function helps to test US_18 function"""
-        expected = ['@I1@ and @I25@ are siblings and a couple. Line number: 512']
+        expected = ['@I25@ and @I1@ are siblings and a couple. Line number: 512']
         result = [value for value in US_18(self.repository._family, self.repository._individual)]
         self.assertEqual(expected, result)
 
@@ -164,6 +164,15 @@ class TestRepository(unittest.TestCase):
         self.assertFalse(US_33(repository) == ['@I1@ Yatinkumar /Shiyani/ 13 is orphan and age is less than 18'])
         self.assertTrue(US_33(repository) != ['@I1@ priyanka /Shiyani/ 16 is orphan and age is less than 18'])
 
+    def test_US_41(self):
+        repository = Repository('../GedcomFiles/ssw555_input_file.ged')
+        individual = repository.get_individual()
+        family = repository.get_family()
+
+        #print(individual['@I2@']._birth_date)
+        self.assertEqual(individual['@I2@']._birth_date, datetime.datetime.strptime("1 JAN 1830", '%d %b %Y').date())
+
+
     # def test_US_35(self):
     #     """ The function helps to test US_35 function """
     #     repository = Repository('../GedcomFiles/US_35.ged')
@@ -173,6 +182,7 @@ class TestRepository(unittest.TestCase):
     #     self.assertFalse(US_35(repository._individual) == ['Jim /Robinson/ has recent birthday'])
     #     self.assertTrue(US_35(repository._individual) == ['Emmy /Robinson/ has recent birthday', 'Jil /Robinson/ has recent birthday', 'Sam /Robinson/ has recent birthday'])
     #     self.assertTrue(US_35(repository._individual) != ['Smith /Robinson/ has recent birthday'])
+
 
     def test_deceased(self):
         repository = Repository('../GedcomFiles/US_29.ged')
