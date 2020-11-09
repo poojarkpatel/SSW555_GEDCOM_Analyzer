@@ -13,6 +13,7 @@ from UserStories.US_11 import US_11
 from UserStories.US_13 import US_13
 from UserStories.US_17 import US_17
 from UserStories.US_18 import US_18
+from UserStories.US_19 import US_19
 from UserStories.US_23 import US_23
 from UserStories.US_25 import US_25
 from UserStories.US_28 import US_28
@@ -89,6 +90,10 @@ def main():
 
     for item in us_37(individual,family):
         print(f"US_37: {item}")
+
+    for item in US_19(individual, family):
+        print(item)
+
     """
     for individual_id, individual_information in individual.items():
         print(individual_id, individual_information.get_line_numbers())
