@@ -22,6 +22,8 @@ from UserStories.US_33 import US_33
 from UserStories.US_35 import US_35
 from UserStories.US_30 import us_30
 from UserStories.US_26 import us_26
+from UserStories.US_34 import us_34
+from UserStories.US_37 import us_37
 
 class TestRepository(unittest.TestCase):
     """ Class that contains all the test cases. """
@@ -185,6 +187,21 @@ class TestRepository(unittest.TestCase):
                           ' Renu /Sharma/ is married and alive on line number 72']
         calculated: List = us_30(indi_repo._individual)
         self.assertEqual(calculated, excepted)
+
+    def test_us_34(self):
+        indi_repo: Repository = Repository("../GedcomFiles/US_34.ged")
+        excepted: List = ['Rahul /Sharma/,70 and Pinal /Sharma/ ,22  are the couples who were married when the older spouse was more than as twice as old as the younger spouse on line number 52']
+        calculated: List = us_34(indi_repo._individual,indi_repo._family)
+        self.assertEqual(calculated, excepted)
+
+    def test_us_37(self):
+        indi_repo: Repository = Repository("../GedcomFiles/US_37.ged")
+        excepted: List = ['Living Spouse: Dhruv /Shah/ and descendant : Saddi /Shah/ on line number 115','Living Spouse: Dhiru /Shah/ and descendant : Praj /Shah/ on line number 120',
+                          ' Living spouse: Riya /Patel/ and Descendant : Dhiru /Shah/ on line number 128 ','Living Spouse: Raj /Shah/ and descendant : Dhruv /Shah/ on line number 132']
+        calculated: List = us_37(indi_repo._individual, indi_repo._family)
+        self.assertEqual(calculated, excepted)
+
+
 if __name__ == "__main__":
     """ Runs all the tests created above. """
     unittest.main(exit=False, verbosity=2)
