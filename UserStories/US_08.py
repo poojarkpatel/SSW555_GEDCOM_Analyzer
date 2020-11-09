@@ -4,12 +4,12 @@
 def US_08(individual, family):
     for fam in family.values():
         if fam._children != 'NA':
-            husband_birth = individual[fam._husband_id]._birth
-            wife_birth = individual[fam._wife_id]._birth
+            husband_birth = individual[fam._husband_id]._birth_date
+            wife_birth = individual[fam._wife_id]._birth_date
             for child in fam._children:
-                if individual[child]._birth < husband_birth:
+                if individual[child]._birth_date < husband_birth:
                     yield f"Family id Line number: {fam._line_numbers.get('family_id')}\nThe Father {fam._husband_id}" \
-                          f" is younger than his child {individual[child]._individual_id} which is illeagal. "
-                elif individual[child]._birth < wife_birth:
+                          f" is younger than his child {individual[child]._individual_id} which is illeagal."
+                elif individual[child]._birth_date < wife_birth:
                     yield f"Family id Line number: {fam._line_numbers.get('family_id')}\nThe Mother {fam._wife_id} " \
-                          f"is younger than her child {individual[child]._individual_id} which is illeagal. "
+                          f"is younger than her child {individual[child]._individual_id} which is illeagal."

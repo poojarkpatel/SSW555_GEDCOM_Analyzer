@@ -6,11 +6,16 @@ from Programs.Repository import Repository
 
 # Importing all the user stories.
 from UserStories.US_01 import US_01
+from UserStories.US_2_3 import US_2, US_3
 from UserStories.US_04 import US_04
+from UserStories.US_05 import US_05
 from UserStories.US_06 import US_06
 from UserStories.US_07 import US_07
+from UserStories.US_08 import US_08
+from UserStories.US_09 import US_09
 from UserStories.US_11 import US_11
 from UserStories.US_13 import US_13
+from UserStories.US_10 import US_10
 from UserStories.US_17 import US_17
 from UserStories.US_18 import US_18
 from UserStories.US_19 import US_19
@@ -24,6 +29,8 @@ from UserStories.US_33 import US_33
 from UserStories.US_35 import US_35
 from UserStories.US_39 import US_39
 #from UserStories.US_41 import US_41
+from UserStories.US_15 import US_15
+from UserStories.US_16 import US_16
 
 def main():
     """ Function that runs all the user stories and prints their results. """
@@ -42,14 +49,32 @@ def main():
     for item in US_01(individual, family):
         print(item)
 
+    for item in US_2(individual, family):
+        print(item)
+
+    for item in US_3(individual):
+        print(item)
+
     for item in US_04(family):
         print(item)
+
+    for item in US_05(individual, family):
+        print(f"US_05: {item}")
+
+    for item in US_08(individual, family):
+        print(f"US_08: {item}")
 
     for item in US_06(individual, family):
         print(f"{item}")
 
     for item in US_07(individual):
         print(f"US_07: {item} age is greater than 150 years")
+
+    for item in US_09(individual, family):
+        print(f"US_09: {item}")
+
+    for item in US_10(individual, family):
+        print(f"US_10: {item}")
 
     for item in US_11(repository):
         print(f"US_11: {item}")
@@ -62,7 +87,7 @@ def main():
 
     for item in US_18(family, individual):
         print(f"US18: {item}")
-        
+
     for item in US_19(individual, family):
         print(item)
 
@@ -95,13 +120,11 @@ def main():
     for item in US_39(family):
         print(f"US_39: {item}")
 
-    """
-    for individual_id, individual_information in individual.items():
-        print(individual_id, individual_information.get_line_numbers())
+    for item in US_15(family):
+        print(f"{item} ")
 
-    for family_id, family_information in family.items():
-        print(family_id, family_information.get_line_numbers())
-    """
+    for item in US_16(individual, family):
+        print(f"{item}")
 
 if __name__ == '__main__':
     """ Calls main method. """
