@@ -13,6 +13,7 @@ from UserStories.US_11 import US_11
 from UserStories.US_13 import US_13
 from UserStories.US_17 import US_17
 from UserStories.US_18 import US_18
+from UserStories.US_19 import US_19
 from UserStories.US_20 import US_20
 from UserStories.US_23 import US_23
 from UserStories.US_24 import US_24
@@ -29,7 +30,7 @@ def main():
     sys.stdout = Logger()
     # Creating an object of class Repository that will contains both individual and family dictionaries.
     # Pass the path of your GEDCOM file as a parameter below.
-    repository = Repository("../GedcomFiles/US_39.ged")
+    repository = Repository("../GedcomFiles/US_19.ged")
     individual = repository.get_individual()
     family = repository.get_family()
 
@@ -77,8 +78,10 @@ def main():
     for item in US_25(individual, family):
         print(f"US_25: {item}")
 
+    """
     for item in US_28(repository):
         print(f"US_28: Age {item}")
+    """
 
     for item in US_29(repository):
         print(f"US_29: {item} is deceased individual")

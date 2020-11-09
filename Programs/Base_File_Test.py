@@ -14,6 +14,7 @@ from UserStories.US_11 import US_11
 from UserStories.US_13 import US_13
 from UserStories.US_17 import US_17
 from UserStories.US_18 import US_18
+from UserStories.US_19 import US_19
 from UserStories.US_20 import US_20
 from UserStories.US_23 import US_23
 from UserStories.US_24 import US_24
@@ -110,6 +111,14 @@ class TestRepository(unittest.TestCase):
 
         # self.assertEqual(US_18(self.repository_18._family, self.repository_18._individual), expected)
 
+    def test_US_19(self):
+        """ Function that tests user story 19 """
+        repository = Repository("../GedcomFiles/US_19.ged")
+        expected = ['US_19: First cousins @I7@ and @I8@ married on line 76']
+        actual = US_19(repository.get_individual(), repository.get_family())
+
+        self.assertEqual(expected, actual)
+
     def test_US_20(self):
         """ The function helps to test US_20 function"""
         repository = Repository("../GedcomFiles/US_20.ged")
@@ -167,11 +176,15 @@ class TestRepository(unittest.TestCase):
     def test_US_41(self):
         repository = Repository('../GedcomFiles/ssw555_input_file.ged')
         individual = repository.get_individual()
-        family = repository.get_family()
 
-        #print(individual['@I2@']._birth_date)
         self.assertEqual(individual['@I2@']._birth_date, datetime.datetime.strptime("1 JAN 1830", '%d %b %Y').date())
 
+    def test_US_42(self):
+        """ Function that tests user story 42 """
+        repository = Repository('../GedcomFiles/ssw555_input_file.ged')
+        individual = repository.get_individual()
+
+        self.assertEqual(individual['@I1@']._birth_date, datetime.datetime.strptime("1 JAN 1850", '%d %b %Y').date())
 
     # def test_US_35(self):
     #     """ The function helps to test US_35 function """
@@ -182,7 +195,6 @@ class TestRepository(unittest.TestCase):
     #     self.assertFalse(US_35(repository._individual) == ['Jim /Robinson/ has recent birthday'])
     #     self.assertTrue(US_35(repository._individual) == ['Emmy /Robinson/ has recent birthday', 'Jil /Robinson/ has recent birthday', 'Sam /Robinson/ has recent birthday'])
     #     self.assertTrue(US_35(repository._individual) != ['Smith /Robinson/ has recent birthday'])
-
 
     def test_deceased(self):
         repository = Repository('../GedcomFiles/US_29.ged')

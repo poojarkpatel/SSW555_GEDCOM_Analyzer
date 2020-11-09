@@ -1,5 +1,6 @@
 def US_19(individual, family):
     warnings = []
+    warning_set = set()
 
     for individual_id in individual:
         individual_child_in = individual[individual_id]._famC
@@ -29,6 +30,11 @@ def US_19(individual, family):
                             for child_two in sibling_children:
                                 for key, value in family.items():
                                     if (value._husband_id == child_one and value._wife_id == child_two) or (value._husband_id == child_two and value._wife_id == child_one):
-                                        warnings.append(f'US_19: First cousins {child_one} and {child_two} married on line {family[key]._line_numbers["wife_id"]}')
+                                        new_set = frozenset([child_one, child_two])
+
+                                        if new_set not in warning_set:
+                                            warnings.append(f'US_19: First cousins {child_one} and {child_two} married on line {family[key]._line_numbers["wife_id"]}')
+
+                                        warning_set.add(new_set)
 
     return warnings
