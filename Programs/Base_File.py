@@ -26,6 +26,8 @@ from UserStories.US_33 import US_33
 from UserStories.US_35 import US_35
 from UserStories.US_15 import US_15
 from UserStories.US_16 import US_16
+from UserStories.US_21 import US_21
+from UserStories.US_22 import US_22
 
 
 def main():
@@ -102,7 +104,12 @@ def main():
     for item in US_16(individual, family):
         print(f"{item}")
 
-    "implement the user story 22"
+    for item in US_21(individual, family):
+        print(item)
+
+    for item in US_22(individual, family):
+        print(item)
+
 
     """
     for individual_id, individual_information in individual.items():

@@ -25,6 +25,9 @@ from UserStories.US_33 import US_33
 from UserStories.US_35 import US_35
 from UserStories.US_15 import US_15
 from UserStories.US_16 import US_16
+from UserStories.US_21 import US_21
+from UserStories.US_22 import US_22
+
 
 class TestRepository(unittest.TestCase):
     """ Class that contains all the test cases. """
@@ -57,10 +60,10 @@ class TestRepository(unittest.TestCase):
     def test_US_02(self):
         """ FUnction that tests user story 2 """
         repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
-        expected = ['US_02 - Sam /Robinson/ birthday after marriage date on line number 430',
-                    'US_02 - Micheal /Mia/ birthday after marriage date on line number 528',
-                    'US_02 - Mike /Robinson/ birthday after marriage date on line number 528',
-                    'US_02 - Kim /Bradley/ birthday after marriage date on line number 545']
+        expected = ['US_02: Sam /Robinson/ birthday after marriage date on line number 430',
+                    'US_02: Micheal /Mia/ birthday after marriage date on line number 528',
+                    'US_02: Mike /Robinson/ birthday after marriage date on line number 528',
+                    'US_02: Kim /Bradley/ birthday after marriage date on line number 545']
         actual = US_2(repository.get_individual(), repository.get_family())
         self.assertEqual(expected, actual)
 
@@ -173,7 +176,7 @@ class TestRepository(unittest.TestCase):
         self.assertTrue(US_33(repository) != ['@I1@ priyanka /Shiyani/ 16 is orphan and age is less than 18'])
 
     def test_US_35(self):
-        """ The function helps to test US_35 function """
+        """The function helps to test US_35 function"""
         repository = Repository('../GedcomFiles/US_35.ged')
         expected: List = ['Jil /Robinson/ has recent birthday']
 
@@ -219,6 +222,21 @@ class TestRepository(unittest.TestCase):
         expected = ["US:15 Family id:@F1@ has 15 or more children on line number 180"]
 
         self.assertEqual(US_15(indi_repo._family), expected)
+
+    def test_US_21(self):
+        """ Function that tests user story 21 """
+        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        expected = ['US_21: Sam /Robinson/ gender is supposed to be female but is not on line number 269']
+        actual = US_21(repository.get_individual(), repository.get_family())
+        self.assertEqual(expected, actual)
+
+    def test_US_22(self):
+        """ Function that tests user story 21 """
+        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        expected = []
+        actual = US_22(repository.get_individual(), repository.get_family())
+        self.assertEqual(expected, actual)
+
 
 if __name__ == "__main__":
     """ Runs all the tests created above. """

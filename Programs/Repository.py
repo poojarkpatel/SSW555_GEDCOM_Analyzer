@@ -59,6 +59,8 @@ class Repository:
                 id = arg
                 if arg not in self._individual.keys():
                     self._individual[arg] = Individual(arg, line_number)
+                else:
+                    print(f" US_22: Line number:{line_number} Id already exists")
             elif tag == "NAME" and not indi_flag:
                 self._individual[id].set_name(arg, line_number)
             elif tag == "SEX" and not indi_flag:
@@ -74,6 +76,8 @@ class Repository:
                 fam_id = arg
                 if arg not in self._family.keys():
                     self._family[fam_id] = Family(fam_id, line_number)
+                else:
+                    print(f" US_22: Line number:{line_number} Family Id already exists")
             elif tag == "HUSB":
                 self._family[fam_id].set_husband_id(arg, line_number)
                 self._family[fam_id].set_husband_name(self._individual[arg].get_name())
@@ -98,3 +102,12 @@ class Repository:
         for value in self._family.values():
             pt.add_row(value.info_family())
         print(pt)
+
+    def add_individual(self, i):
+        """ must pass in individual
+        US22: checks if the individual ids are unique
+        """
+        if i.iid in self._individual.keys():
+            print(f'US22 - {i.iid} id has a duplicate in line number ')
+        self._individual[i.iid] = i
+        return Individual()
