@@ -56,8 +56,14 @@
 | @F12@ | 1850-05-05 | 2000-06-12 |   @I29@    |     Ginger /Ale/     |  @I30@  |      Tia /Ale/      |                          NA                         |
 | @F13@ | 2019-03-04 | 2018-07-03 |   @I31@    |   Mike /Robinson/    |  @I32@  |    Micheal /Mia/    |                      {'@I33@'}                      |
 | @F14@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |   @I4@  |   Monica /Geller/   |                          NA                         |
-| @F15@ |     NA     |     NA     |   @I36@    |    Ribu /Watson/     |  @I37@  |     Mikie /Roni/    |                  {'@I25@', '@I1@'}                  |
+| @F15@ |     NA     |     NA     |   @I36@    |    Ribu /Watson/     |  @I37@  |     Mikie /Roni/    |                  {'@I1@', '@I25@'}                  |
+| @F16@ |     NA     |     NA     |   @I38@    |    Rahul /Sharma/    |  @I39@  |    Pinal /Sharma/   |                          NA                         |
 | @F20@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |  @I25@  |    Sam /Robinson/   |                          NA                         |
+| @F21@ |     NA     |     NA     |   @I43@    |     Dhruv /Shah/     |  @I41@  |     Gari /Jain/     |                      {'@I40@'}                      |
+| @F22@ | 2000-04-07 |     NA     |   @I42@    |     Dhiru /Shah/     |  @I41@  |     Gari /Jain/     |                      {'@I44@'}                      |
+| @F23@ |     NA     |     NA     |   @I49@    |     Prem /Shah/      |  @I48@  |     Riya /Patel/    |                      {'@I42@'}                      |
+| @F24@ |     NA     |     NA     |   @I47@    |      Raj /Shah/      |  @I46@  |     Meet /Shah/     |                      {'@I43@'}                      |
+| @F25@ |     NA     |     NA     |            |                      |  @I41@  |     Gari /Jain/     |                      {'@I45@'}                      |
 +-------+------------+------------+------------+----------------------+---------+---------------------+-----------------------------------------------------+
 Birthdate on Line: 331
 US_01: Birthdate "2021-07-02" for individual id @I31@ is illeagal
@@ -71,6 +77,7 @@ US_04: This family id @F13@ has an illegal dates for marriage and divorce
 US_06: Ginger /Ale/ Death 1980-07-10 occured prior to the divorce date 2000-06-12
 US_07: Ginger /Ale/ age is greater than 150 years
 US_07: Tia /Ale/ age is greater than 150 years
+US_07: Prem /Shah/ age is greater than 150 years
 US_11: Priyanka /Robinson/married twice at the same time
 US_11: Priyanka /Robinson/married twice at the same time
 US_11: Joey /Robinson/married twice at the same time

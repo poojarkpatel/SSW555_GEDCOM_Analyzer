@@ -61,6 +61,9 @@ def main():
 
     for item in US_18(family, individual):
         print(f"US18: {item}")
+        
+    for item in US_19(individual, family):
+        print(item)
 
     for item in US_20(family, individual):
         print(f"US_20: {item}")
