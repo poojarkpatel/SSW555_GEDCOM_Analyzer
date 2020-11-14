@@ -16,7 +16,6 @@ def US_39(family):
             curr_day = int(marr_date.split('-')[2])
 
             day_diff = abs(curr_month - today_month) * 30 + (curr_day - today_date)
-            print(fam, day_diff)
             if day_diff > 0 and day_diff <= 31:
                 warnings.append(f"The family id {fam} have their marriage anniversary in the next 30 days. Line number: {value.get_line_numbers()['family_id']}")
 
