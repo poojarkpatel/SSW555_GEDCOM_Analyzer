@@ -28,6 +28,8 @@ from UserStories.US_15 import US_15
 from UserStories.US_16 import US_16
 from UserStories.US_21 import US_21
 from UserStories.US_22 import US_22
+from UserStories.US_44 import US_44
+
 
 
 def main():
@@ -110,6 +112,8 @@ def main():
     for item in US_22(individual, family):
         print(item)
 
+    for item in US_44(individual):
+        print(f"US_44: {item} age is greater than 100 years")
 
     """
     for individual_id, individual_information in individual.items():

@@ -1,12 +1,12 @@
 +-------+----------------------+--------+------------+-----+-------+------------+-----------+--------------------------+
 |   Id  |         Name         | Gender |  Birthday  | Age | Alive | Deathdate  |   Child   |          Spouse          |
 +-------+----------------------+--------+------------+-----+-------+------------+-----------+--------------------------+
-|  @I1@ |   Joey /Robinson/    |   M    | 1822-01-01 |  68 | False | 1890-03-06 |     NA    | {'@F2@', '@F1@', '@F3@'} |
-|  @I2@ | Priyanka /Robinson/  |   F    | 1830-01-12 | 100 | False | 1930-06-12 |  {'@F6@'} | {'@F1@', '@F4@', '@F5@'} |
+|  @I1@ |   Joey /Robinson/    |   M    | 1822-01-01 |  68 | False | 1890-03-06 |     NA    | {'@F2@', '@F3@', '@F1@'} |
+|  @I2@ | Priyanka /Robinson/  |   F    | 1830-01-12 | 100 | False | 1930-06-12 |  {'@F6@'} | {'@F4@', '@F5@', '@F1@'} |
 |  @I3@ |   Ross /Robinson/    |   M    | 1790-11-26 |  59 | False | 1850-09-09 |     NA    |         {'@F6@'}         |
-|  @I4@ |   Monica /Geller/    |   F    | 1792-11-12 |  47 | False | 1840-04-02 |     NA    |     {'@F2@', '@F6@'}     |
+|  @I4@ |   Monica /Geller/    |   F    | 1792-11-12 |  47 | False | 1840-04-02 |     NA    |     {'@F6@', '@F2@'}     |
 |  @I5@ |      Ben /Mann/      |   M    | 1823-02-01 |  48 | False | 1871-04-06 |  {'@F6@'} |            NA            |
-|  @I6@ |   Mike /Robinson/    |   M    | 1824-02-01 |  55 | False | 1880-01-10 |  {'@F6@'} |     {'@F7@', '@F8@'}     |
+|  @I6@ |   Mike /Robinson/    |   M    | 1824-02-01 |  55 | False | 1880-01-10 |  {'@F6@'} |     {'@F8@', '@F7@'}     |
 |  @I7@ |    Rachel /Green/    |   F    | 1832-02-14 |  68 | False | 1900-06-24 |     NA    |         {'@F7@'}         |
 |  @I8@ |     Ema /Mosbi/      |   F    | 1828-04-14 |  41 | False | 1869-04-09 |     NA    |         {'@F8@'}         |
 |  @I9@ |  William /Robinson/  |   M    | 1849-09-09 |  38 | False | 1888-08-02 |  {'@F8@'} |            NA            |
@@ -49,14 +49,14 @@
 |  @F3@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |  @I25@  |    Sam /Robinson/   |                              NA                              |
 |  @F4@ | 1850-12-14 |     NA     |   @I26@    |    Joss /Parker/     |   @I2@  | Priyanka /Robinson/ |                              NA                              |
 |  @F5@ | 1850-09-11 |     NA     |   @I27@    | Yatinkumar /Shiyani/ |   @I2@  | Priyanka /Robinson/ |                          {'@I28@'}                           |
-|  @F6@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I5@', '@I2@', '@I35@', '@I38@', '@I31@', '@I6@', '@I29@'} |
+|  @F6@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I31@', '@I35@', '@I29@', '@I6@', '@I2@', '@I38@', '@I5@'} |
 |  @F7@ | 1862-07-10 |     NA     |    @I6@    |   Mike /Robinson/    |   @I7@  |    Rachel /Green/   |                          {'@I10@'}                           |
 |  @F8@ | 1848-01-12 | 1852-07-14 |    @I6@    |   Mike /Robinson/    |   @I8@  |     Ema /Mosbi/     |                           {'@I9@'}                           |
 |  @F9@ | 1893-08-04 |     NA     |   @I10@    |    Max /Robinson/    |  @I11@  |   Dora /Robinson/   |                          {'@I12@'}                           |
 | @F10@ | 1925-06-05 | 1930-11-15 |   @I13@    |    Jimmy /Smith/     |  @I12@  |   Emmy /Robinson/   |                              NA                              |
 | @F11@ |     NA     |     NA     |   @I14@    |  Miller /Robinson/   |  @I15@  |   Ellie /Robinson/  |                          {'@I17@'}                           |
-| @F12@ |     NA     |     NA     |   @I18@    |   Erica /Robinson/   |  @I17@  |  Miller /Robinson/  |                      {'@I19@', '@I20@'}                      |
-| @F13@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |                 {'@I23@', '@I25@', '@I24@'}                  |
+| @F12@ |     NA     |     NA     |   @I18@    |   Erica /Robinson/   |  @I17@  |  Miller /Robinson/  |                      {'@I20@', '@I19@'}                      |
+| @F13@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |                 {'@I24@', '@I25@', '@I23@'}                  |
 | @F14@ | 1850-05-05 | 2000-06-12 |   @I29@    |     Ginger /Ale/     |  @I30@  |      Tia /Ale/      |                              NA                              |
 | @F15@ | 2019-03-04 | 2018-07-03 |   @I31@    |   Mike /Robinson/    |  @I32@  |    Micheal /Mia/    |                          {'@I33@'}                           |
 | @F16@ |     NA     |     NA     |   @I33@    |   Ryan /Robinson/    |  @I34@  |   Rosa /Hernadez/   |                              NA                              |
@@ -87,9 +87,9 @@ US_11: Priyanka /Robinson/married twice at the same time
 US_11: Joey /Robinson/married twice at the same time
 US_11: Monica /Geller/married twice at the same time
 US_11: Priyanka /Robinson/married twice at the same time
+US13: The family id @F13@ has twins Emmy /Robinson/ and Sam /Robinson/
 US13: The family id @F13@ has twins Emmy /Robinson/ and Jil /Robinson/
 US13: The family id @F13@ has twins Jil /Robinson/ and Sam /Robinson/
-US13: The family id @F13@ has twins Emmy /Robinson/ and Sam /Robinson/
 US_23: Multiple individuals with name Mike /Robinson/ born on 2021-07-02 exists.
 US_24: Family contains same husband, wife and marriage date as another family, Line number: 422
 US_24: Family contains same husband, wife and marriage date as another family, Line number: 430
@@ -124,9 +124,13 @@ US_29: Yatinkumar /Shiyani/ is deceased individual
 US_29: Ginger /Ale/ is deceased individual
 US_29: Jammy /Robinson/ is deceased individual
 US_33: @I28@ Mia /Shiyani/ has age 16 and is orphan
-US_33: @I35@ Mike /Robinson/ has age 0 and is orphan
 US_33: @I31@ Mike /Robinson/ has age 0 and is orphan
-US_35: Sam /Robinson/ has recent birthday
+US_33: @I35@ Mike /Robinson/ has age 0 and is orphan
 US_16: Family id @F6@ with father Ross /Robinson/ and son Ben /Mann/ have different last names on line number 451
 US_16: Family id @F6@ with father Ross /Robinson/ and son Ginger /Ale/ have different last names on line number 451
 US_21: Sam /Robinson/ gender is supposed to be female but is not on line number 269
+US_44: Priyanka /Robinson/ age is greater than 100 years
+US_44: Emmy /Robinson/ age is greater than 100 years
+US_44: Yatinkumar /Shiyani/ age is greater than 100 years
+US_44: Ginger /Ale/ age is greater than 100 years
+US_44: Tia /Ale/ age is greater than 100 years

@@ -27,6 +27,7 @@ from UserStories.US_15 import US_15
 from UserStories.US_16 import US_16
 from UserStories.US_21 import US_21
 from UserStories.US_22 import US_22
+from UserStories.US_44 import US_44
 
 
 class TestRepository(unittest.TestCase):
@@ -237,6 +238,16 @@ class TestRepository(unittest.TestCase):
         actual = US_22(repository.get_individual(), repository.get_family())
         self.assertEqual(expected, actual)
 
+    def test_US_44(self):
+        """ Contains test cases for US_44"""
+        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        expected = ['Priyanka /Robinson/',
+                    'Emmy /Robinson/',
+                    'Yatinkumar /Shiyani/',
+                    'Ginger /Ale/',
+                    'Tia /Ale/']
+        actual = US_44(repository.get_individual())
+        self.assertEqual(expected, actual)
 
 if __name__ == "__main__":
     """ Runs all the tests created above. """
