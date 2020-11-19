@@ -20,13 +20,15 @@ class Test(unittest.TestCase):
 
     def test_US_56(self):
         """ The function helps to test US_56"""
-        indi_repo: Repository = Repository("../GedcomFiles/US_55_56.ged")
+        repository = Repository("../GedcomFiles/US_55_56.ged")
+        individual = repository.get_individual()
+        repository.individual_pretty_table()
 
         expected: List = ['Line number: 15 Camila /Parker Bowles/is below 30 and married',
                           'Line number: 24 Andrew /Parker Bowles/is below 30 and married']
 
-        self.assertEqual(US_56(indi_repo._individual), expected)
-        self.assertNotEqual(US_56(indi_repo._individual),
+        self.assertEqual(US_56(individual), expected)
+        self.assertNotEqual(US_56(individual),
                             'Line number: 25 Andrew /Parker Bowles/is below 30 and married')
 
 

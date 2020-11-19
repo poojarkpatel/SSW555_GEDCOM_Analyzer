@@ -25,12 +25,9 @@ def US_55(individual):
 def US_56(individuals):
     warnings = []
     for individual in individuals.values():
-        if individual._famS != set() and individual._age < 30 and individual._death_date == "NA":
+        if individual._famS != "NA" and individual._age < 30 and individual._death_date \
+                == "NA":
             warnings.append(f"Line number: {individual._line_numbers['individual_name']} "
                             f"{individual._name}is below 30 and married")
 
-        # elif individual._famS != "NA" and individual._age <= 30 and individual._death_date == "NA":
-        #     print(individual._famS, individual._age, individual._death_date)
-        #     warnings.append(f"Line number: {individual._line_numbers['individual_name']} "
-        #                     f"{individual._name}is below 30 and married")
     return warnings

@@ -234,7 +234,7 @@ class TestRepository(unittest.TestCase):
     def test_US_31(self):
         """ The function helps to test US_31"""
         indi_repo: Repository = Repository("../GedcomFiles/US_31.ged")
-
+        indi_repo.individual_pretty_table()
         expected: List = ['Line number: 33 Charles /Windsor/is over 30 and still not married']
 
         self.assertEqual(US_31(indi_repo._individual), expected)
@@ -247,7 +247,6 @@ class TestRepository(unittest.TestCase):
     def test_US_55(self):
         """ The function helps to test US_55"""
         indi_repo: Repository = Repository("../GedcomFiles/US_55_56.ged")
-
         expected: List = ['Line number 39,William /Parker Bowles/ has illegal birthdate',
                           'Line number 47,Harry /Parker Bowles/ has illegal birthdate',
                           'Line number 58,Michael /Parker Bowles/ has illegal deathdate']
@@ -259,7 +258,7 @@ class TestRepository(unittest.TestCase):
     def test_US_56(self):
         """ The function helps to test US_56"""
         indi_repo: Repository = Repository("../GedcomFiles/US_55_56.ged")
-
+        indi_repo.individual_pretty_table()
         expected: List = ['Line number: 15 Camila /Parker Bowles/is below 30 and married',
                           'Line number: 24 Andrew /Parker Bowles/is below 30 and married']
 

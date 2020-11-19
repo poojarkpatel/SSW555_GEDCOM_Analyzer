@@ -12,6 +12,7 @@ class Test(unittest.TestCase):
         indi_repo: Repository = Repository("../GedcomFiles/US_31.ged")
 
         expected: List = ['Line number: 33 Charles /Windsor/is over 30 and still not married']
+        indi_repo.individual_pretty_table()
 
         self.assertEqual(US_31(indi_repo._individual), expected)
         self.assertNotEqual(US_31(indi_repo._individual), ['William /Robinson/ has recent birthday'])
