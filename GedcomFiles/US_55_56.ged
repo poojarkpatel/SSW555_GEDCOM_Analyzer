@@ -1,0 +1,67 @@
+0 HEAD
+1 SOUR Family Echo
+2 WWW http://www.familyecho.com/
+1 FILE Family 10
+1 DATE 18 NOV 2020
+1 DEST ANSTFILE
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 SUBM @I1@
+2 NAME Pooja Patel
+1 SUBN
+1 CHAR UTF-8
+0 @I1@ INDI
+1 NAME Camila /Parker Bowles/
+2 GIVN Camila
+2 SURN Parker Bowles
+2 _MARNM Parker Bowles
+1 SEX F
+1 BIRT
+2 DATE 12 APR 1997
+1 FAMS @F1@
+0 @I2@ INDI
+1 NAME Andrew /Parker Bowles/
+2 GIVN Andrew
+2 SURN Parker Bowles
+2 _MARNM Parker Bowles
+1 SEX M
+1 BIRT
+2 DATE 4 FEB 1997
+1 FAMS @F1@
+0 @I3@ INDI
+1 NAME William /Parker Bowles/
+2 GIVN William
+2 SURN Parker Bowles
+2 _MARNM Parker Bowles
+1 SEX M
+1 BIRT
+2 DATE 1 JAN 2021
+1 FAMC @F1@
+0 @I4@ INDI
+1 NAME Harry /Parker Bowles/
+2 GIVN Harry
+2 SURN Parker Bowles
+2 _MARNM Parker Bowles
+1 BIRT
+2 DATE 31 DEC 2020
+1 FAMC @F1@
+0 @I5@ INDI
+1 NAME Michael /Parker Bowles/
+2 GIVN Michael
+2 SURN Parker Bowles
+2 _MARNM Parker Bowles
+1 SEX M
+1 BIRT
+2 DATE 2 MAR 2005
+1 DEAT Y
+2 DATE 31 DEC 2020
+1 FAMC @F1@
+0 @F1@ FAM
+1 HUSB @I2@
+1 WIFE @I1@
+1 CHIL @I3@
+1 CHIL @I4@
+1 CHIL @I5@
+1 _CURRENT Y
+0 TRLR
