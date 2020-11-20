@@ -3,4 +3,4 @@ python:
   - "3.5"
 # command to run tests
 script:
- - python -m unittest Base_File_Test
+ - python -m unittest Programs.Base_File_Test.py
