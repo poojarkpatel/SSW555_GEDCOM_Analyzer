@@ -16,6 +16,7 @@ from UserStories.US_13 import US_13
 from UserStories.US_17 import US_17
 from UserStories.US_18 import US_18
 from UserStories.US_20 import US_20
+from UserStories.US_22 import US_22
 from UserStories.US_23 import US_23
 from UserStories.US_24 import US_24
 from UserStories.US_25 import US_25
@@ -27,6 +28,7 @@ from UserStories.US_15 import US_15
 from UserStories.US_16 import US_16
 from UserStories.US_21 import US_21
 from UserStories.US_22 import US_22
+from UserStories.US_43 import US_43
 from UserStories.US_44 import US_44
 
 
@@ -238,14 +240,27 @@ class TestRepository(unittest.TestCase):
         actual = US_22(repository.get_individual(), repository.get_family())
         self.assertEqual(expected, actual)
 
+    def test_US_43(self):
+        """ Contains test cases for US_43"""
+        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        expected = ['Emmy /Robinson/ is divorced and alive on line number 151',
+                    'Tia /Ale/ is divorced and alive on line number 324',
+                    'Micheal /Mia/ is divorced and alive on line number 343',
+                    'Mike /Robinson/ is divorced and alive on line number 333']
+        actual = US_43(repository.get_individual(), repository.get_family())
+        self.assertEqual(expected, actual)
+
     def test_US_44(self):
         """ Contains test cases for US_44"""
         repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
-        expected = ['Priyanka /Robinson/',
-                    'Emmy /Robinson/',
-                    'Yatinkumar /Shiyani/',
-                    'Ginger /Ale/',
-                    'Tia /Ale/']
+        expected = ['Priyanka /Robinson/ is alive and age is more than 100 years old on line '
+                    'number 34',
+                    'Emmy /Robinson/ is alive and age is more than 100 years old on line number '
+                    '151',
+                    'Yatinkumar /Shiyani/ is alive and age is more than 100 years old on line '
+                    'number 292',
+                    'Ginger /Ale/ is alive and age is more than 100 years old on line number 312',
+                    'Tia /Ale/ is alive and age is more than 100 years old on line number 324']
         actual = US_44(repository.get_individual())
         self.assertEqual(expected, actual)
 
