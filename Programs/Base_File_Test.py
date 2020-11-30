@@ -46,6 +46,10 @@ from UserStories.US_47 import US_47
 from UserStories.US_48 import US_48
 from UserStories.US_15 import US_15
 from UserStories.US_16 import US_16
+from UserStories.US_21 import US_21
+from UserStories.US_22 import US_22
+from UserStories.US_43 import US_43
+from UserStories.US_44 import US_44
 from UserStories.US_49 import US_49
 from UserStories.US_50 import US_50
 from UserStories.US_53 import US_53
@@ -448,7 +452,7 @@ class TestRepository(unittest.TestCase):
     #     self.assertTrue(US_35(repository._individual) != ['Smith /Robinson/ has recent birthday'])
 
     def test_US_35(self):
-        """ The function helps to test US_35 function """
+        """The function helps to test US_35 function"""
         repository = Repository('../GedcomFiles/US_35.ged')
         expected: List = []  # 'Jil /Robinson/ has recent birthday'
 
@@ -500,6 +504,44 @@ class TestRepository(unittest.TestCase):
         expected = ["US:15 Family id:@F1@ has 15 or more children on line number 180"]
 
         self.assertEqual(US_15(indi_repo._family), expected)
+
+    def test_US_21(self):
+        """ Function that tests user story 21 """
+        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        expected = ['US_21: Sam /Robinson/ gender is supposed to be female but is not on line number 269']
+        actual = US_21(repository.get_individual(), repository.get_family())
+        self.assertEqual(expected, actual)
+
+    def test_US_22(self):
+        """ Function that tests user story 21 """
+        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        expected = []
+        actual = US_22(repository.get_individual(), repository.get_family())
+        self.assertEqual(expected, actual)
+
+    def test_US_43(self):
+        """ Contains test cases for US_43"""
+        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        expected = ['Emmy /Robinson/ is divorced and alive on line number 151',
+                    'Tia /Ale/ is divorced and alive on line number 324',
+                    'Micheal /Mia/ is divorced and alive on line number 343',
+                    'Mike /Robinson/ is divorced and alive on line number 333']
+        actual = US_43(repository.get_individual(), repository.get_family())
+        self.assertEqual(expected, actual)
+
+    def test_US_44(self):
+        """ Contains test cases for US_44"""
+        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        expected = ['Priyanka /Robinson/ is alive and age is more than 100 years old on line '
+                    'number 34',
+                    'Emmy /Robinson/ is alive and age is more than 100 years old on line number '
+                    '151',
+                    'Yatinkumar /Shiyani/ is alive and age is more than 100 years old on line '
+                    'number 292',
+                    'Ginger /Ale/ is alive and age is more than 100 years old on line number 312',
+                    'Tia /Ale/ is alive and age is more than 100 years old on line number 324']
+        actual = US_44(repository.get_individual())
+        self.assertEqual(expected, actual)
 
     def test_US_47(self):
         """ The function is to test US_47 function"""

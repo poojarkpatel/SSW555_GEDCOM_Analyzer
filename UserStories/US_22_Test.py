@@ -5,8 +5,8 @@ from Programs.Base_File import Repository
 class US_22_Test(unittest.TestCase):
     def test_US_22(self):
         """ Function that tests user story 22 """
-        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
-        expected = []
+        repository = Repository("../GedcomFiles/US_22.ged")
+        expected = ['KeyError: '@I6@'']
         actual = US_22(repository.get_individual(), repository.get_family())
         self.assertEqual(expected, actual)
 
