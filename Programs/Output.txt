@@ -2,11 +2,11 @@
 |   Id  |         Name         | Gender |  Birthday  | Age | Alive | Deathdate  |   Child   |          Spouse          |
 +-------+----------------------+--------+------------+-----+-------+------------+-----------+--------------------------+
 |  @I1@ |   Joey /Robinson/    |   M    | 1822-01-01 |  68 | False | 1890-03-06 |     NA    |    {'@F20@', '@F1@'}     |
-|  @I2@ | Priyanka /Robinson/  |   F    | 1830-01-01 | 100 | False | 1930-01-01 |  {'@F2@'} | {'@F3@', '@F4@', '@F1@'} |
+|  @I2@ | Priyanka /Robinson/  |   F    | 1830-01-01 | 100 | False | 1930-01-01 |  {'@F2@'} | {'@F1@', '@F3@', '@F4@'} |
 |  @I3@ |   Ross /Robinson/    |   M    | 1790-11-26 |  59 | False | 1850-09-09 |     NA    |         {'@F2@'}         |
 |  @I4@ |   Monica /Geller/    |   F    | 1792-11-12 |  47 | False | 1840-04-02 |     NA    |         {'@F2@'}         |
 |  @I5@ |      Ben /Mann/      |   M    | 1823-02-01 |  48 | False | 1871-04-06 |  {'@F2@'} |            NA            |
-|  @I6@ |   Mike /Robinson/    |   M    | 1824-02-01 |  55 | False | 1880-01-10 |  {'@F2@'} |     {'@F5@', '@F6@'}     |
+|  @I6@ |   Mike /Robinson/    |   M    | 1824-02-01 |  55 | False | 1880-01-10 |  {'@F2@'} |     {'@F6@', '@F5@'}     |
 |  @I7@ |    Rachel /Green/    |   F    | 1832-02-14 |  68 | False | 1900-06-24 |     NA    |         {'@F5@'}         |
 |  @I8@ |     Ema /Mosbi/      |   F    | 1828-04-14 |  41 | False | 1869-04-09 |     NA    |         {'@F6@'}         |
 |  @I9@ |  William /Robinson/  |   M    | 1849-09-09 |  38 | False | 1888-08-02 |  {'@F6@'} |            NA            |
@@ -44,7 +44,7 @@
 +-------+------------+------------+------------+----------------------+---------+---------------------+-----------------------------------------------------+
 |  @F1@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |   @I2@  | Priyanka /Robinson/ |                       {'@I4@'}                      |
 |  @F3@ | 1850-01-01 |     NA     |   @I27@    | Yatinkumar /Shiyani/ |   @I2@  | Priyanka /Robinson/ |                      {'@I28@'}                      |
-|  @F2@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I5@', '@I6@', '@I2@', '@I35@', '@I31@', '@I29@'} |
+|  @F2@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I2@', '@I6@', '@I29@', '@I31@', '@I35@', '@I5@'} |
 |  @F4@ | 1850-12-14 |     NA     |   @I26@    |    Joss /Parker/     |   @I2@  | Priyanka /Robinson/ |                          NA                         |
 |  @F5@ | 1862-07-10 |     NA     |    @I6@    |   Mike /Robinson/    |   @I7@  |    Rachel /Green/   |                      {'@I10@'}                      |
 |  @F6@ | 1848-01-12 | 1852-01-01 |    @I6@    |   Mike /Robinson/    |   @I8@  |     Ema /Mosbi/     |                       {'@I9@'}                      |
@@ -52,7 +52,7 @@
 |  @F8@ | 1925-06-05 | 1930-11-15 |   @I13@    |    Jimmy /Smith/     |  @I12@  |   Emmy /Robinson/   |                          NA                         |
 |  @F9@ |     NA     |     NA     |   @I14@    |  Miller /Robinson/   |  @I15@  |   Ellie /Robinson/  |                      {'@I17@'}                      |
 | @F10@ |     NA     |     NA     |   @I17@    |  Miller /Robinson/   |  @I18@  |   Erica /Robinson/  |                  {'@I19@', '@I20@'}                 |
-| @F11@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |             {'@I23@', '@I25@', '@I24@'}             |
+| @F11@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |             {'@I25@', '@I23@', '@I24@'}             |
 | @F12@ | 1850-05-05 | 2000-06-12 |   @I29@    |     Ginger /Ale/     |  @I30@  |      Tia /Ale/      |                          NA                         |
 | @F13@ | 2019-03-04 | 2018-07-03 |   @I31@    |   Mike /Robinson/    |  @I32@  |    Micheal /Mia/    |                      {'@I33@'}                      |
 | @F14@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |   @I4@  |   Monica /Geller/   |                          NA                         |
@@ -82,13 +82,13 @@ US13: The family id @F11@ has twins Emmy /Robinson/ and Jil /Robinson/, Line num
 US13: The family id @F11@ has twins Emmy /Robinson/ and Sam /Robinson/, Line number: 469
 US13: The family id @F11@ has twins Jil /Robinson/ and Sam /Robinson/, Line number: 469
 US_17: Parents married to their children: Joey /Robinson/ and Monica /Geller/.
-US18: @I25@ and @I1@ are siblings and a couple. Line number: 512
+US18: @I1@ and @I25@ are siblings and a couple. Line number: 512
 US_23: Multiple individuals with name Mike /Robinson/ born on 2021-07-02 exists.
 US_24: Family contains same husband, wife and marriage date as another family, Line number: 501
 US_24: Family contains same husband, wife and marriage date as another family, Line number: 514
 US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
-US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
 US_25: There are multiple people born on 2021-07-02 date in family @F2@
+US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
 US_25: The family @F10@ has multiple individuals with same name Joey /Robinson/
 US_28: Age 68 :- Joey /Robinson/ from FamID @F15@
 US_28: Age 55 :- Mike /Robinson/ from FamID @F2@
@@ -122,21 +122,18 @@ US_33: @I31@ Mike /Robinson/ has age 0 and is orphan
 US_33: @I35@ Mike /Robinson/ has age 0 and is orphan
 US_39: The family id @F4@ have their marriage anniversary in the next 30 days. Line number: 419
 US_51: The family id @F4@ have their marriage anniversary in the next 2 months. Line number: 419
-US 50: Joey /Robinson/
-US 50: Ross /Robinson/
-US 50: Ben /Mann/
-US 50: Mike /Robinson/
-US 50: William /Robinson/
-US 50: Max /Robinson/
-US 50: Jimmy /Smith/
-US 50: Miller /Robinson/
-US 50: Sam /Robinson/
-US 50: Ross /Robinson/
-US 50: Sam /Robinson/
-US 50: Joss /Parker/
-US 50: Yatinkumar /Shiyani/
-US 50: Ginger /Ale/
-US 50: Mike /Robinson/
-US 50: Ryan /Robinson/
-US 50: Mike /Robinson/
-US 50: Ribu /Watson/
+{'Ryan /Robinson/', 'Jimmy /Smith/', 'Ginger /Ale/', 'William /Robinson/', 'Sam /Robinson/', 'Miller /Robinson/', 'Joey /Robinson/', 'Max /Robinson/', 'Ross /Robinson/', 'Joss /Parker/', 'Yatinkumar /Shiyani/', 'Ribu /Watson/', 'Mike /Robinson/', 'Ben /Mann/'}
+US_52: Ryan /Robinson/
+US_52: Jimmy /Smith/
+US_52: Ginger /Ale/
+US_52: William /Robinson/
+US_52: Sam /Robinson/
+US_52: Miller /Robinson/
+US_52: Joey /Robinson/
+US_52: Max /Robinson/
+US_52: Ross /Robinson/
+US_52: Joss /Parker/
+US_52: Yatinkumar /Shiyani/
+US_52: Ribu /Watson/
+US_52: Mike /Robinson/
+US_52: Ben /Mann/

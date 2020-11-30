@@ -6,7 +6,7 @@ from typing import List
 class Test(unittest.TestCase):
     """This function helps to test all the functions"""
 
-    def test_US_39(self):
+    def test_US_51(self):
         """ The function helps to test US_51 function"""
         indi_repo = Repository("../GedcomFiles/US_51.ged")
         expected = ['The family id @F4@ have their marriage anniversary in the next 2 months. Line number: 419']

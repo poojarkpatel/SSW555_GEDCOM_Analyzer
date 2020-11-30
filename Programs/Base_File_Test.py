@@ -172,6 +172,19 @@ class TestRepository(unittest.TestCase):
         #print(individual['@I2@']._birth_date)
         self.assertEqual(individual['@I2@']._birth_date, datetime.datetime.strptime("1 JAN 1830", '%d %b %Y').date())
 
+    def test_US_51(self):
+        """ The function helps to test US_51 function"""
+        indi_repo = Repository("../GedcomFiles/US_51.ged")
+        expected = ['The family id @F4@ have their marriage anniversary in the next 2 months. Line number: 419']
+        self.assertEqual(US_51(indi_repo._family), expected)
+
+    def test_US_52(self):
+        """ Contains test cases for US_52"""
+        indi_repo = Repository("../GedcomFiles/US_52.ged")
+
+        expected = {'Ryan /Robinson/', 'Jimmy /Smith/', 'Ginger /Ale/', 'William /Robinson/', 'Sam /Robinson/', 'Miller /Robinson/', 'Joey /Robinson/', 'Max /Robinson/', 'Ross /Robinson/', 'Joss /Parker/', 'Yatinkumar /Shiyani/', 'Ribu /Watson/', 'Mike /Robinson/', 'Ben /Mann/'}
+
+        self.assertEqual(US_52(indi_repo._individual), expected)
 
     # def test_US_35(self):
     #     """ The function helps to test US_35 function """
@@ -182,6 +195,7 @@ class TestRepository(unittest.TestCase):
     #     self.assertFalse(US_35(repository._individual) == ['Jim /Robinson/ has recent birthday'])
     #     self.assertTrue(US_35(repository._individual) == ['Emmy /Robinson/ has recent birthday', 'Jil /Robinson/ has recent birthday', 'Sam /Robinson/ has recent birthday'])
     #     self.assertTrue(US_35(repository._individual) != ['Smith /Robinson/ has recent birthday'])
+
 
 
     def test_deceased(self):
