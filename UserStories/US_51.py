@@ -1,7 +1,7 @@
 from datetime import datetime
 
-def US_39(family):
-    """ List all living couples in a GEDCOM file whose marriage anniversaries occur in the next 30 days """
+def US_51(family):
+    """ List all marriage anniversaries in the next 2 months """
 
     warnings = list()
 
@@ -15,9 +15,9 @@ def US_39(family):
             curr_month = int(marr_date.split('-')[1])
             curr_day = int(marr_date.split('-')[2])
 
-            day_diff = abs(curr_month - today_month) * 30 + (curr_day - today_date)
-            if day_diff > 0 and day_diff <= 31:
-                warnings.append(f"The family id {fam} have their marriage anniversary in the next 30 days. Line number: {value.get_line_numbers()['family_id']}")
+            day_diff = abs(curr_month - today_month) * 60 + (curr_day - today_date)
+            if day_diff > 0 and day_diff <= 61:
+                warnings.append(f"The family id {fam} have their marriage anniversary in the next 2 months. Line number: {value.get_line_numbers()['family_id']}")
 
 
     return warnings

@@ -22,14 +22,14 @@ from UserStories.US_29 import US_29
 from UserStories.US_33 import US_33
 from UserStories.US_35 import US_35
 from UserStories.US_39 import US_39
-#from UserStories.US_41 import US_41
-
+from UserStories.US_51 import US_51
+from UserStories.US_52 import US_52
 def main():
     """ Function that runs all the user stories and prints their results. """
     sys.stdout = Logger()
     # Creating an object of class Repository that will contains both individual and family dictionaries.
     # Pass the path of your GEDCOM file as a parameter below.
-    repository = Repository("../GedcomFiles/US_39.ged")
+    repository = Repository("../GedcomFiles/ssw555_input_file.ged")
     individual = repository.get_individual()
     family = repository.get_family()
 
@@ -89,10 +89,14 @@ def main():
     for item in US_39(family):
         print(f"US_39: {item}")
 
+    for item in US_51(family):
+        print(f"US_51: {item}")
+
+    for item in US_52(individual):
+        print(f"US_52: {item}")
+
 """
 
-    for item in US_41(self):
-        print(f"US_41: {item}")
 
     for individual_id, individual_information in individual.items():
         print(individual_id, individual_information.get_line_numbers())
