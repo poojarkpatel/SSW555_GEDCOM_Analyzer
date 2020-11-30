@@ -6,6 +6,7 @@
 |  @I3@ |   Ross /Robinson/    |   M    | 1790-11-26 |  59 | False | 1850-09-09 |     NA    |           {'@F2@'}          |
 |  @I4@ |   Monica /Geller/    |   F    | 1792-11-12 |  47 | False | 1840-04-02 |     NA    |           {'@F2@'}          |
 |  @I5@ |      Ben /Mann/      |   M    | 1823-02-01 |  48 | False | 1871-04-06 |  {'@F2@'} |              NA             |
+|  @I6@ |   Mike /Robinson/    |   M    | 1824-02-01 |  55 | False | 1880-01-10 |  {'@F2@'} |       {'@F6@', '@F5@'}      |
 |  @I6@ |   Mike /Robinson/    |   M    | 1824-02-01 |  55 | False | 1880-01-10 |  {'@F2@'} |       {'@F5@', '@F6@'}      |
 |  @I7@ |    Rachel /Green/    |   F    | 1832-02-14 |  68 | False | 1900-06-24 |     NA    |           {'@F5@'}          |
 |  @I8@ |     Ema /Mosbi/      |   F    | 1828-04-14 |  41 | False | 1869-04-09 |     NA    |           {'@F6@'}          |
@@ -41,6 +42,7 @@
 | @I38@ |    Rahul /Sharma/    |   M    | 1950-03-05 |  70 |  True |     NA     |     NA    |          {'@F16@'}          |
 | @I39@ |    Pinal /Sharma/    |   F    | 1998-04-06 |  22 |  True |     NA     |     NA    |              NA             |
 | @I40@ |     Saddi /Shah/     |   M    | 2020-11-02 |  0  |  True |     NA     | {'@F21@'} |              NA             |
+| @I41@ |     Gari /Jain/      |   F    | 1980-10-05 |  40 | False | 2020-11-02 |     NA    | {'@F25@', '@F22@', '@F21@'} |
 | @I41@ |     Gari /Jain/      |   F    | 1980-10-05 |  40 | False | 2020-11-02 |     NA    | {'@F21@', '@F22@', '@F25@'} |
 | @I42@ |     Dhiru /Shah/     |   M    | 1920-10-17 | 100 |  True |     NA     | {'@F23@'} |          {'@F22@'}          |
 | @I43@ |     Dhruv /Shah/     |   M    | 1975-07-04 |  45 |  True |     NA     | {'@F24@'} |          {'@F21@'}          |
@@ -56,6 +58,7 @@
 +-------+------------+------------+------------+----------------------+---------+---------------------+-----------------------------------------------------+
 |  @F1@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |   @I2@  | Priyanka /Robinson/ |                       {'@I4@'}                      |
 |  @F3@ | 1850-01-01 |     NA     |   @I27@    | Yatinkumar /Shiyani/ |   @I2@  | Priyanka /Robinson/ |                      {'@I28@'}                      |
+|  @F2@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I6@', '@I5@', '@I31@', '@I29@', '@I2@', '@I35@'} |
 |  @F2@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I35@', '@I29@', '@I2@', '@I31@', '@I6@', '@I5@'} |
 |  @F4@ | 1850-12-14 |     NA     |   @I26@    |    Joss /Parker/     |   @I2@  | Priyanka /Robinson/ |                          NA                         |
 |  @F5@ | 1862-07-10 |     NA     |    @I6@    |   Mike /Robinson/    |   @I7@  |    Rachel /Green/   |                      {'@I10@'}                      |
@@ -64,6 +67,7 @@
 |  @F8@ | 1925-06-05 | 1930-11-15 |   @I13@    |    Jimmy /Smith/     |  @I12@  |   Emmy /Robinson/   |                          NA                         |
 |  @F9@ |     NA     |     NA     |   @I14@    |  Miller /Robinson/   |  @I15@  |   Ellie /Robinson/  |                      {'@I17@'}                      |
 | @F10@ |     NA     |     NA     |   @I17@    |  Miller /Robinson/   |  @I18@  |   Erica /Robinson/  |                  {'@I19@', '@I20@'}                 |
+| @F11@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |             {'@I25@', '@I23@', '@I24@'}             |
 | @F11@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |             {'@I23@', '@I24@', '@I25@'}             |
 | @F12@ | 1850-05-05 | 2000-06-12 |   @I29@    |     Ginger /Ale/     |  @I30@  |      Tia /Ale/      |                          NA                         |
 | @F13@ | 2019-03-04 | 2018-07-03 |   @I31@    |   Mike /Robinson/    |  @I32@  |    Micheal /Mia/    |                      {'@I33@'}                      |
@@ -75,6 +79,7 @@
 | @F22@ | 2000-04-07 |     NA     |   @I42@    |     Dhiru /Shah/     |  @I41@  |     Gari /Jain/     |                      {'@I44@'}                      |
 | @F23@ |     NA     |     NA     |   @I49@    |     Prem /Shah/      |  @I48@  |     Riya /Patel/    |                      {'@I42@'}                      |
 | @F24@ |     NA     |     NA     |   @I47@    |      Raj /Shah/      |  @I46@  |     Meet /Shah/     |                      {'@I43@'}                      |
+| @F25@ |     NA     |     NA     |   @I44@    |     Praj /Shah/      |  @I41@  |     Gari /Jain/     |                      {'@I45@'}                      |
 | @F25@ |     NA     |     NA     |            |                      |  @I41@  |     Gari /Jain/     |                      {'@I45@'}                      |
 +-------+------------+------------+------------+----------------------+---------+---------------------+-----------------------------------------------------+
 Birthdate on Line: 331
@@ -89,6 +94,49 @@ US_02 - Sam /Robinson/ birthday after marriage date on line number 633
 Marriage date Line: 604
 Divorce date Line: 606
 US_04: This family id @F13@ has an illegal dates for marriage and divorce
+US_05: Marriage date Line: 616
+Death of wife date Line: 60
+The family @F14@ has a death of wife @I4@ before the marriage date.
+US_08: Family id Line number: 506
+The Father @I1@ is younger than his child @I4@ which is illeagal.
+US_08: Family id Line number: 599
+The Father @I31@ is younger than his child @I33@ which is illeagal.
+US_08: Family id Line number: 618
+The Father @I36@ is younger than his child @I1@ which is illeagal.
+US_08: Family id Line number: 647
+The Mother @I48@ is younger than her child @I42@ which is illeagal.
+US_08: Family id Line number: 652
+The Father @I47@ is younger than his child @I43@ which is illeagal.
+US_08: Family id Line number: 657
+The Father @I44@ is younger than his child @I45@ which is illeagal.
+US_06: Ginger /Ale/ Death 1980-07-10 occured prior to the divorce date 2000-06-12
+US_07: Ginger /Ale/ age is greater than 150 years
+US_07: Tia /Ale/ age is greater than 150 years
+US_07: Prem /Shah/ age is greater than 150 years
+US_09: Family id Line number: 513
+Birth of child @I28@ is before the death of the father @I27@
+US_09: Family id Line number: 513
+Birth of child @I28@ is before the death of the mother @I2@
+US_09: Family id Line number: 522
+Birth of child @I31@ is before the death of the father @I3@
+US_09: Family id Line number: 522
+Birth of child @I31@ is before the death of the mother @I4@
+US_09: Family id Line number: 522
+Birth of child @I35@ is before the death of the father @I3@
+US_09: Family id Line number: 522
+Birth of child @I35@ is before the death of the mother @I4@
+US_10: Family id Line number: 506
+The husband @I1@ was younger than 14 at the time of marriage for @F1@
+US_10: Family id Line number: 599
+The husband @I31@ was younger than 14 at the time of marriage for @F13@
+US_10: Family id Line number: 599
+The wife @I32@ was younger than 14 at the time of marriage for @F13@
+US_10: Family id Line number: 608
+The husband @I1@ was younger than 14 at the time of marriage for @F14@
+US_10: Family id Line number: 629
+The husband @I1@ was younger than 14 at the time of marriage for @F20@
+US_10: Family id Line number: 629
+The wife @I25@ was younger than 14 at the time of marriage for @F20@
 US_11: Priyanka /Robinson/married twice at the same time
 US_11: Priyanka /Robinson/married twice at the same time
 US_11: Joey /Robinson/married twice at the same time
@@ -99,6 +147,26 @@ US_11: Joey /Robinson/married twice at the same time
 US_11: Gari /Jain/married twice at the same time
 US_11: Gari /Jain/married twice at the same time
 US_11: Gari /Jain/married twice at the same time
+US_12: US_12: Yatinkumar /Shiyani/ with @I27@ is 80 years or older than Mia /Shiyani/ id:{'@I28@'} in line number 513 
+US_12: US_12: Priyanka /Robinson/ with @I2@ is 60 years or older than Mia /Shiyani/ id:{'@I28@'} in line number 513 
+US_12: US_12: Dhiru /Shah/ with @I42@ is 80 years or older than Praj /Shah/ id:{'@I44@'} in line number 640 
+US13: The family id @F11@ has twins Emmy /Robinson/ and Sam /Robinson/, Line number: 584
+US13: The family id @F11@ has twins Emmy /Robinson/ and Jil /Robinson/, Line number: 584
+US13: The family id @F11@ has twins Jil /Robinson/ and Sam /Robinson/, Line number: 584
+US_14: US14: @F25@ has more than 5 children born on same date 0 in line number 657
+US_16: Family id @F15@ with father Ribu /Watson/ and son Joey /Robinson/ have different last names on line number 618
+US_16: Family id @F15@ with father Ribu /Watson/ and son Sam /Robinson/ have different last names on line number 618
+US_16: Family id @F2@ with father Ross /Robinson/ and son Ben /Mann/ have different last names on line number 522
+US_16: Family id @F2@ with father Ross /Robinson/ and son Ginger /Ale/ have different last names on line number 522
+US_17: Parents married to their children: Joey /Robinson/ and Monica /Geller/.
+US_17: Parents married to their children: Praj /Shah/ and Gari /Jain/.
+US18: @I1@ and @I25@ are siblings and a couple. Line number: 631
+US_19: First cousins @I1@ and @I4@ married on line 614
+US_21: US_21: Sam /Robinson/ gender is supposed to be female but is not on line number 267
+US_23: Multiple individuals with name Mike /Robinson/ born on 2021-07-02 exists.
+US_24: Family contains same husband, wife and marriage date as another family, Line number: 616
+US_24: Family contains same husband, wife and marriage date as another family, Line number: 633
+US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
 US13: The family id @F11@ has twins Jil /Robinson/ and Sam /Robinson/, Line number: 584
 US13: The family id @F11@ has twins Emmy /Robinson/ and Sam /Robinson/, Line number: 584
 US13: The family id @F11@ has twins Emmy /Robinson/ and Jil /Robinson/, Line number: 584
@@ -112,6 +180,41 @@ US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
 US_25: There are multiple people born on 2021-07-02 date in family @F2@
 US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
 US_25: The family @F10@ has multiple individuals with same name Joey /Robinson/
+US_26: Individual in family:@F2@ is on line number 522
+US_26: Individual in family:@F2@ is on line number 522
+US_26: Individual in family:@F2@ is on line number 522
+US_26: Individual in family:@F6@ is on line number 549
+US_26: Individual in family:@F5@ is on line number 542
+US_26: Individual in family:@F7@ is on line number 558
+US_26: Individual in family:@F9@ is on line number 573
+US_26: Individual in family:@F10@ is on line number 578
+US_26: Individual in family:@F10@ is on line number 578
+US_26: Individual in family:@F11@ is on line number 584
+US_26: Individual in family:@F11@ is on line number 584
+US_26: Individual in family:@F11@ is on line number 584
+US_26: Individual in family:@F3@ is on line number 513
+US_26: Individual in family:@F2@ is on line number 522
+US_26: Individual in family:@F2@ is on line number 522
+US_26: Individual in family:@F13@ is on line number 599
+US_26: Individual in family:@F2@ is on line number 522
+US_26: Individual in family:@F21@ is on line number 635
+US_26: Individual in family:@F23@ is on line number 647
+US_26: Individual in family:@F24@ is on line number 652
+US_26: Individual in family:@F22@ is on line number 640
+US_26: Individual in family:@F25@ is on line number 657
+US_28: Age 55 :- Mike /Robinson/ from FamID @F2@ with individual id @I6@ is on line number 73
+US_28: Age 48 :- Ben /Mann/ from FamID @F2@ with individual id @I5@ is on line number 62
+US_28: Age 40 :- Joey /Robinson/ from FamID @F15@ with individual id @I1@ is on line number 14
+US_28: Age 24 :- Joey /Robinson/ from FamID @F10@ with individual id @I19@ is on line number 208
+US_28: Age 23 :- Joey /Robinson/ from FamID @F10@ with individual id @I20@ is on line number 217
+US_28: Age 180 :- Ginger /Ale/ from FamID @F2@ with individual id @I29@ is on line number 303
+US_28: Age 100 :- Priyanka /Robinson/ from FamID @F2@ with individual id @I2@ is on line number 26
+US_28: Age 0 :- Sam /Robinson/ from FamID @F15@ with individual id @I25@ is on line number 262
+US_28: Age 0 :- Sam /Robinson/ from FamID @F11@ with individual id @I25@ is on line number 262
+US_28: Age 0 :- Mike /Robinson/ from FamID @F2@ with individual id @I35@ is on line number 362
+US_28: Age 0 :- Mike /Robinson/ from FamID @F2@ with individual id @I31@ is on line number 324
+US_28: Age 0 :- Jil /Robinson/ from FamID @F11@ with individual id @I24@ is on line number 253
+US_28: Age 0 :- Emmy /Robinson/ from FamID @F11@ with individual id @I23@ is on line number 244
 US_29: Joey /Robinson/ on line number 21 is deceased individual
 US_29: Priyanka /Robinson/ on line number 33 is deceased individual
 US_29: Ross /Robinson/ on line number 47 is deceased individual
@@ -130,8 +233,67 @@ US_29: Ginger /Ale/ on line number 310 is deceased individual
 US_29: Gari /Jain/ on line number 422 is deceased individual
 US_29: Meet /Shah/ on line number 473 is deceased individual
 US_29: Prem /Shah/ on line number 502 is deceased individual
+US_30:  Emmy /Robinson/ is married and alive on line number 149 is deceased individual
+US_30:  Miller /Robinson/ is married and alive on line number 170 is deceased individual
+US_30:  Ellie /Robinson/ is married and alive on line number 179 is deceased individual
+US_30:  Sam /Robinson/ is married and alive on line number 188 is deceased individual
+US_30:  Miller /Robinson/ is married and alive on line number 196 is deceased individual
+US_30:  Erica /Robinson/ is married and alive on line number 206 is deceased individual
+US_30:  Joey /Robinson/ is married and alive on line number 215 is deceased individual
+US_30:  Joey /Robinson/ is married and alive on line number 224 is deceased individual
+US_30:  Ross /Robinson/ is married and alive on line number 233 is deceased individual
+US_30:  Joey /Robinson/ is married and alive on line number 242 is deceased individual
+US_30:  Emmy /Robinson/ is married and alive on line number 251 is deceased individual
+US_30:  Jil /Robinson/ is married and alive on line number 260 is deceased individual
+US_30:  Sam /Robinson/ is married and alive on line number 269 is deceased individual
+US_30:  Mia /Shiyani/ is married and alive on line number 301 is deceased individual
+US_30:  Tia /Ale/ is married and alive on line number 322 is deceased individual
+US_30:  Mike /Robinson/ is married and alive on line number 331 is deceased individual
+US_30:  Micheal /Mia/ is married and alive on line number 341 is deceased individual
+US_30:  Ryan /Robinson/ is married and alive on line number 350 is deceased individual
+US_30:  Rosa /Hernadez/ is married and alive on line number 360 is deceased individual
+US_30:  Mike /Robinson/ is married and alive on line number 369 is deceased individual
+US_30:  Ribu /Watson/ is married and alive on line number 378 is deceased individual
+US_30:  Mikie /Roni/ is married and alive on line number 388 is deceased individual
+US_30:  Rahul /Sharma/ is married and alive on line number 396 is deceased individual
+US_30:  Pinal /Sharma/ is married and alive on line number 405 is deceased individual
+US_30:  Saddi /Shah/ is married and alive on line number 413 is deceased individual
+US_30:  Dhiru /Shah/ is married and alive on line number 435 is deceased individual
+US_30:  Dhruv /Shah/ is married and alive on line number 445 is deceased individual
+US_30:  Praj /Shah/ is married and alive on line number 455 is deceased individual
+US_30:  Waah /Shah/ is married and alive on line number 464 is deceased individual
+US_30:  Raj /Shah/ is married and alive on line number 484 is deceased individual
+US_30:  Riya /Patel/ is married and alive on line number 493 is deceased individual
+US_32: Line number:331 The two or more individuals were born at the same time @I31@:Mike /Robinson/
+US_32: Line number:369 The two or more individuals were born at the same time @I35@:Mike /Robinson/
 US_33: @I28@ Mia /Shiyani/ has age 16 and is orphan
 US_33: @I35@ Mike /Robinson/ has age 0 and is orphan
+US_34: Joey /Robinson/,40 and Priyanka /Robinson/ ,100  are the couples who were married when the older spouse was more than as twice as old as the younger spouse on line number 507
+US_34: Rahul /Sharma/,70 and Pinal /Sharma/ ,22  are the couples who were married when the older spouse was more than as twice as old as the younger spouse on line number 626
+US_34: Dhiru /Shah/,100 and Gari /Jain/ ,40  are the couples who were married when the older spouse was more than as twice as old as the younger spouse on line number 641
+US_34: Prem /Shah/,160 and Riya /Patel/ ,70  are the couples who were married when the older spouse was more than as twice as old as the younger spouse on line number 648
+US_35: Saddi /Shah/ has recent birthday
+US_36: Line number:424 Gari /Jain/ died recently
+US_36: Line number:504 Prem /Shah/ died recently
+US_37: Living Spouse: Dhruv /Shah/ and descendant : Saddi /Shah/ on line number 636
+US_37: Living Spouse: Dhiru /Shah/ and descendant : Praj /Shah/ on line number 641
+US_37:  Living spouse: Riya /Patel/ and Descendant : Dhiru /Shah/ on line number 649 
+US_38: Line number 159, Jimmy /Smith/ has upcoming birthday is deceased individual
+US_39: The family id @F4@ have their marriage anniversary in the next 30 days. Line number: 534
+US_47: Wife @I2@ is 25 or more year older than husband @I1@.
+US_47: Wife @I12@ is 25 or more year older than husband @I13@.
+US_47: Husband @I38@ is 25 or more year older than wife @I39@.
+US_47: Husband @I1@ is 25 or more year older than wife @I25@.
+US_47: Husband @I42@ is 25 or more year older than wife @I41@.
+US_47: Husband @I49@ is 25 or more year older than wife @I48@.
+US_47: Wife @I46@ is 25 or more year older than husband @I47@.
+US_47: Wife @I41@ is 25 or more year older than husband @I44@.
+US_48: Wife @I2@ is older than husband @I1@.
+US_48: Wife @I2@ is older than husband @I27@.
+US_48: Wife @I2@ is older than husband @I26@.
+US_48: Wife @I4@ is older than husband @I1@.
+US_48: Wife @I46@ is older than husband @I47@.
+US_48: Wife @I41@ is older than husband @I44@.
 US_33: @I31@ Mike /Robinson/ has age 0 and is orphan
 US_35: Saddi /Shah/ has recent birthday
 US_39: The family id @F4@ have their marriage anniversary in the next 30 days. Line number: 534
