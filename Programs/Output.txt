@@ -1,63 +1,81 @@
-+-------+----------------------+--------+------------+-----+-------+------------+-----------+--------------------------+
-|   Id  |         Name         | Gender |  Birthday  | Age | Alive | Deathdate  |   Child   |          Spouse          |
-+-------+----------------------+--------+------------+-----+-------+------------+-----------+--------------------------+
-|  @I1@ |   Joey /Robinson/    |   M    | 1822-01-01 |  68 | False | 1890-03-06 |     NA    |    {'@F1@', '@F20@'}     |
-|  @I2@ | Priyanka /Robinson/  |   F    | 1830-01-12 | 100 | False | 1930-06-12 |  {'@F2@'} | {'@F1@', '@F4@', '@F3@'} |
-|  @I3@ |   Ross /Robinson/    |   M    | 1790-11-26 |  59 | False | 1850-09-09 |     NA    |         {'@F2@'}         |
-|  @I4@ |   Monica /Geller/    |   F    | 1792-11-12 |  47 | False | 1840-04-02 |     NA    |         {'@F2@'}         |
-|  @I5@ |      Ben /Mann/      |   M    | 1823-02-01 |  48 | False | 1871-04-06 |  {'@F2@'} |            NA            |
-|  @I6@ |   Mike /Robinson/    |   M    | 1824-02-01 |  55 | False | 1880-01-10 |  {'@F2@'} |     {'@F6@', '@F5@'}     |
-|  @I7@ |    Rachel /Green/    |   F    | 1832-02-14 |  68 | False | 1900-06-24 |     NA    |         {'@F5@'}         |
-|  @I8@ |     Ema /Mosbi/      |   F    | 1828-04-14 |  41 | False | 1869-04-09 |     NA    |         {'@F6@'}         |
-|  @I9@ |  William /Robinson/  |   M    | 1849-09-09 |  38 | False | 1888-08-02 |  {'@F6@'} |            NA            |
-| @I10@ |    Max /Robinson/    |   M    | 1866-10-08 |  83 | False | 1950-04-12 |  {'@F5@'} |         {'@F7@'}         |
-| @I11@ |   Dora /Robinson/    |   F    | 1868-10-09 |  61 | False | 1930-01-12 |     NA    |         {'@F7@'}         |
-| @I12@ |   Emmy /Robinson/    |   F    | 1899-09-05 | 121 |  True |     NA     |  {'@F7@'} |         {'@F8@'}         |
-| @I13@ |    Jimmy /Smith/     |   M    | 1898-12-19 |  71 | False | 1970-08-10 |     NA    |         {'@F8@'}         |
-| @I14@ |  Miller /Robinson/   |   M    | 1964-11-11 |  56 |  True |     NA     |     NA    |         {'@F9@'}         |
-| @I15@ |   Ellie /Robinson/   |   F    | 1967-08-15 |  53 |  True |     NA     |     NA    |         {'@F9@'}         |
-| @I16@ |    Sam /Robinson/    |   M    | 2000-09-13 |  20 |  True |     NA     |     NA    |            NA            |
-| @I17@ |  Miller /Robinson/   |   F    | 1980-09-13 |  40 |  True |     NA     |  {'@F9@'} |        {'@F10@'}         |
-| @I18@ |   Erica /Robinson/   |   F    | 1981-09-13 |  39 |  True |     NA     |     NA    |        {'@F10@'}         |
-| @I19@ |   Joey /Robinson/    |   F    | 1996-04-10 |  24 |  True |     NA     | {'@F10@'} |            NA            |
-| @I20@ |   Joey /Robinson/    |   F    | 1997-11-08 |  23 |  True |     NA     | {'@F10@'} |            NA            |
-| @I21@ |   Ross /Robinson/    |   M    | 1970-01-04 |  50 |  True |     NA     |     NA    |        {'@F11@'}         |
-| @I22@ |   Joey /Robinson/    |   F    | 1971-08-10 |  49 |  True |     NA     |     NA    |        {'@F11@'}         |
-| @I23@ |   Emmy /Robinson/    |   F    | 2020-09-22 |  0  |  True |     NA     | {'@F11@'} |            NA            |
-| @I24@ |    Jil /Robinson/    |   F    | 2020-10-01 |  0  |  True |     NA     | {'@F11@'} |            NA            |
-| @I25@ |    Sam /Robinson/    |   M    | 2020-10-10 |  0  |  True |     NA     | {'@F11@'} |        {'@F20@'}         |
-| @I26@ |    Joss /Parker/     |   M    | 1834-05-06 |  97 | False | 1932-03-08 |     NA    |         {'@F4@'}         |
-| @I27@ | Yatinkumar /Shiyani/ |   M    | 1832-11-16 | 100 | False | 1932-11-16 |     NA    |         {'@F3@'}         |
-| @I28@ |    Mia /Shiyani/     |   F    | 2004-06-12 |  16 |  True |     NA     |  {'@F3@'} |            NA            |
-| @I29@ |     Ginger /Ale/     |   M    | 1800-02-15 | 180 | False | 1980-07-10 |  {'@F2@'} |        {'@F12@'}         |
-| @I30@ |      Tia /Ale/       |   F    | 1820-11-13 | 200 |  True |     NA     |     NA    |        {'@F12@'}         |
-| @I31@ |   Mike /Robinson/    |   M    | 2021-07-02 |  0  |  True |     NA     |  {'@F2@'} |        {'@F13@'}         |
-| @I32@ |    Micheal /Mia/     |   F    | 2025-09-04 |  0  |  True |     NA     |     NA    |        {'@F13@'}         |
-| @I33@ |   Ryan /Robinson/    |   M    | 1990-02-05 |  30 |  True |     NA     | {'@F13@'} |        {'@F14@'}         |
-| @I34@ |   Rosa /Hernadez/    |   F    | 1990-06-02 |  30 |  True |     NA     |     NA    |        {'@F14@'}         |
-| @I35@ |   Mike /Robinson/    |   M    | 2021-07-02 |  0  |  True |     NA     |  {'@F2@'} |            NA            |
-| @I36@ |    Ribu /Watson/     |   M    | 1990-07-02 |  30 |  True |     NA     | {'@F15@'} |        {'@F15@'}         |
-| @I37@ |     Mikie /Roni/     |   F    | 1991-07-02 |  29 |  True |     NA     | {'@F15@'} |        {'@F15@'}         |
-+-------+----------------------+--------+------------+-----+-------+------------+-----------+--------------------------+
++-------+----------------------+--------+------------+-----+-------+------------+-----------+-----------------------------+
+|   Id  |         Name         | Gender |  Birthday  | Age | Alive | Deathdate  |   Child   |            Spouse           |
++-------+----------------------+--------+------------+-----+-------+------------+-----------+-----------------------------+
+|  @I1@ |   Joey /Robinson/    |   M    | 1850-01-01 |  40 | False | 1890-03-06 |     NA    |      {'@F20@', '@F1@'}      |
+|  @I2@ | Priyanka /Robinson/  |   F    | 1830-01-01 | 100 | False | 1930-01-01 |  {'@F2@'} |   {'@F3@', '@F1@', '@F4@'}  |
+|  @I3@ |   Ross /Robinson/    |   M    | 1790-11-26 |  59 | False | 1850-09-09 |     NA    |           {'@F2@'}          |
+|  @I4@ |   Monica /Geller/    |   F    | 1792-11-12 |  47 | False | 1840-04-02 |     NA    |           {'@F2@'}          |
+|  @I5@ |      Ben /Mann/      |   M    | 1823-02-01 |  48 | False | 1871-04-06 |  {'@F2@'} |              NA             |
+|  @I6@ |   Mike /Robinson/    |   M    | 1824-02-01 |  55 | False | 1880-01-10 |  {'@F2@'} |       {'@F5@', '@F6@'}      |
+|  @I7@ |    Rachel /Green/    |   F    | 1832-02-14 |  68 | False | 1900-06-24 |     NA    |           {'@F5@'}          |
+|  @I8@ |     Ema /Mosbi/      |   F    | 1828-04-14 |  41 | False | 1869-04-09 |     NA    |           {'@F6@'}          |
+|  @I9@ |  William /Robinson/  |   M    | 1849-09-09 |  38 | False | 1888-08-02 |  {'@F6@'} |              NA             |
+| @I10@ |    Max /Robinson/    |   M    | 1866-10-08 |  83 | False | 1950-04-12 |  {'@F5@'} |           {'@F7@'}          |
+| @I11@ |   Dora /Robinson/    |   F    | 1868-10-09 |  61 | False | 1930-01-12 |     NA    |           {'@F7@'}          |
+| @I12@ |   Emmy /Robinson/    |   F    | 1899-09-05 | 121 |  True |     NA     |  {'@F7@'} |           {'@F8@'}          |
+| @I13@ |    Jimmy /Smith/     |   M    | 1898-12-19 |  71 | False | 1970-08-10 |     NA    |           {'@F8@'}          |
+| @I14@ |  Miller /Robinson/   |   M    | 1964-11-11 |  56 |  True |     NA     |     NA    |           {'@F9@'}          |
+| @I15@ |   Ellie /Robinson/   |   F    | 1967-08-15 |  53 |  True |     NA     |     NA    |           {'@F9@'}          |
+| @I16@ |    Sam /Robinson/    |   M    | 2000-09-13 |  20 |  True |     NA     |     NA    |              NA             |
+| @I17@ |  Miller /Robinson/   |   F    | 1980-09-13 |  40 |  True |     NA     |  {'@F9@'} |          {'@F10@'}          |
+| @I18@ |   Erica /Robinson/   |   F    | 1981-09-13 |  39 |  True |     NA     |     NA    |          {'@F10@'}          |
+| @I19@ |   Joey /Robinson/    |   F    | 1996-04-10 |  24 |  True |     NA     | {'@F10@'} |              NA             |
+| @I20@ |   Joey /Robinson/    |   F    | 1997-11-08 |  23 |  True |     NA     | {'@F10@'} |              NA             |
+| @I21@ |   Ross /Robinson/    |   M    | 1970-01-04 |  50 |  True |     NA     |     NA    |          {'@F11@'}          |
+| @I22@ |   Joey /Robinson/    |   F    | 1971-08-10 |  49 |  True |     NA     |     NA    |          {'@F11@'}          |
+| @I23@ |   Emmy /Robinson/    |   F    | 2020-09-22 |  0  |  True |     NA     | {'@F11@'} |              NA             |
+| @I24@ |    Jil /Robinson/    |   F    | 2020-10-01 |  0  |  True |     NA     | {'@F11@'} |              NA             |
+| @I25@ |    Sam /Robinson/    |   M    | 2020-10-10 |  0  |  True |     NA     | {'@F11@'} |          {'@F20@'}          |
+| @I26@ |    Joss /Parker/     |   M    | 1834-05-06 |  97 | False | 1932-03-08 |     NA    |           {'@F4@'}          |
+| @I27@ | Yatinkumar /Shiyani/ |   M    | 1832-11-16 | 100 | False | 1932-11-16 |     NA    |           {'@F3@'}          |
+| @I28@ |    Mia /Shiyani/     |   F    | 2004-06-12 |  16 |  True |     NA     |  {'@F3@'} |              NA             |
+| @I29@ |     Ginger /Ale/     |   M    | 1800-02-15 | 180 | False | 1980-07-10 |  {'@F2@'} |          {'@F12@'}          |
+| @I30@ |      Tia /Ale/       |   F    | 1820-11-13 | 200 |  True |     NA     |     NA    |          {'@F12@'}          |
+| @I31@ |   Mike /Robinson/    |   M    | 2021-07-02 |  0  |  True |     NA     |  {'@F2@'} |          {'@F13@'}          |
+| @I32@ |    Micheal /Mia/     |   F    | 2025-09-04 |  0  |  True |     NA     |     NA    |          {'@F13@'}          |
+| @I33@ |   Ryan /Robinson/    |   M    | 1990-02-05 |  30 |  True |     NA     | {'@F13@'} |          {'@F14@'}          |
+| @I34@ |   Rosa /Hernadez/    |   F    | 1990-06-02 |  30 |  True |     NA     |     NA    |          {'@F14@'}          |
+| @I35@ |   Mike /Robinson/    |   M    | 2021-07-02 |  0  |  True |     NA     |  {'@F2@'} |              NA             |
+| @I36@ |    Ribu /Watson/     |   M    | 1990-07-02 |  30 |  True |     NA     | {'@F15@'} |          {'@F15@'}          |
+| @I37@ |     Mikie /Roni/     |   F    | 1991-07-02 |  29 |  True |     NA     |     NA    |              NA             |
+| @I38@ |    Rahul /Sharma/    |   M    | 1950-03-05 |  70 |  True |     NA     |     NA    |          {'@F16@'}          |
+| @I39@ |    Pinal /Sharma/    |   F    | 1998-04-06 |  22 |  True |     NA     |     NA    |              NA             |
+| @I40@ |     Saddi /Shah/     |   M    | 2020-11-02 |  0  |  True |     NA     | {'@F21@'} |              NA             |
+| @I41@ |     Gari /Jain/      |   F    | 1980-10-05 |  40 | False | 2020-11-02 |     NA    | {'@F21@', '@F22@', '@F25@'} |
+| @I42@ |     Dhiru /Shah/     |   M    | 1920-10-17 | 100 |  True |     NA     | {'@F23@'} |          {'@F22@'}          |
+| @I43@ |     Dhruv /Shah/     |   M    | 1975-07-04 |  45 |  True |     NA     | {'@F24@'} |          {'@F21@'}          |
+| @I44@ |     Praj /Shah/      |   M    | 2020-10-19 |  0  |  True |     NA     | {'@F22@'} |              NA             |
+| @I45@ |     Waah /Shah/      |   F    | 2020-03-15 |  0  |  True |     NA     | {'@F25@'} |              NA             |
+| @I46@ |     Meet /Shah/      |   F    | 1940-09-03 |  80 | False | 2020-10-18 |     NA    |          {'@F24@'}          |
+| @I47@ |      Raj /Shah/      |   M    | 2020-10-12 |  0  |  True |     NA     |     NA    |          {'@F24@'}          |
+| @I48@ |     Riya /Patel/     |   F    | 1950-02-02 |  70 |  True |     NA     |     NA    |          {'@F23@'}          |
+| @I49@ |     Prem /Shah/      |   M    | 1860-04-11 | 160 | False | 2020-11-07 |     NA    |          {'@F23@'}          |
++-------+----------------------+--------+------------+-----+-------+------------+-----------+-----------------------------+
 +-------+------------+------------+------------+----------------------+---------+---------------------+-----------------------------------------------------+
 |   Id  |  Married   |  Divorced  | Husband ID |     Husband Name     | Wife ID |      Wife Name      |                       Children                      |
 +-------+------------+------------+------------+----------------------+---------+---------------------+-----------------------------------------------------+
 |  @F1@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |   @I2@  | Priyanka /Robinson/ |                       {'@I4@'}                      |
-|  @F3@ | 1850-09-11 |     NA     |   @I27@    | Yatinkumar /Shiyani/ |   @I2@  | Priyanka /Robinson/ |                      {'@I28@'}                      |
-|  @F2@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I6@', '@I31@', '@I2@', '@I5@', '@I29@', '@I35@'} |
+|  @F3@ | 1850-01-01 |     NA     |   @I27@    | Yatinkumar /Shiyani/ |   @I2@  | Priyanka /Robinson/ |                      {'@I28@'}                      |
+|  @F2@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I35@', '@I29@', '@I2@', '@I31@', '@I6@', '@I5@'} |
 |  @F4@ | 1850-12-14 |     NA     |   @I26@    |    Joss /Parker/     |   @I2@  | Priyanka /Robinson/ |                          NA                         |
 |  @F5@ | 1862-07-10 |     NA     |    @I6@    |   Mike /Robinson/    |   @I7@  |    Rachel /Green/   |                      {'@I10@'}                      |
-|  @F6@ | 1848-01-12 | 1852-07-14 |    @I6@    |   Mike /Robinson/    |   @I8@  |     Ema /Mosbi/     |                       {'@I9@'}                      |
+|  @F6@ | 1848-01-12 | 1852-01-01 |    @I6@    |   Mike /Robinson/    |   @I8@  |     Ema /Mosbi/     |                       {'@I9@'}                      |
 |  @F7@ | 1893-08-04 |     NA     |   @I10@    |    Max /Robinson/    |  @I11@  |   Dora /Robinson/   |                      {'@I12@'}                      |
 |  @F8@ | 1925-06-05 | 1930-11-15 |   @I13@    |    Jimmy /Smith/     |  @I12@  |   Emmy /Robinson/   |                          NA                         |
 |  @F9@ |     NA     |     NA     |   @I14@    |  Miller /Robinson/   |  @I15@  |   Ellie /Robinson/  |                      {'@I17@'}                      |
 | @F10@ |     NA     |     NA     |   @I17@    |  Miller /Robinson/   |  @I18@  |   Erica /Robinson/  |                  {'@I19@', '@I20@'}                 |
-| @F11@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |             {'@I25@', '@I24@', '@I23@'}             |
+| @F11@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |             {'@I23@', '@I24@', '@I25@'}             |
 | @F12@ | 1850-05-05 | 2000-06-12 |   @I29@    |     Ginger /Ale/     |  @I30@  |      Tia /Ale/      |                          NA                         |
 | @F13@ | 2019-03-04 | 2018-07-03 |   @I31@    |   Mike /Robinson/    |  @I32@  |    Micheal /Mia/    |                      {'@I33@'}                      |
 | @F14@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |   @I4@  |   Monica /Geller/   |                          NA                         |
-| @F15@ |     NA     |     NA     |   @I36@    |    Ribu /Watson/     |  @I37@  |     Mikie /Roni/    |                  {'@I25@', '@I1@'}                  |
+| @F15@ |     NA     |     NA     |   @I36@    |    Ribu /Watson/     |  @I37@  |     Mikie /Roni/    |                  {'@I1@', '@I25@'}                  |
+| @F16@ |     NA     |     NA     |   @I38@    |    Rahul /Sharma/    |  @I39@  |    Pinal /Sharma/   |                          NA                         |
 | @F20@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |  @I25@  |    Sam /Robinson/   |                          NA                         |
+| @F21@ |     NA     |     NA     |   @I43@    |     Dhruv /Shah/     |  @I41@  |     Gari /Jain/     |                      {'@I40@'}                      |
+| @F22@ | 2000-04-07 |     NA     |   @I42@    |     Dhiru /Shah/     |  @I41@  |     Gari /Jain/     |                      {'@I44@'}                      |
+| @F23@ |     NA     |     NA     |   @I49@    |     Prem /Shah/      |  @I48@  |     Riya /Patel/    |                      {'@I42@'}                      |
+| @F24@ |     NA     |     NA     |   @I47@    |      Raj /Shah/      |  @I46@  |     Meet /Shah/     |                      {'@I43@'}                      |
+| @F25@ |     NA     |     NA     |            |                      |  @I41@  |     Gari /Jain/     |                      {'@I45@'}                      |
 +-------+------------+------------+------------+----------------------+---------+---------------------+-----------------------------------------------------+
 Birthdate on Line: 331
 US_01: Birthdate "2021-07-02" for individual id @I31@ is illeagal
@@ -65,42 +83,12 @@ Birthdate on Line: 341
 US_01: Birthdate "2025-09-04" for individual id @I32@ is illeagal
 Birthdate on Line: 369
 US_01: Birthdate "2021-07-02" for individual id @I35@ is illeagal
-US_02 - Micheal /Mia/ birthday after marriage date on line number 489
-US_02 - Mike /Robinson/ birthday after marriage date on line number 489
-US_02 - Sam /Robinson/ birthday after marriage date on line number 514
-Marriage date Line: 489
-Divorce date Line: 491
+US_02 - Micheal /Mia/ birthday after marriage date on line number 604
+US_02 - Mike /Robinson/ birthday after marriage date on line number 604
+US_02 - Sam /Robinson/ birthday after marriage date on line number 633
+Marriage date Line: 604
+Divorce date Line: 606
 US_04: This family id @F13@ has an illegal dates for marriage and divorce
-US_05: Marriage date Line: 501
-Death of wife date Line: 60
-The family @F14@ has a death of wife @I4@ before the marriage date.
-US_08: Family id Line number: 391
-The Father @I1@ is younger than his child @I4@ which is illeagal.
-US_08: Family id Line number: 484
-The Father @I31@ is younger than his child @I33@ which is illeagal.
-US_08: Family id Line number: 503
-The Father @I36@ is younger than his child @I1@ which is illeagal.
-US_06: Ginger /Ale/ Death 1980-07-10 occured prior to the divorce date 2000-06-12
-US_07: Ginger /Ale/ age is greater than 150 years
-US_07: Tia /Ale/ age is greater than 150 years
-US_09: Family id Line number: 398
-Birth of child @I28@ is before the death of the father @I27@
-US_09: Family id Line number: 398
-Birth of child @I28@ is before the death of the mother @I2@
-US_09: Family id Line number: 407
-Birth of child @I31@ is before the death of the father @I3@
-US_09: Family id Line number: 407
-Birth of child @I31@ is before the death of the mother @I4@
-US_09: Family id Line number: 407
-Birth of child @I35@ is before the death of the father @I3@
-US_09: Family id Line number: 407
-Birth of child @I35@ is before the death of the mother @I4@
-US_10: Family id Line number: 484
-The husband @I31@ was younger than 14 at the time of marriage for @F13@
-US_10: Family id Line number: 484
-The wife @I32@ was younger than 14 at the time of marriage for @F13@
-US_10: Family id Line number: 510
-The wife @I25@ was younger than 14 at the time of marriage for @F20@
 US_11: Priyanka /Robinson/married twice at the same time
 US_11: Priyanka /Robinson/married twice at the same time
 US_11: Joey /Robinson/married twice at the same time
@@ -108,50 +96,56 @@ US_11: Joey /Robinson/married twice at the same time
 US_11: Priyanka /Robinson/married twice at the same time
 US_11: Monica /Geller/married twice at the same time
 US_11: Joey /Robinson/married twice at the same time
-US13: The family id @F11@ has twins Jil /Robinson/ and Sam /Robinson/
-US13: The family id @F11@ has twins Emmy /Robinson/ and Sam /Robinson/
-US13: The family id @F11@ has twins Emmy /Robinson/ and Jil /Robinson/
+US_11: Gari /Jain/married twice at the same time
+US_11: Gari /Jain/married twice at the same time
+US_11: Gari /Jain/married twice at the same time
+US13: The family id @F11@ has twins Jil /Robinson/ and Sam /Robinson/, Line number: 584
+US13: The family id @F11@ has twins Emmy /Robinson/ and Sam /Robinson/, Line number: 584
+US13: The family id @F11@ has twins Emmy /Robinson/ and Jil /Robinson/, Line number: 584
 US_17: Parents married to their children: Joey /Robinson/ and Monica /Geller/.
-US18: @I25@ and @I1@ are siblings and a couple.
+US18: @I25@ and @I1@ are siblings and a couple. Line number: 631
+US_19: First cousins @I1@ and @I4@ married on line 614
 US_23: Multiple individuals with name Mike /Robinson/ born on 2021-07-02 exists.
-US_24: Family contains same husband, wife and marriage date as another family, Line number: 501
-US_24: Family contains same husband, wife and marriage date as another family, Line number: 514
-US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
+US_24: Family contains same husband, wife and marriage date as another family, Line number: 616
+US_24: Family contains same husband, wife and marriage date as another family, Line number: 633
 US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
 US_25: There are multiple people born on 2021-07-02 date in family @F2@
+US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
 US_25: The family @F10@ has multiple individuals with same name Joey /Robinson/
-US_28: Age 68 :- Joey /Robinson/ from FamID @F15@
-US_28: Age 55 :- Mike /Robinson/ from FamID @F2@
-US_28: Age 48 :- Ben /Mann/ from FamID @F2@
-US_28: Age 24 :- Joey /Robinson/ from FamID @F10@
-US_28: Age 23 :- Joey /Robinson/ from FamID @F10@
-US_28: Age 180 :- Ginger /Ale/ from FamID @F2@
-US_28: Age 100 :- Priyanka /Robinson/ from FamID @F2@
-US_28: Age 0 :- Sam /Robinson/ from FamID @F15@
-US_28: Age 0 :- Sam /Robinson/ from FamID @F11@
-US_28: Age 0 :- Mike /Robinson/ from FamID @F2@
-US_28: Age 0 :- Jil /Robinson/ from FamID @F11@
-US_28: Age 0 :- Emmy /Robinson/ from FamID @F11@
-US_29: Joey /Robinson/ is deceased individual
-US_29: Priyanka /Robinson/ is deceased individual
-US_29: Ross /Robinson/ is deceased individual
-US_29: Monica /Geller/ is deceased individual
-US_29: Ben /Mann/ is deceased individual
-US_29: Mike /Robinson/ is deceased individual
-US_29: Rachel /Green/ is deceased individual
-US_29: Ema /Mosbi/ is deceased individual
-US_29: William /Robinson/ is deceased individual
-US_29: Max /Robinson/ is deceased individual
-US_29: Dora /Robinson/ is deceased individual
-US_29: Jimmy /Smith/ is deceased individual
-US_29: Joss /Parker/ is deceased individual
-US_29: Yatinkumar /Shiyani/ is deceased individual
-US_29: Ginger /Ale/ is deceased individual
+US_29: Joey /Robinson/ on line number 21 is deceased individual
+US_29: Priyanka /Robinson/ on line number 33 is deceased individual
+US_29: Ross /Robinson/ on line number 47 is deceased individual
+US_29: Monica /Geller/ on line number 58 is deceased individual
+US_29: Ben /Mann/ on line number 69 is deceased individual
+US_29: Mike /Robinson/ on line number 80 is deceased individual
+US_29: Rachel /Green/ on line number 93 is deceased individual
+US_29: Ema /Mosbi/ on line number 104 is deceased individual
+US_29: William /Robinson/ on line number 115 is deceased individual
+US_29: Max /Robinson/ on line number 126 is deceased individual
+US_29: Dora /Robinson/ on line number 138 is deceased individual
+US_29: Jimmy /Smith/ on line number 159 is deceased individual
+US_29: Joss /Parker/ on line number 279 is deceased individual
+US_29: Yatinkumar /Shiyani/ on line number 290 is deceased individual
+US_29: Ginger /Ale/ on line number 310 is deceased individual
+US_29: Gari /Jain/ on line number 422 is deceased individual
+US_29: Meet /Shah/ on line number 473 is deceased individual
+US_29: Prem /Shah/ on line number 502 is deceased individual
 US_33: @I28@ Mia /Shiyani/ has age 16 and is orphan
-US_33: @I31@ Mike /Robinson/ has age 0 and is orphan
 US_33: @I35@ Mike /Robinson/ has age 0 and is orphan
-US_35: Sam /Robinson/ has recent birthday
-US_16: Family id @F15@ with father Ribu /Watson/ and son Joey /Robinson/ have different last names on line number 503
-US_16: Family id @F15@ with father Ribu /Watson/ and son Sam /Robinson/ have different last names on line number 503
-US_16: Family id @F2@ with father Ross /Robinson/ and son Ben /Mann/ have different last names on line number 407
-US_16: Family id @F2@ with father Ross /Robinson/ and son Ginger /Ale/ have different last names on line number 407
+US_33: @I31@ Mike /Robinson/ has age 0 and is orphan
+US_35: Saddi /Shah/ has recent birthday
+US_39: The family id @F4@ have their marriage anniversary in the next 30 days. Line number: 534
+US_49: Multiple individuals with name Miller /Robinson/ present.
+US_49: Multiple individuals with name Mike /Robinson/ present.
+US_49: Multiple individuals with name Sam /Robinson/ present.
+US_49: Multiple individuals with name Joey /Robinson/ present.
+US_49: Multiple individuals with name Ross /Robinson/ present.
+US_49: Multiple individuals with name Emmy /Robinson/ present.
+{'Priyanka /Robinson/', 'Miller /Robinson/', 'Monica /Geller/', 'Mike /Robinson/', 'Gari /Jain/', 'Joey /Robinson/', 'Ross /Robinson/'}
+US_50: Individual Priyanka /Robinson/ married more than once.
+US_50: Individual Miller /Robinson/ married more than once.
+US_50: Individual Monica /Geller/ married more than once.
+US_50: Individual Mike /Robinson/ married more than once.
+US_50: Individual Gari /Jain/ married more than once.
+US_50: Individual Joey /Robinson/ married more than once.
+US_50: Individual Ross /Robinson/ married more than once.
