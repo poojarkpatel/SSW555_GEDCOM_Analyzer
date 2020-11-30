@@ -30,6 +30,8 @@ from UserStories.US_33 import US_33
 from UserStories.US_35 import US_35
 from UserStories.US_15 import US_15
 from UserStories.US_16 import US_16
+from UserStories.US_53 import US_53
+from UserStories.US_54 import US_54
 
 
 class TestRepository(unittest.TestCase):
@@ -343,6 +345,22 @@ class TestRepository(unittest.TestCase):
         expected = ["US:15 Family id:@F1@ has 15 or more children on line number 180"]
 
         self.assertEqual(US_15(indi_repo._family), expected)
+
+    def test_US_53(self):
+        """ Contains test cases for US_53"""
+        indi_repo: Repository = Repository("../GedcomFiles/US_53.ged")
+
+        exp = ["US_53: Husband Katir /Bala/ with @I2@ has the same name as wife Katir /Bala/ with @I3@ in line number 180 "]
+
+        self.assertEqual(US_53(indi_repo._individual, indi_repo._family), exp)
+
+    def test_US_54(self):
+        """ Contains test cases for US_54"""
+        indi_repo: Repository = Repository("../GedcomFiles/US_53.ged")
+
+        exp = ["US_54: Katir /Bala/ with @I3@ is younger than child Pia /Ale/ in line number 180 "]
+
+        self.assertEqual(US_54(indi_repo._individual, indi_repo._family), exp)
 
 if __name__ == "__main__":
     """ Runs all the tests created above. """
