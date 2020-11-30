@@ -23,4 +23,3 @@ def US_22(individual, family):
               i.append(item)
 
     return warning
-

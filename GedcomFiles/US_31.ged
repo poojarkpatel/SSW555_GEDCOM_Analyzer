@@ -1,0 +1,58 @@
+0 HEAD
+1 SOUR Family Echo
+2 WWW http://www.familyecho.com/
+1 FILE Family 8
+1 DATE 8 NOV 2020
+1 DEST ANSTFILE
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 SUBM @I3@
+2 NAME Pooja Patel
+1 SUBN
+1 CHAR UTF-8
+0 @I1@ INDI
+1 NAME Philip /Windsor/
+2 GIVN Philip
+2 SURN Windsor
+2 _MARNM Windsor
+1 SEX M
+1 BIRT
+2 DATE 3 JAN 1950
+1 FAMS @F1@
+0 @I2@ INDI
+1 NAME Elizabeth /Windsor/
+2 GIVN Elizabeth
+2 SURN Windsor
+2 _MARNM Windsor
+1 SEX F
+1 BIRT
+2 DATE 4 JAN 1950
+1 FAMS @F1@
+0 @I3@ INDI
+1 NAME Charles /Windsor/
+2 GIVN Charles
+2 SURN Windsor
+2 _MARNM Windsor
+1 SEX M
+1 BIRT
+2 DATE 2 JAN 1988
+1 FAMC @F1@
+0 @I4@ INDI
+1 NAME Anne /Windsor/
+2 GIVN Anne
+2 SURN Windsor
+2 _MARNM Windsor
+1 SEX F
+1 BIRT
+2 DATE 3 FEB 1988
+1 DEAT Y
+2 DATE 1 JAN 2020
+1 FAMC @F1@
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 CHIL @I3@
+1 CHIL @I4@
+1 _CURRENT Y
+0 TRLR

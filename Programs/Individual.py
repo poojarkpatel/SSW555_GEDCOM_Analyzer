@@ -35,8 +35,19 @@ class Individual:
 
     def set_birth_death_date(self, date, line_number):
         """ Function that sets the birth-date and death-date of individual. """
+        words = date.split()
+
+        try:
+            date = datetime.datetime.strptime(date, '%d %b %Y').date()
+        except ValueError:
+            try:
+                date = datetime.datetime.strptime(words[len(words) - 1], '%Y').date()
+            except ValueError:
+                date = datetime.datetime.strptime("1 JAN 1850", '%d %b %Y').date()
+
         if not self._is_alive:
-            self._birth_date = datetime.datetime.strptime(date, '%d %b %Y').date()
+            self._birth_date = date
+
             # Today's date.
             today = datetime.date.today()
             # Current age.
@@ -49,7 +60,8 @@ class Individual:
             self._is_alive = True
             self._line_numbers['date']['birth'] = line_number
         else:
-            self._death_date = datetime.datetime.strptime(date, '%d %b %Y').date()
+            self._death_date = date
+
             # Obtaining birthday for a deceased individual.
             self._age = self._death_date - self._birth_date
             # Setting age at which individual died.

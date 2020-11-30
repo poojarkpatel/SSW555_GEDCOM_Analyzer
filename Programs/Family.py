@@ -38,12 +38,21 @@ class Family:
 
     def set_marriage_divorce_date(self, date, line_number):
         """ Function that sets marriage and divorce dates (if any). """
+        words = date.split()
+        try:
+            date = datetime.datetime.strptime(date, '%d %b %Y').date()
+        except ValueError:
+            try:
+                date = datetime.datetime.strptime(words[len(words) - 1], '%Y').date()
+            except ValueError:
+                date = datetime.datetime.strptime("1 JAN 1850", '%d %b %Y').date()
+
         if not self._is_divorced:
-            self._marriage_date = datetime.datetime.strptime(date, '%d %b %Y').date()
+            self._marriage_date = date
             self._is_divorced = True
             self._line_numbers['date']['marriage'] = line_number
         else:
-            self._divorce_date = datetime.datetime.strptime(date, '%d %b %Y').date()
+            self._divorce_date = date
             self._is_divorced = False
             self._line_numbers['date']['divorce'] = line_number
 

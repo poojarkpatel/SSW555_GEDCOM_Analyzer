@@ -19,4 +19,3 @@ def US_21(individual, family):
                         warnings.append(f'US_21: {individual[family._wife_id]._name} gender is supposed to be female but is not on line number {individual[family._wife_id]._line_numbers["gender"]}')
 
     return warnings
-
