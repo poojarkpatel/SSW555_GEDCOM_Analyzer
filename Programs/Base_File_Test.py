@@ -501,22 +501,6 @@ class TestRepository(unittest.TestCase):
 
         self.assertEqual(US_15(indi_repo._family), expected)
 
-    def test_US_53(self):
-        """ Contains test cases for US_53"""
-        indi_repo: Repository = Repository("../GedcomFiles/US_53.ged")
-
-        exp = ["US_53: Husband Katir /Bala/ with @I2@ has the same name as wife Katir /Bala/ with @I3@ in line number 180 "]
-
-        self.assertEqual(US_53(indi_repo._individual, indi_repo._family), exp)
-
-    def test_US_54(self):
-        """ Contains test cases for US_54"""
-        indi_repo: Repository = Repository("../GedcomFiles/US_53.ged")
-
-        exp = ["US_54: Katir /Bala/ with @I3@ is younger than child Pia /Ale/ in line number 180 "]
-
-        self.assertEqual(US_54(indi_repo._individual, indi_repo._family), exp)
-
     def test_US_47(self):
         """ The function is to test US_47 function"""
         indi_repo: Repository = Repository('../GedcomFiles/ssw555_input_file.ged')
@@ -569,6 +553,22 @@ class TestRepository(unittest.TestCase):
          'Joey /Robinson/', 'Ross /Robinson/'}
         actual = US_50(self.repository.get_family())
         self.assertEqual(expected, actual)
+
+    def test_US_53(self):
+        """ Contains test cases for US_53"""
+        indi_repo: Repository = Repository("../GedcomFiles/US_53.ged")
+
+        exp = ["US_53: Husband Katir /Bala/ with @I2@ has the same name as wife Katir /Bala/ with @I3@ in line number 180 "]
+
+        self.assertEqual(US_53(indi_repo._individual, indi_repo._family), exp)
+
+    def test_US_54(self):
+        """ Contains test cases for US_54"""
+        indi_repo: Repository = Repository("../GedcomFiles/US_53.ged")
+
+        exp = ["US_54: Katir /Bala/ with @I3@ is younger than child Pia /Ale/ in line number 180 "]
+
+        self.assertEqual(US_54(indi_repo._individual, indi_repo._family), exp)
 
 if __name__ == "__main__":
     """ Runs all the tests created above. """

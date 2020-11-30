@@ -77,23 +77,23 @@ def main():
     for item in US_04(family):
         print(item)
 
-    #for item in US_05(individual, family):
-        #print(f"US_05: {item}")
+    for item in US_05(individual, family):
+        print(f"US_05: {item}")
 
-    #for item in US_08(individual, family):
-        #print(f"US_08: {item}")
+    for item in US_08(individual, family):
+        print(f"US_08: {item}")
 
-    #for item in US_06(individual, family):
-        #print(f"{item}")
+    for item in US_06(individual, family):
+        print(f"{item}")
 
-    #for item in US_07(individual):
-        #print(f"US_07: {item} age is greater than 150 years")
+    for item in US_07(individual):
+        print(f"US_07: {item} age is greater than 150 years")
 
-    #for item in US_09(individual, family):
-        #print(f"US_09: {item}")
+    for item in US_09(individual, family):
+        print(f"US_09: {item}")
 
-    #for item in US_10(individual, family):
-        #print(f"US_10: {item}")
+    for item in US_10(individual, family):
+        print(f"US_10: {item}")
 
     for item in US_11(repository):
         print(f"US_11: {item}")
@@ -184,9 +184,6 @@ def main():
     
     for item in US_48(individual, family):
         print(f"US_48: {item}")
-
-    #for item in US_16(individual, family):
-        #print(f"{item}")
 
     for item in US_49(individual):
         print(f'US_49: Multiple individuals with name {item} present.')
