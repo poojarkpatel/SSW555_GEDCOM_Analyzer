@@ -31,13 +31,15 @@ from UserStories.US_39 import US_39
 #from UserStories.US_41 import US_41
 from UserStories.US_15 import US_15
 from UserStories.US_16 import US_16
+from UserStories.US_49 import US_49
+from UserStories.US_50 import US_50
 
 def main():
     """ Function that runs all the user stories and prints their results. """
     sys.stdout = Logger()
     # Creating an object of class Repository that will contains both individual and family dictionaries.
     # Pass the path of your GEDCOM file as a parameter below.
-    repository = Repository("../GedcomFiles/US_19.ged")
+    repository = Repository("../GedcomFiles/ssw555_input_file.ged")
     individual = repository.get_individual()
     family = repository.get_family()
 
@@ -58,23 +60,23 @@ def main():
     for item in US_04(family):
         print(item)
 
-    for item in US_05(individual, family):
-        print(f"US_05: {item}")
+    #for item in US_05(individual, family):
+        #print(f"US_05: {item}")
 
-    for item in US_08(individual, family):
-        print(f"US_08: {item}")
+    #for item in US_08(individual, family):
+        #print(f"US_08: {item}")
 
-    for item in US_06(individual, family):
-        print(f"{item}")
+    #for item in US_06(individual, family):
+        #print(f"{item}")
 
-    for item in US_07(individual):
-        print(f"US_07: {item} age is greater than 150 years")
+    #for item in US_07(individual):
+        #print(f"US_07: {item} age is greater than 150 years")
 
-    for item in US_09(individual, family):
-        print(f"US_09: {item}")
+    #for item in US_09(individual, family):
+        #print(f"US_09: {item}")
 
-    for item in US_10(individual, family):
-        print(f"US_10: {item}")
+    #for item in US_10(individual, family):
+        #print(f"US_10: {item}")
 
     for item in US_11(repository):
         print(f"US_11: {item}")
@@ -123,8 +125,14 @@ def main():
     for item in US_15(family):
         print(f"{item} ")
 
-    for item in US_16(individual, family):
-        print(f"{item}")
+    #for item in US_16(individual, family):
+        #print(f"{item}")
+
+    for item in US_49(individual):
+        print(f'US_49: Multiple individuals with name {item} present.')
+
+    for item in US_50(family):
+        print(f'US_50: Individual {item} married more than once.')
 
 if __name__ == '__main__':
     """ Calls main method. """
