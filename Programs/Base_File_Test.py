@@ -42,6 +42,8 @@ from UserStories.US_35 import US_35
 from UserStories.US_37 import us_37
 from UserStories.US_38 import US_38
 from UserStories.US_39 import US_39
+from UserStories.US_47 import US_47
+from UserStories.US_48 import US_48
 
 
 class TestRepository(unittest.TestCase):
@@ -493,6 +495,46 @@ class TestRepository(unittest.TestCase):
         expected = ["US:15 Family id:@F1@ has 15 or more children on line number 180"]
 
         self.assertEqual(US_15(indi_repo._family), expected)
+
+    def test_US_47(self):
+        """ The function is to test US_47 function"""
+        indi_repo: Repository = Repository('../GedcomFiles/ssw555_input_file.ged')
+
+        # The expected output
+        expected = ['Wife @I2@ is 25 or more year older than husband @I1@.',
+                    'Wife @I12@ is 25 or more year older than husband @I13@.',
+                    'Husband @I38@ is 25 or more year older than wife @I39@.',
+                    'Husband @I1@ is 25 or more year older than wife @I25@.',
+                    'Husband @I42@ is 25 or more year older than wife @I41@.',
+                    'Husband @I49@ is 25 or more year older than wife @I48@.',
+                    'Wife @I46@ is 25 or more year older than husband @I47@.',
+                    'Wife @I41@ is 25 or more year older than husband @I44@.']
+
+        # generating a list of the output from the function
+        result = [value for value in US_47(indi_repo._individual, indi_repo._family)]
+
+        self.assertEqual(result, expected)  # positive test result
+        self.assertFalse(result == ['Birthdate "2022-01-01" for individual id @I1@ is illeagal',
+                                    'Birthdate "2020-12-06" for individual id @I13@ is illeagal'])  # Negative test case
+
+    def test_US_48(self):
+        """ The function is to test US_48 function"""
+        indi_repo: Repository = Repository('../GedcomFiles/ssw555_input_file.ged')
+
+        # The expected output
+        expected = ['Wife @I2@ is older than husband @I1@.',
+                    'Wife @I2@ is older than husband @I27@.',
+                    'Wife @I2@ is older than husband @I26@.',
+                    'Wife @I4@ is older than husband @I1@.',
+                    'Wife @I46@ is older than husband @I47@.',
+                    'Wife @I41@ is older than husband @I44@.']
+
+        # generating a list of the output from the function
+        result = [value for value in US_48(indi_repo._individual, indi_repo._family)]
+
+        self.assertEqual(result, expected)  # positive test result
+        self.assertFalse(result == ['Birthdate "2022-01-01" for individual id @I1@ is illeagal',
+                                    'Birthdate "2020-12-06" for individual id @I13@ is illeagal'])  # Negative test case
 
 
 if __name__ == "__main__":
