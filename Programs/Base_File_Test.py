@@ -22,6 +22,8 @@ from UserStories.US_28 import US_28
 from UserStories.US_29 import US_29
 from UserStories.US_33 import US_33
 from UserStories.US_35 import US_35
+from UserStories.US_51 import US_51
+from UserStories.US_52 import US_52
 
 class TestRepository(unittest.TestCase):
     """ Class that contains all the test cases. """
