@@ -13,5 +13,4 @@ def US_50(family):
         names_seen.add(family_details._husband_name)
         names_seen.add(family_details._wife_name)
 
-    print(warnings)
     return warnings
