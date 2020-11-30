@@ -39,6 +39,8 @@ from UserStories.us_32_36 import us_32, us_36
 from UserStories.US_33 import US_33
 from UserStories.US_34 import us_34
 from UserStories.US_35 import US_35
+from UserStories.US_51 import US_51
+from UserStories.US_52 import US_52
 from UserStories.US_37 import us_37
 from UserStories.US_38 import US_38
 from UserStories.US_39 import US_39
@@ -54,6 +56,7 @@ from UserStories.US_49 import US_49
 from UserStories.US_50 import US_50
 from UserStories.US_53 import US_53
 from UserStories.US_54 import US_54
+
 
 class TestRepository(unittest.TestCase):
     """ Class that contains all the test cases. """
@@ -434,6 +437,20 @@ class TestRepository(unittest.TestCase):
 
         self.assertEqual(individual['@I2@']._birth_date, datetime.datetime.strptime("1 JAN 1830", '%d %b %Y').date())
 
+    def test_US_51(self):
+        """ The function helps to test US_51 function"""
+        indi_repo = Repository("../GedcomFiles/US_51.ged")
+        expected = ['The family id @F4@ have their marriage anniversary in the next 2 months. Line number: 419']
+        self.assertEqual(US_51(indi_repo._family), expected)
+
+    def test_US_52(self):
+        """ Contains test cases for US_52"""
+        indi_repo = Repository("../GedcomFiles/US_52.ged")
+
+        expected = {'Ryan /Robinson/', 'Jimmy /Smith/', 'Ginger /Ale/', 'William /Robinson/', 'Sam /Robinson/', 'Miller /Robinson/', 'Joey /Robinson/', 'Max /Robinson/', 'Ross /Robinson/', 'Joss /Parker/', 'Yatinkumar /Shiyani/', 'Ribu /Watson/', 'Mike /Robinson/', 'Ben /Mann/'}
+
+        self.assertEqual(US_52(indi_repo._individual), expected)
+        
     def test_US_42(self):
         """ Function that tests user story 42 """
         repository = Repository('../GedcomFiles/ssw555_input_file.ged')
@@ -459,6 +476,7 @@ class TestRepository(unittest.TestCase):
         self.assertEqual(US_35(repository._individual), expected)
         self.assertNotEqual(US_35(repository._individual), ['William /Robinson/ has recent birthday'])
         self.assertTrue(US_35(repository._individual) != ['Smith /Robinson/ has recent birthday'])
+
 
     def test_deceased(self):
         # User story 29

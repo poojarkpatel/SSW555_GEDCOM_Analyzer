@@ -41,6 +41,8 @@ from UserStories.US_35 import US_35
 from UserStories.US_37 import us_37
 from UserStories.US_38 import US_38
 from UserStories.US_39 import US_39
+from UserStories.US_51 import US_51
+from UserStories.US_52 import US_52
 #from UserStories.US_41 import US_41
 from UserStories.US_47 import US_47
 from UserStories.US_48 import US_48
@@ -173,6 +175,13 @@ def main():
 
     for item in us_36(individual):
         print(f"US_36: {item}")
+
+
+    for item in US_51(family):
+        print(f"US_51: {item}")
+
+    for item in US_52(individual):
+        print(f"US_52: {item}")
 
     for item in US_16(individual, family):
         print(f"{item}")
