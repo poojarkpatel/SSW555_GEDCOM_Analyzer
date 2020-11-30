@@ -44,7 +44,10 @@ from UserStories.US_39 import US_39
 #from UserStories.US_41 import US_41
 from UserStories.US_47 import US_47
 from UserStories.US_48 import US_48
-
+from UserStories.US_15 import US_15
+from UserStories.US_16 import US_16
+from UserStories.US_49 import US_49
+from UserStories.US_50 import US_50
 
 def main():
     """ Function that runs all the user stories and prints their results. """
@@ -72,23 +75,23 @@ def main():
     for item in US_04(family):
         print(item)
 
-    for item in US_05(individual, family):
-        print(f"US_05: {item}")
+    #for item in US_05(individual, family):
+        #print(f"US_05: {item}")
 
-    for item in US_08(individual, family):
-        print(f"US_08: {item}")
+    #for item in US_08(individual, family):
+        #print(f"US_08: {item}")
 
-    for item in US_06(individual, family):
-        print(f"{item}")
+    #for item in US_06(individual, family):
+        #print(f"{item}")
 
-    for item in US_07(individual):
-        print(f"US_07: {item} age is greater than 150 years")
+    #for item in US_07(individual):
+        #print(f"US_07: {item} age is greater than 150 years")
 
-    for item in US_09(individual, family):
-        print(f"US_09: {item}")
+    #for item in US_09(individual, family):
+        #print(f"US_09: {item}")
 
-    for item in US_10(individual, family):
-        print(f"US_10: {item}")
+    #for item in US_10(individual, family):
+        #print(f"US_10: {item}")
 
     for item in US_11(repository):
         print(f"US_11: {item}")
@@ -177,9 +180,17 @@ def main():
     for item in US_47(individual, family):
         print(f"US_47: {item}")
 
-
     for item in US_48(individual, family):
         print(f"US_48: {item}")
+
+    #for item in US_16(individual, family):
+        #print(f"{item}")
+
+    for item in US_49(individual):
+        print(f'US_49: Multiple individuals with name {item} present.')
+
+    for item in US_50(family):
+        print(f'US_50: Individual {item} married more than once.')
 
 if __name__ == '__main__':
     """ Calls main method. """

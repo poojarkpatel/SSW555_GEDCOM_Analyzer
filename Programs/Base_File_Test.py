@@ -44,7 +44,10 @@ from UserStories.US_38 import US_38
 from UserStories.US_39 import US_39
 from UserStories.US_47 import US_47
 from UserStories.US_48 import US_48
-
+from UserStories.US_15 import US_15
+from UserStories.US_16 import US_16
+from UserStories.US_49 import US_49
+from UserStories.US_50 import US_50
 
 class TestRepository(unittest.TestCase):
     """ Class that contains all the test cases. """
@@ -536,6 +539,18 @@ class TestRepository(unittest.TestCase):
         self.assertFalse(result == ['Birthdate "2022-01-01" for individual id @I1@ is illeagal',
                                     'Birthdate "2020-12-06" for individual id @I13@ is illeagal'])  # Negative test case
 
+    def test_US_49(self):
+        """ Function that tests user story 49. """
+        expected = {'Ross /Robinson/', 'Mike /Robinson/', 'Sam /Robinson/', 'Miller /Robinson/', 'Joey /Robinson/', 'Emmy /Robinson/'}
+        actual = US_49(self.repository.get_individual())
+        self.assertEqual(expected, actual)
+
+    def test_US_50(self):
+        """ Function that tests user story 50. """
+        expected = {'Priyanka /Robinson/', 'Miller /Robinson/', 'Monica /Geller/', 'Mike /Robinson/', 'Gari /Jain/',
+         'Joey /Robinson/', 'Ross /Robinson/'}
+        actual = US_50(self.repository.get_family())
+        self.assertEqual(expected, actual)
 
 if __name__ == "__main__":
     """ Runs all the tests created above. """
