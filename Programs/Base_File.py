@@ -48,6 +48,8 @@ from UserStories.US_45 import us_45
 from UserStories.US_46 import us_46
 from UserStories.US_47 import US_47
 from UserStories.US_48 import US_48
+from UserStories.US_55_56 import US_55
+from UserStories.US_55_56 import US_56
 from UserStories.US_15 import US_15
 from UserStories.US_16 import US_16
 from UserStories.US_21 import US_21
@@ -222,6 +224,12 @@ def main():
 
     for item in US_48(individual, family):
         print(f"US_48: {item}")
+
+    for item in US_55(individual):
+        print(f"US_55: {item}")
+
+    for item in US_56(individual):
+        print(f"US_56: {item}")
 
     for item in US_49(individual):
         print(f'US_49: Multiple individuals with name {item} present.')
