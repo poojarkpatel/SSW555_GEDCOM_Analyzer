@@ -43,7 +43,9 @@ from UserStories.US_38 import US_38
 from UserStories.US_39 import US_39
 from UserStories.US_51 import US_51
 from UserStories.US_52 import US_52
-#from UserStories.US_41 import US_41
+# from UserStories.US_41 import US_41
+from UserStories.US_45 import us_45
+from UserStories.US_46 import us_46
 from UserStories.US_47 import US_47
 from UserStories.US_48 import US_48
 from UserStories.US_15 import US_15
@@ -56,6 +58,7 @@ from UserStories.US_49 import US_49
 from UserStories.US_50 import US_50
 from UserStories.US_53 import US_53
 from UserStories.US_54 import US_54
+
 
 def main():
     """ Function that runs all the user stories and prints their results. """
@@ -176,7 +179,6 @@ def main():
     for item in us_36(individual):
         print(f"US_36: {item}")
 
-
     for item in US_51(family):
         print(f"US_51: {item}")
 
@@ -209,9 +211,15 @@ def main():
     for item in US_39(family):
         print(f"US_39: {item}")
 
+    for item in us_45(individual):
+        print(f"US_45: {item}")
+
+    for item in us_46(individual):
+        print(f"US_46: {item}")
+
     for item in US_47(individual, family):
         print(f"US_47: {item}")
-    
+
     for item in US_48(individual, family):
         print(f"US_48: {item}")
 
@@ -220,12 +228,13 @@ def main():
 
     for item in US_50(family):
         print(f'US_50: Individual {item} married more than once.')
-        
+
     for item in US_53(individual, family):
         print(item)
-    
+
     for item in US_54(individual, family):
         print(item)
+
 
 if __name__ == '__main__':
     """ Calls main method. """
