@@ -39,13 +39,27 @@ from UserStories.us_32_36 import us_32, us_36
 from UserStories.US_33 import US_33
 from UserStories.US_34 import us_34
 from UserStories.US_35 import US_35
+from UserStories.US_51 import US_51
+from UserStories.US_52 import US_52
 from UserStories.US_37 import us_37
 from UserStories.US_38 import US_38
 from UserStories.US_39 import US_39
+from UserStories.US_45 import us_45
+from UserStories.US_46 import us_46
 from UserStories.US_47 import US_47
 from UserStories.US_48 import US_48
 from UserStories.US_55_56 import US_55
 from UserStories.US_55_56 import US_56
+from UserStories.US_15 import US_15
+from UserStories.US_16 import US_16
+from UserStories.US_21 import US_21
+from UserStories.US_22 import US_22
+from UserStories.US_43 import US_43
+from UserStories.US_44 import US_44
+from UserStories.US_49 import US_49
+from UserStories.US_50 import US_50
+from UserStories.US_53 import US_53
+from UserStories.US_54 import US_54
 
 
 class TestRepository(unittest.TestCase):
@@ -339,9 +353,11 @@ class TestRepository(unittest.TestCase):
 
     def test_us_30(self):
         indi_repo: Repository = Repository("../GedcomFiles/US_30.ged")
-        excepted: List = [' Seema /Sharma/ is married and alive on line number 32', ' Poonam /Sharma/ is married and alive on line number 41', ' Snehal /Sharma/ is married and alive on line number 51',
+        excepted: List = [' Seema /Sharma/ is married and alive on line number 32',
+                          ' Poonam /Sharma/ is married and alive on line number 41',
+                          ' Snehal /Sharma/ is married and alive on line number 51',
                           ' Renu /Sharma/ is married and alive on line number 72']
-        calculated:List = us_30(indi_repo._individual)
+        calculated: List = us_30(indi_repo._individual)
         self.assertEqual(calculated, excepted)
 
     def test_US_31(self):
@@ -381,8 +397,9 @@ class TestRepository(unittest.TestCase):
 
     def test_us_34(self):
         indi_repo: Repository = Repository("../GedcomFiles/US_34.ged")
-        excepted: List = ['Rahul /Sharma/,70 and Pinal /Sharma/ ,22  are the couples who were married when the older spouse was more than as twice as old as the younger spouse on line number 52']
-        calculated: List = us_34(indi_repo._individual,indi_repo._family)
+        excepted: List = [
+            'Rahul /Sharma/,70 and Pinal /Sharma/ ,22  are the couples who were married when the older spouse was more than as twice as old as the younger spouse on line number 52']
+        calculated: List = us_34(indi_repo._individual, indi_repo._family)
         self.assertEqual(calculated, excepted)
 
     def test_us_36(self):
@@ -394,8 +411,10 @@ class TestRepository(unittest.TestCase):
 
     def test_us_37(self):
         indi_repo: Repository = Repository("../GedcomFiles/US_37.ged")
-        excepted: List = ['Living Spouse: Dhruv /Shah/ and descendant : Saddi /Shah/ on line number 115','Living Spouse: Dhiru /Shah/ and descendant : Praj /Shah/ on line number 120',
-                          ' Living spouse: Riya /Patel/ and Descendant : Dhiru /Shah/ on line number 128 ','Living Spouse: Raj /Shah/ and descendant : Dhruv /Shah/ on line number 132']
+        excepted: List = ['Living Spouse: Dhruv /Shah/ and descendant : Saddi /Shah/ on line number 115',
+                          'Living Spouse: Dhiru /Shah/ and descendant : Praj /Shah/ on line number 120',
+                          ' Living spouse: Riya /Patel/ and Descendant : Dhiru /Shah/ on line number 128 ',
+                          'Living Spouse: Raj /Shah/ and descendant : Dhruv /Shah/ on line number 132']
         calculated: List = us_37(indi_repo._individual, indi_repo._family)
         self.assertEqual(calculated, excepted)
 
@@ -427,6 +446,22 @@ class TestRepository(unittest.TestCase):
 
         self.assertEqual(individual['@I2@']._birth_date, datetime.datetime.strptime("1 JAN 1830", '%d %b %Y').date())
 
+    def test_US_51(self):
+        """ The function helps to test US_51 function"""
+        indi_repo = Repository("../GedcomFiles/US_51.ged")
+        expected = ['The family id @F4@ have their marriage anniversary in the next 2 months. Line number: 419']
+        self.assertEqual(US_51(indi_repo._family), expected)
+
+    def test_US_52(self):
+        """ Contains test cases for US_52"""
+        indi_repo = Repository("../GedcomFiles/US_52.ged")
+
+        expected = {'Ryan /Robinson/', 'Jimmy /Smith/', 'Ginger /Ale/', 'William /Robinson/', 'Sam /Robinson/',
+                    'Miller /Robinson/', 'Joey /Robinson/', 'Max /Robinson/', 'Ross /Robinson/', 'Joss /Parker/',
+                    'Yatinkumar /Shiyani/', 'Ribu /Watson/', 'Mike /Robinson/', 'Ben /Mann/'}
+
+        self.assertEqual(US_52(indi_repo._individual), expected)
+
     def test_US_42(self):
         """ Function that tests user story 42 """
         repository = Repository('../GedcomFiles/ssw555_input_file.ged')
@@ -445,7 +480,7 @@ class TestRepository(unittest.TestCase):
     #     self.assertTrue(US_35(repository._individual) != ['Smith /Robinson/ has recent birthday'])
 
     def test_US_35(self):
-        """ The function helps to test US_35 function """
+        """The function helps to test US_35 function"""
         repository = Repository('../GedcomFiles/US_35.ged')
         expected: List = []  # 'Jil /Robinson/ has recent birthday'
 
@@ -497,6 +532,57 @@ class TestRepository(unittest.TestCase):
         expected = ["US:15 Family id:@F1@ has 15 or more children on line number 180"]
 
         self.assertEqual(US_15(indi_repo._family), expected)
+
+    def test_US_21(self):
+        """ Function that tests user story 21 """
+        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        expected = ['US_21: Sam /Robinson/ gender is supposed to be female but is not on line number 269']
+        actual = US_21(repository.get_individual(), repository.get_family())
+        self.assertEqual(expected, actual)
+
+    def test_US_22(self):
+        """ Function that tests user story 21 """
+        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        expected = []
+        actual = US_22(repository.get_individual(), repository.get_family())
+        self.assertEqual(expected, actual)
+
+    def test_US_43(self):
+        """ Contains test cases for US_43"""
+        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        expected = ['Emmy /Robinson/ is divorced and alive on line number 151',
+                    'Tia /Ale/ is divorced and alive on line number 324',
+                    'Micheal /Mia/ is divorced and alive on line number 343',
+                    'Mike /Robinson/ is divorced and alive on line number 333']
+        actual = US_43(repository.get_individual(), repository.get_family())
+        self.assertEqual(expected, actual)
+
+    def test_US_44(self):
+        """ Contains test cases for US_44"""
+        repository = Repository("../GedcomFiles/SSW_555_updatedwithUS_2_3.ged")
+        expected = ['Priyanka /Robinson/ is alive and age is more than 100 years old on line '
+                    'number 34',
+                    'Emmy /Robinson/ is alive and age is more than 100 years old on line number '
+                    '151',
+                    'Yatinkumar /Shiyani/ is alive and age is more than 100 years old on line '
+                    'number 292',
+                    'Ginger /Ale/ is alive and age is more than 100 years old on line number 312',
+                    'Tia /Ale/ is alive and age is more than 100 years old on line number 324']
+        actual = US_44(repository.get_individual())
+        self.assertEqual(expected, actual)
+
+    def test_us_45(self):
+        indi_repo: Repository = Repository("../GedcomFiles/US_45.ged")
+        excepted: List = ['Rahul /Sharma/ on line number 21', 'Riya /Sharma/ on line number 41']
+        calculated = [i for i in us_45(indi_repo)]
+        self.assertEqual(calculated, excepted)
+
+    def test_us_46(self):
+        indi_repo: Repository = Repository("../GedcomFiles/US_46.ged")
+        excepted: List = [' Tina /Sharma/ is married and dead on line number 30', 'Kiran /Sharma/ is married and '
+                                                                                  'dead on line number 51']
+        calculated: List = us_46(indi_repo._individual)
+        self.assertEqual(calculated, excepted)
 
     def test_US_47(self):
         """ The function is to test US_47 function"""
@@ -559,6 +645,37 @@ class TestRepository(unittest.TestCase):
         self.assertEqual(US_56(indi_repo._individual), expected)
         self.assertNotEqual(US_56(indi_repo._individual),
                             'Line number: 25 Andrew /Parker Bowles/is below 30 and married')
+
+    def test_US_49(self):
+        """ Function that tests user story 49. """
+        expected = {'Ross /Robinson/', 'Mike /Robinson/', 'Sam /Robinson/', 'Miller /Robinson/', 'Joey /Robinson/',
+                    'Emmy /Robinson/'}
+        actual = US_49(self.repository.get_individual())
+        self.assertEqual(expected, actual)
+
+    def test_US_50(self):
+        """ Function that tests user story 50. """
+        expected = {'Priyanka /Robinson/', 'Miller /Robinson/', 'Monica /Geller/', 'Mike /Robinson/', 'Gari /Jain/',
+                    'Joey /Robinson/', 'Ross /Robinson/'}
+        actual = US_50(self.repository.get_family())
+        self.assertEqual(expected, actual)
+
+    def test_US_53(self):
+        """ Contains test cases for US_53"""
+        indi_repo: Repository = Repository("../GedcomFiles/US_53.ged")
+
+        exp = [
+            "US_53: Husband Katir /Bala/ with @I2@ has the same name as wife Katir /Bala/ with @I3@ in line number 180 "]
+
+        self.assertEqual(US_53(indi_repo._individual, indi_repo._family), exp)
+
+    def test_US_54(self):
+        """ Contains test cases for US_54"""
+        indi_repo: Repository = Repository("../GedcomFiles/US_53.ged")
+
+        exp = ["US_54: Katir /Bala/ with @I3@ is younger than child Pia /Ale/ in line number 180 "]
+
+        self.assertEqual(US_54(indi_repo._individual, indi_repo._family), exp)
 
 
 if __name__ == "__main__":

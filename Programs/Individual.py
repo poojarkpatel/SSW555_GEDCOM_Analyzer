@@ -89,3 +89,4 @@ class Individual:
             self._famS = "NA"
 
         return list((self._individual_id, self._name, self._gender, self._birth_date, self._age, self._is_alive, self._death_date, self._famC, self._famS))
+
