@@ -94,9 +94,9 @@ class TestRepository(unittest.TestCase):
     def test_US_02(self):
         """ FUnction that tests user story 2 """
         repository = Repository("../GedcomFiles/ssw555_input_file.ged")
-        expected = ['US_02 - Micheal /Mia/ birthday after marriage date on line number 604',
-                    'US_02 - Mike /Robinson/ birthday after marriage date on line number 604',
-                    'US_02 - Sam /Robinson/ birthday after marriage date on line number 633']
+        expected = ['US_02: Micheal /Mia/ birthday after marriage date on line number 604',
+                    'US_02: Mike /Robinson/ birthday after marriage date on line number 604',
+                    'US_02: Sam /Robinson/ birthday after marriage date on line number 633']
         actual = US_2(repository.get_individual(), repository.get_family())
         self.assertEqual(expected, actual)
 
@@ -414,7 +414,7 @@ class TestRepository(unittest.TestCase):
         excepted: List = ['Living Spouse: Dhruv /Shah/ and descendant : Saddi /Shah/ on line number 115',
                           'Living Spouse: Dhiru /Shah/ and descendant : Praj /Shah/ on line number 120',
                           ' Living spouse: Riya /Patel/ and Descendant : Dhiru /Shah/ on line number 128 ',
-                          'Living Spouse: Raj /Shah/ and descendant : Dhruv /Shah/ on line number 132']
+                          ]
         calculated: List = us_37(indi_repo._individual, indi_repo._family)
         self.assertEqual(calculated, excepted)
 
@@ -579,7 +579,7 @@ class TestRepository(unittest.TestCase):
 
     def test_us_46(self):
         indi_repo: Repository = Repository("../GedcomFiles/US_46.ged")
-        excepted: List = [' Tina /Sharma/ is married and dead on line number 30', 'Kiran /Sharma/ is married and '
+        excepted: List = [' Tina /Sharma/ is married and dead on line number 30', ' Kiran /Sharma/ is married and '
                                                                                   'dead on line number 51']
         calculated: List = us_46(indi_repo._individual)
         self.assertEqual(calculated, excepted)

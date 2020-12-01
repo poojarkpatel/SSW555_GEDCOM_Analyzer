@@ -7,7 +7,7 @@
 |  @I3@ |   Ross /Robinson/    |   M    | 1790-11-26 |  59 | False | 1850-09-09 |     NA    |           {'@F2@'}          |
 |  @I4@ |   Monica /Geller/    |   F    | 1792-11-12 |  47 | False | 1840-04-02 |     NA    |           {'@F2@'}          |
 |  @I5@ |      Ben /Mann/      |   M    | 1823-02-01 |  48 | False | 1871-04-06 |  {'@F2@'} |              NA             |
-|  @I6@ |   Mike /Robinson/    |   M    | 1824-02-01 |  55 | False | 1880-01-10 |  {'@F2@'} |       {'@F6@', '@F5@'}      |
+|  @I6@ |   Mike /Robinson/    |   M    | 1824-02-01 |  55 | False | 1880-01-10 |  {'@F2@'} |       {'@F5@', '@F6@'}      |
 |  @I7@ |    Rachel /Green/    |   F    | 1832-02-14 |  68 | False | 1900-06-24 |     NA    |           {'@F5@'}          |
 |  @I8@ |     Ema /Mosbi/      |   F    | 1828-04-14 |  41 | False | 1869-04-09 |     NA    |           {'@F6@'}          |
 |  @I9@ |  William /Robinson/  |   M    | 1849-09-09 |  38 | False | 1888-08-02 |  {'@F6@'} |              NA             |
@@ -42,7 +42,7 @@
 | @I38@ |    Rahul /Sharma/    |   M    | 1950-03-05 |  70 |  True |     NA     |     NA    |          {'@F16@'}          |
 | @I39@ |    Pinal /Sharma/    |   F    | 1998-04-06 |  22 |  True |     NA     |     NA    |              NA             |
 | @I40@ |     Saddi /Shah/     |   M    | 2020-11-02 |  0  |  True |     NA     | {'@F21@'} |              NA             |
-| @I41@ |     Gari /Jain/      |   F    | 1980-10-05 |  40 | False | 2020-11-02 |     NA    | {'@F22@', '@F21@', '@F25@'} |
+| @I41@ |     Gari /Jain/      |   F    | 1980-10-05 |  40 | False | 2020-11-02 |     NA    | {'@F25@', '@F21@', '@F22@'} |
 | @I42@ |     Dhiru /Shah/     |   M    | 1920-10-17 | 100 |  True |     NA     | {'@F23@'} |          {'@F22@'}          |
 | @I43@ |     Dhruv /Shah/     |   M    | 1975-07-04 |  45 |  True |     NA     | {'@F24@'} |          {'@F21@'}          |
 | @I44@ |     Praj /Shah/      |   M    | 2020-10-19 |  0  |  True |     NA     | {'@F22@'} |              NA             |
@@ -57,15 +57,15 @@
 +-------+------------+------------+------------+----------------------+---------+---------------------+-----------------------------------------------------+
 |  @F1@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |   @I2@  | Priyanka /Robinson/ |                       {'@I4@'}                      |
 |  @F3@ | 1850-01-01 |     NA     |   @I27@    | Yatinkumar /Shiyani/ |   @I2@  | Priyanka /Robinson/ |                      {'@I28@'}                      |
-|  @F2@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I5@', '@I31@', '@I6@', '@I2@', '@I35@', '@I29@'} |
+|  @F2@ | 1820-04-12 |     NA     |    @I3@    |   Ross /Robinson/    |   @I4@  |   Monica /Geller/   | {'@I29@', '@I31@', '@I5@', '@I35@', '@I2@', '@I6@'} |
 |  @F4@ | 1850-12-14 |     NA     |   @I26@    |    Joss /Parker/     |   @I2@  | Priyanka /Robinson/ |                          NA                         |
 |  @F5@ | 1862-07-10 |     NA     |    @I6@    |   Mike /Robinson/    |   @I7@  |    Rachel /Green/   |                      {'@I10@'}                      |
 |  @F6@ | 1848-01-12 | 1852-01-01 |    @I6@    |   Mike /Robinson/    |   @I8@  |     Ema /Mosbi/     |                       {'@I9@'}                      |
 |  @F7@ | 1893-08-04 |     NA     |   @I10@    |    Max /Robinson/    |  @I11@  |   Dora /Robinson/   |                      {'@I12@'}                      |
 |  @F8@ | 1925-06-05 | 1930-11-15 |   @I13@    |    Jimmy /Smith/     |  @I12@  |   Emmy /Robinson/   |                          NA                         |
 |  @F9@ |     NA     |     NA     |   @I14@    |  Miller /Robinson/   |  @I15@  |   Ellie /Robinson/  |                      {'@I17@'}                      |
-| @F10@ |     NA     |     NA     |   @I17@    |  Miller /Robinson/   |  @I18@  |   Erica /Robinson/  |                  {'@I20@', '@I19@'}                 |
-| @F11@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |             {'@I23@', '@I24@', '@I25@'}             |
+| @F10@ |     NA     |     NA     |   @I17@    |  Miller /Robinson/   |  @I18@  |   Erica /Robinson/  |                  {'@I19@', '@I20@'}                 |
+| @F11@ |     NA     |     NA     |   @I21@    |   Ross /Robinson/    |  @I22@  |   Joey /Robinson/   |             {'@I25@', '@I23@', '@I24@'}             |
 | @F12@ | 1850-05-05 | 2000-06-12 |   @I29@    |     Ginger /Ale/     |  @I30@  |      Tia /Ale/      |                          NA                         |
 | @F13@ | 2019-03-04 | 2018-07-03 |   @I31@    |   Mike /Robinson/    |  @I32@  |    Micheal /Mia/    |                      {'@I33@'}                      |
 | @F14@ | 1862-07-10 |     NA     |    @I1@    |   Joey /Robinson/    |   @I4@  |   Monica /Geller/   |                          NA                         |
@@ -163,8 +163,8 @@ US_23: Multiple individuals with name Mike /Robinson/ born on 2021-07-02 exists.
 US_24: Family contains same husband, wife and marriage date as another family, Line number: 616
 US_24: Family contains same husband, wife and marriage date as another family, Line number: 633
 US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
-US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
 US_25: There are multiple people born on 2021-07-02 date in family @F2@
+US_25: The family @F2@ has multiple individuals with same name Mike /Robinson/
 US_25: The family @F10@ has multiple individuals with same name Joey /Robinson/
 US_26: Individual in family:@F2@ is on line number 522
 US_26: Individual in family:@F2@ is on line number 522
@@ -263,28 +263,28 @@ US_35: Saddi /Shah/ has recent birthday
 US_36: Line number:424 Gari /Jain/ died recently
 US_36: Line number:504 Prem /Shah/ died recently
 US_51: The family id @F4@ have their marriage anniversary in the next 2 months. Line number: 534
-{'Ryan /Robinson/', 'Sam /Robinson/', 'Ginger /Ale/', 'Jimmy /Smith/', 'Max /Robinson/', 'Joss /Parker/', 'Ross /Robinson/', 'Ben /Mann/', 'Rahul /Sharma/', 'Joey /Robinson/', 'Praj /Shah/', 'Miller /Robinson/', 'Saddi /Shah/', 'Mike /Robinson/', 'Dhiru /Shah/', 'Dhruv /Shah/', 'Prem /Shah/', 'Raj /Shah/', 'Yatinkumar /Shiyani/', 'Ribu /Watson/', 'William /Robinson/'}
-US_52: Ryan /Robinson/
-US_52: Sam /Robinson/
-US_52: Ginger /Ale/
-US_52: Jimmy /Smith/
-US_52: Max /Robinson/
-US_52: Joss /Parker/
-US_52: Ross /Robinson/
-US_52: Ben /Mann/
-US_52: Rahul /Sharma/
+{'Joey /Robinson/', 'Dhiru /Shah/', 'Ginger /Ale/', 'Prem /Shah/', 'Ribu /Watson/', 'Max /Robinson/', 'Ryan /Robinson/', 'Jimmy /Smith/', 'Mike /Robinson/', 'Joss /Parker/', 'Sam /Robinson/', 'Dhruv /Shah/', 'Miller /Robinson/', 'William /Robinson/', 'Praj /Shah/', 'Yatinkumar /Shiyani/', 'Ben /Mann/', 'Raj /Shah/', 'Saddi /Shah/', 'Ross /Robinson/', 'Rahul /Sharma/'}
 US_52: Joey /Robinson/
-US_52: Praj /Shah/
-US_52: Miller /Robinson/
-US_52: Saddi /Shah/
-US_52: Mike /Robinson/
 US_52: Dhiru /Shah/
-US_52: Dhruv /Shah/
+US_52: Ginger /Ale/
 US_52: Prem /Shah/
-US_52: Raj /Shah/
-US_52: Yatinkumar /Shiyani/
 US_52: Ribu /Watson/
+US_52: Max /Robinson/
+US_52: Ryan /Robinson/
+US_52: Jimmy /Smith/
+US_52: Mike /Robinson/
+US_52: Joss /Parker/
+US_52: Sam /Robinson/
+US_52: Dhruv /Shah/
+US_52: Miller /Robinson/
 US_52: William /Robinson/
+US_52: Praj /Shah/
+US_52: Yatinkumar /Shiyani/
+US_52: Ben /Mann/
+US_52: Raj /Shah/
+US_52: Saddi /Shah/
+US_52: Ross /Robinson/
+US_52: Rahul /Sharma/
 US_16: Family id @F15@ with father Ribu /Watson/ and son Joey /Robinson/ have different last names on line number 618
 US_16: Family id @F15@ with father Ribu /Watson/ and son Sam /Robinson/ have different last names on line number 618
 US_16: Family id @F2@ with father Ross /Robinson/ and son Ben /Mann/ have different last names on line number 522
@@ -355,3 +355,104 @@ US_37: Living Spouse: Dhiru /Shah/ and descendant : Praj /Shah/ on line number 6
 US_37:  Living spouse: Riya /Patel/ and Descendant : Dhiru /Shah/ on line number 649 
 US_38: Line number 159, Jimmy /Smith/ has upcoming birthday is deceased individual
 US_39: The family id @F4@ have their marriage anniversary in the next 30 days. Line number: 534
+US_45: Emmy /Robinson/ on line number 149
+US_45: Miller /Robinson/ on line number 170
+US_45: Ellie /Robinson/ on line number 179
+US_45: Sam /Robinson/ on line number 188
+US_45: Miller /Robinson/ on line number 196
+US_45: Erica /Robinson/ on line number 206
+US_45: Joey /Robinson/ on line number 215
+US_45: Joey /Robinson/ on line number 224
+US_45: Ross /Robinson/ on line number 233
+US_45: Joey /Robinson/ on line number 242
+US_45: Emmy /Robinson/ on line number 251
+US_45: Jil /Robinson/ on line number 260
+US_45: Sam /Robinson/ on line number 269
+US_45: Mia /Shiyani/ on line number 301
+US_45: Tia /Ale/ on line number 322
+US_45: Mike /Robinson/ on line number 331
+US_45: Micheal /Mia/ on line number 341
+US_45: Ryan /Robinson/ on line number 350
+US_45: Rosa /Hernadez/ on line number 360
+US_45: Mike /Robinson/ on line number 369
+US_45: Ribu /Watson/ on line number 378
+US_45: Mikie /Roni/ on line number 388
+US_45: Rahul /Sharma/ on line number 396
+US_45: Pinal /Sharma/ on line number 405
+US_45: Saddi /Shah/ on line number 413
+US_45: Dhiru /Shah/ on line number 435
+US_45: Dhruv /Shah/ on line number 445
+US_45: Praj /Shah/ on line number 455
+US_45: Waah /Shah/ on line number 464
+US_45: Raj /Shah/ on line number 484
+US_45: Riya /Patel/ on line number 493
+[' Joey /Robinson/ is married and dead on line number 21', ' Priyanka /Robinson/ is married and dead on line number 33', ' Ross /Robinson/ is married and dead on line number 47', ' Monica /Geller/ is married and dead on line number 58', ' Ben /Mann/ is married and dead on line number 69', ' Mike /Robinson/ is married and dead on line number 80', ' Rachel /Green/ is married and dead on line number 93', ' Ema /Mosbi/ is married and dead on line number 104', ' William /Robinson/ is married and dead on line number 115', ' Max /Robinson/ is married and dead on line number 126', ' Dora /Robinson/ is married and dead on line number 138', ' Jimmy /Smith/ is married and dead on line number 159', ' Joss /Parker/ is married and dead on line number 279', ' Yatinkumar /Shiyani/ is married and dead on line number 290', ' Ginger /Ale/ is married and dead on line number 310', ' Gari /Jain/ is married and dead on line number 422', ' Meet /Shah/ is married and dead on line number 473', ' Prem /Shah/ is married and dead on line number 502']
+US_46:  Joey /Robinson/ is married and dead on line number 21
+US_46:  Priyanka /Robinson/ is married and dead on line number 33
+US_46:  Ross /Robinson/ is married and dead on line number 47
+US_46:  Monica /Geller/ is married and dead on line number 58
+US_46:  Ben /Mann/ is married and dead on line number 69
+US_46:  Mike /Robinson/ is married and dead on line number 80
+US_46:  Rachel /Green/ is married and dead on line number 93
+US_46:  Ema /Mosbi/ is married and dead on line number 104
+US_46:  William /Robinson/ is married and dead on line number 115
+US_46:  Max /Robinson/ is married and dead on line number 126
+US_46:  Dora /Robinson/ is married and dead on line number 138
+US_46:  Jimmy /Smith/ is married and dead on line number 159
+US_46:  Joss /Parker/ is married and dead on line number 279
+US_46:  Yatinkumar /Shiyani/ is married and dead on line number 290
+US_46:  Ginger /Ale/ is married and dead on line number 310
+US_46:  Gari /Jain/ is married and dead on line number 422
+US_46:  Meet /Shah/ is married and dead on line number 473
+US_46:  Prem /Shah/ is married and dead on line number 502
+US_47: Wife @I2@ is 25 or more year older than husband @I1@.
+US_47: Wife @I12@ is 25 or more year older than husband @I13@.
+US_47: Husband @I38@ is 25 or more year older than wife @I39@.
+US_47: Husband @I1@ is 25 or more year older than wife @I25@.
+US_47: Husband @I42@ is 25 or more year older than wife @I41@.
+US_47: Husband @I49@ is 25 or more year older than wife @I48@.
+US_47: Wife @I46@ is 25 or more year older than husband @I47@.
+US_47: Wife @I41@ is 25 or more year older than husband @I44@.
+US_48: Wife @I2@ is older than husband @I1@.
+US_48: Wife @I2@ is older than husband @I27@.
+US_48: Wife @I2@ is older than husband @I26@.
+US_48: Wife @I4@ is older than husband @I1@.
+US_48: Wife @I46@ is older than husband @I47@.
+US_48: Wife @I41@ is older than husband @I44@.
+US_55: Line number 331,Mike /Robinson/ has illegal birthdate
+US_55: Line number 341,Micheal /Mia/ has illegal birthdate
+US_55: Line number 369,Mike /Robinson/ has illegal birthdate
+US_56: Line number: 263 Sam /Robinson/is below 30 and married
+US_56: Line number: 325 Mike /Robinson/is below 30 and married
+US_56: Line number: 335 Micheal /Mia/is below 30 and married
+US_56: Line number: 478 Raj /Shah/is below 30 and married
+US_49: Multiple individuals with name Mike /Robinson/ present.
+US_49: Multiple individuals with name Joey /Robinson/ present.
+US_49: Multiple individuals with name Sam /Robinson/ present.
+US_49: Multiple individuals with name Emmy /Robinson/ present.
+US_49: Multiple individuals with name Ross /Robinson/ present.
+US_49: Multiple individuals with name Miller /Robinson/ present.
+US_50: Individual Mike /Robinson/ married more than once.
+US_50: Individual Joey /Robinson/ married more than once.
+US_50: Individual Priyanka /Robinson/ married more than once.
+US_50: Individual Miller /Robinson/ married more than once.
+US_50: Individual Ross /Robinson/ married more than once.
+US_50: Individual Monica /Geller/ married more than once.
+US_50: Individual Gari /Jain/ married more than once.
+US_54: Joey /Robinson/ with @I1@ is younger than child Monica /Geller/  in line number 506 
+US_54: Ross /Robinson/ with @I3@ is younger than child Ginger /Ale/  in line number 522 
+US_54: Monica /Geller/ with @I4@ is younger than child Ginger /Ale/ in line number 522 
+US_54: Monica /Geller/ with @I4@ is younger than child Ben /Mann/ in line number 522 
+US_54: Ross /Robinson/ with @I3@ is younger than child Priyanka /Robinson/  in line number 522 
+US_54: Monica /Geller/ with @I4@ is younger than child Priyanka /Robinson/ in line number 522 
+US_54: Monica /Geller/ with @I4@ is younger than child Mike /Robinson/ in line number 522 
+US_54: Mike /Robinson/ with @I6@ is younger than child Max /Robinson/  in line number 542 
+US_54: Rachel /Green/ with @I7@ is younger than child Max /Robinson/ in line number 542 
+US_54: Max /Robinson/ with @I10@ is younger than child Emmy /Robinson/  in line number 558 
+US_54: Dora /Robinson/ with @I11@ is younger than child Emmy /Robinson/ in line number 558 
+US_54: Mike /Robinson/ with @I31@ is younger than child Ryan /Robinson/  in line number 599 
+US_54: Micheal /Mia/ with @I32@ is younger than child Ryan /Robinson/ in line number 599 
+US_54: Ribu /Watson/ with @I36@ is younger than child Joey /Robinson/  in line number 618 
+US_54: Mikie /Roni/ with @I37@ is younger than child Joey /Robinson/ in line number 618 
+US_54: Riya /Patel/ with @I48@ is younger than child Dhiru /Shah/ in line number 647 
+US_54: Raj /Shah/ with @I47@ is younger than child Dhruv /Shah/  in line number 652 
