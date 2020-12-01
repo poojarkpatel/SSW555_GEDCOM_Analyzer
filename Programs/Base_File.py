@@ -44,6 +44,8 @@ from UserStories.US_39 import US_39
 #from UserStories.US_41 import US_41
 from UserStories.US_47 import US_47
 from UserStories.US_48 import US_48
+from UserStories.US_55_56 import US_55
+from UserStories.US_55_56 import US_56
 
 
 def main():
@@ -180,6 +182,12 @@ def main():
 
     for item in US_48(individual, family):
         print(f"US_48: {item}")
+
+    for item in US_55(individual):
+        print(f"US_55: {item}")
+
+    for item in US_56(individual):
+        print(f"US_56: {item}")
 
 if __name__ == '__main__':
     """ Calls main method. """
